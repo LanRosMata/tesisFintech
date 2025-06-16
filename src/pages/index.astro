@@ -1,11 +1,214 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import imagensElements from "../utilitys/imagensElements";
+import Ondulaciones from "../assets/img/svg/ondulacionessvg.svg";
+const { lgUPH, alipay, paylpal, strapi, block, foto4 } = imagensElements;
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeroPortada from "../components/HeroPortada.astro";
+import SectionScreen from "../components/SectionScreen.astro";
+import CardImagenTit from "../components/CardImagenTit.astro";
+
 ---
 
 <Layout>
-	<Welcome />
+  <main class="mx-auto">
+		<!-- portada -->
+		<HeroPortada />
+		<!-- Antecedentes del problema -->
+		<div
+			class="py-10 text-center h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% shadow-lg shadow-background-1"
+		>
+			<div
+				class="bg-white mx-10 flex flex-row items-center justify-center md:gap-5 rounded-lg shadow-lg"
+			>
+				<div
+					class="h-full w-20 md:w-25 bg-secondary flex items-center justify-center"
+				>
+					<p class="text-5xl md:text-7xl font-black text-white">1</p>
+				</div>
+				<h3 class="text-5xl md:text-8xl text-primary py-10 lg:px-20">
+					Antecedentes del problema
+				</h3>
+			</div>
+		</div>
+		<!-- Logos Fintech en el mundo -->
+		<SectionScreen tipo="azul">
+			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
+				<div class="absolute z-10 ">
+					<h2 class="text-6xl mb-20 text-white">Principales Fintech en el mundo</h2>
+					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
+						<CardImagenTit image={alipay} />
+						<CardImagenTit image={paylpal} />	
+						<CardImagenTit image={strapi} />
+						<CardImagenTit image={block} />
+					</div>
+				</div>
+				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
+			</div>
+		</SectionScreen>
+		<!-- texto informativo -->
+		<SectionScreen tipo="">
+			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
+				<div class="absolute mt-10 z-10 bg-white w-[60%] h-[50%] p-10">
+					<h3>Tema del texto</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur praesentium facere soluta minima ducimus in deserunt consequatur! Repellat, ea eligendi nulla autem alias, incidunt sequi tempora vero error, consequatur voluptatem.</p>
+					<div class="absolute w-full h-10 top-[92%] right-0 bg-gradient-to-r from-background-2 from-10% to-background-3/80 to-100%"></div>
+				</div>
+				<div class="rectangulo-morado"></div>
+
+			</div>
+		</SectionScreen>
+
+
+
+		<!-- Test de cards estaditicos -->
+		<SectionScreen tipo="degradado-1" >
+			<div class=" h-full flex flex-col justify-center items-center gap-5">
+				<h2>Holas ajajksh</h2>
+				<div class="flex flex-wrap gap-10 items-center justify-center">
+					<!-- inicio cards -->
+					<!-- 1 -->
+					<div class="w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
+						<div class="">
+							<p class="font-black text-8xl text-secondary">0.55%</p>
+						</div>
+						<div class="">
+							<p class="text-3xl text-primary">del total de la región en 2023</p>
+						</div>
+					</div>
+					<!-- 2 -->
+					<div class="w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
+						<div class="">
+							<p class="font-black text-8xl text-secondary">18</p>
+						</div>
+						<div class="">
+							<p class="text-3xl text-primary">Fintech Honduras</p>
+						</div>
+					</div>
+					<!-- fin cards -->
+				</div>
+			</div>
+		</SectionScreen>
+
+
+
+    <!-- Portada -->
+    <div
+      class="w-full h-screen flex flex-row items-center justify-center bg-white shadow-lg shadow-white"
+    >
+      <div
+        class="h-full w-[50%] flex flex-col items-center justify-center bg-background-1"
+      >
+        <Image
+          src={lgUPH.img}
+          alt={lgUPH.alt}
+          width={500}
+          height={200}
+          class="mx-auto mb-4"
+        />
+      </div>
+      <div class="px-10 h-full w-full flex flex-col justify-center">
+        <h1 class="text-6xl">Las Fintech y su Presencia en</h1>
+        <h1 class="text-6xl">Honduras en el Año 2024</h1>
+        <h2>Presentado por:</h2>
+        <p class="text-4xl">Allan Rosales</p>
+        <h2>Carrera:</h2>
+        <p class="text-4xl">Ingeniería en Sistemas Computacionales</p>
+      </div>
+    </div>
+
+    <!-- Portada -->
+    <div
+      class="w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white"
+    >
+      <Image
+        src={lgUPH.img}
+        alt={lgUPH.alt}
+        width={500}
+        height={200}
+        class="mx-auto mb-4"
+      />
+      <div class="p-10 bg-white rounded-lg shadow-lg">
+        <h1>Las Fintech y su Presencia en Honduras en el Año 2024</h1>
+        <h2>Presentado por:</h2>
+        <p class="text-4xl">Allan Rosales</p>
+        <h2>Carrera:</h2>
+        <p class="text-4xl">Ingeniería en Sistemas Computacionales</p>
+      </div>
+    </div>
+
+
+    <!-- fintech en el mundo -->
+    <div class="h p-10 bg-white rounded-lg shadow-lg shadow-background-1 my-10">
+      <h3 class="text-4xl">Principales Fintech en el Mundo</h3>
+      <Image
+        src={alipay.img}
+        alt={alipay.alt}
+        width={300}
+        height={200}
+        class="mx-auto mb-4"
+      />
+      <Image
+        src={paylpal.img}
+        alt={paylpal.alt}
+        width={200}
+        height={200}
+        class="mx-auto mb-4"
+      />
+      <h1 class="text-white">Hola Astro</h1>
+      <h2>Este es un H2</h2>
+      <p>
+        Este es un párrafo de ejemplo para mostrar el uso de Tailwind CSS en
+        Astro.
+      </p>
+    </div>
+
+    <!-- test -->
+    <div
+      class="overflow-hidden p-10 bg-white rounded-lg shadow-lg shadow-background-1 my-10"
+    >
+      <Image
+        src={foto4.img}
+        alt={foto4.alt}
+        width={300}
+        height={200}
+        class="mx-auto mb-4"
+      />
+      <h1 class="text-white">Hola Astro</h1>
+      <h2>Este es un H2</h2>
+      <h3>Este es un H3</h3>
+      <p>
+        Este es un párrafo de ejemplo para mostrar el uso de Tailwind CSS en
+        Astro.
+      </p>
+    </div>
+
+    <svg width="0" height="0">
+      <defs>
+        <clipPath id="tuFormaSVG" clipPathUnits="objectBoundingBox">
+          <path
+            d="M.03,0.46c-0.05,0.08-0.03,0.2,0.05,0.25L0.66,1h0.3V0H0.33L.03,0.46Z"
+          ></path>
+        </clipPath>
+      </defs>
+    </svg>
+  </main>
+
 </Layout>
+
+<style>
+	.fig-hondu {
+  /* La sintaxis incorrecta era: linear-gradient(circle to right, transparent 40%, black); */
+  mask-image: radial-gradient(circle, black, transparent 80%);
+	}
+	.rectangulo-morado {
+		position: absolute;
+		width: 70%;
+		height: 50%;
+		right: 30%;
+		top: 15%;
+		z-index: 0;
+		background-color: var(--color-background-1);
+	}
+</style>

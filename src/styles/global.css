@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/TitilliumWeb-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/TitilliumWeb-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/TitilliumWeb-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/TitilliumWeb-Black.woff2') format('woff2');
+}
+
+
+@theme {
+  --color-primary: #213343;
+  --color-secondary: #F15757;
+  --color-secondary-2: #FCBA2C;
+  --color-background-1: #0D0129;
+  --color-background-2: #3E0873;
+  --color-background-3: #EC2020;
+}
+@layer base {
+  h1 {
+    @apply text-4xl font-black text-primary;
+  }
+  h2 {
+    @apply text-3xl font-bold text-gray-900;
+  }
+  h3 {
+    @apply text-2xl font-bold text-secondary;
+  }
+  p {
+    @apply font-semibold text-lg text-black;
+  }
+}
+
+html {
+  font-family: 'Titillium Web', sans-serif;
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,95 @@
+---
+import Image from "astro/components/Image.astro";
+import imagensElements from "../utilitys/imagensElements";
+import TecnoLineas from "../assets/img/svg/tecno-lineas.svg";
+const { lgUPH } = imagensElements;
+
+---
+
+    <!-- Portada -->
+    <section
+      class="w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white"
+    >
+      <div class="hero-portada w-full h-screen">
+        <TecnoLineas
+          class="absolute tecno-img w-5xl h-4xl fill-amber-700 rotate-180 -right-5 top-40"
+        />
+        <div class="absolute h-full flex flex-col z-10 top-[25%] left-[5%] ">
+					<Image
+						src={lgUPH.img}
+						alt={lgUPH.alt}
+						width={500}
+						height={200}
+						class="mx-auto mb-4"
+					/>
+          <h1 class="text-6xl text-white">Las Fintech y su Presencia en</h1>
+          <h1 class="text-6xl text-white">Honduras en el Año 2024</h1>
+          <h2 class="text-white">Presentado por:</h2>
+          <p class="text-4xl text-white">Allan Rosales</p>
+          <h2 class="text-white">Carrera:</h2>
+          <p class="text-4xl text-white">Ingeniería en Sistemas Computacionales</p>
+        </div>
+      </div>
+    </section>
+
+    <style>
+    .hero-portada {
+      position: relative;
+      overflow: hidden;
+    }
+    /* .hero-portada::after{
+		content: '';
+		background: radial-gradient(rgba(255, 255, 255, 0.5), transparent, transparent);
+		position: absolute;
+		width: 50%;
+		height: 50%;
+	} */
+
+    .hero-portada::after {
+      content: "";
+      clip-path: circle(30% at 50% 50%);
+      position: absolute;
+      background: radial-gradient(
+        circle at 70%,
+        var(--color-background-1),
+        var(--color-background-1),
+        var(--color-secondary-2)
+      );
+			top: 10%;
+      /* background: var(--color-background-1); */
+      width: 100%;
+      height: 100%;
+      right: -50%;
+    }
+    .hero-portada::before {
+      content: "";
+      clip-path: circle(50% at 50% 50%);
+      position: absolute;
+      background: radial-gradient(
+        var(--color-secondary-2),
+        transparent,
+        transparent,
+        transparent
+      );
+      width: 100%;
+      height: 100%;
+      transform: scale(1.5);
+      right: -45%;
+      top: -8%;
+    }
+		.tecno-img{
+			mask-image: linear-gradient(to right , transparent 40% ,black);
+		}
+    @media (max-width: 768px) {
+      .hero-portada::after {
+        clip-path: circle(50% at 90% 50%);
+        right: -30%;
+      }
+      .hero-portada::before {
+        clip-path: circle(50% at 90% 50%);
+        transform: scale(2.5, 1.8);
+        right: -45%;
+        top: -10%;
+      }
+    }
+</style>
