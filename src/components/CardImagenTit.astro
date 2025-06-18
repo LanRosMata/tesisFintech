@@ -4,15 +4,15 @@ const { image, titulo = image.alt } = Astro.props;
 ---
 
 <div
-  class="card-img border-2 bg-white border-secondary-2 rounded-lg p-5 shadow-xl shadow-secondary-2/50"
+  class="card-img w-[250px] h-[300px] border-2 flex flex-col items-center justify-center bg-white border-secondary-2 rounded-lg p-5 shadow-xl shadow-secondary-2/50"
 >
-<div class="img-card01 h-40 w-40 flex items-center justify-center">
+<div class="img-card max-h-40 max-w-40 flex items-center justify-center my-auto">
   <Image
     src={image.img}
     alt={image.alt}
     width={300}
     height={200}
-    class=" w-full h-auto  mx-auto mb-4"
+    class=" w-full h-auto mx-auto mb-4"
   />
 </div>
   <p class="text-center font-bold text-4xl text-secondary-2 ">{ image.alt }</p>

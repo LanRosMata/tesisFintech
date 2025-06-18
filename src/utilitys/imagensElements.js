@@ -64,19 +64,19 @@ const imagensElements = {
     },
     nubank:{
       img : nubankIMG,
-      alt: 'Nubank'
+      alt: 'Nubank (Brasil)'
     },
     pix:{
       img : pixIMG,
-      alt: 'Pix'
+      alt: 'Pix (Brasil)'
     },
     chivo:{
       img : chivoIMG,
-      alt: 'Chivo Wallet'
+      alt: 'Chivo Wallet (El Salvador)'
     },
     bitcoin:{
       img : bitcoinIMG,
-      alt: 'Bitcoin'
+      alt: 'Bitcoin (El Salvador)'
     },
     tigo:{
       img : tigoIMG,

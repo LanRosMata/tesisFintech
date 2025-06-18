@@ -1,18 +1,18 @@
 ---
-const { tipo } = Astro.props;
+const { tipo, class: className = "" } = Astro.props;
 let clases;
 switch (tipo) {
   case 'degradado-1':
-      clases = "text-center h-screen bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% shadow-lg shadow-background-1"
+      clases = "text-white h-screen mb-20 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% rounded-m-2xl shadow-xl shadow-background-2"
       break
   case 'azul':
-      clases = "text-center h-screen bg-background-1 shadow-lg shadow-background-1"
+      clases = "text-white mb-20 h-screen bg-background-1 rounded-m-2xl shadow-xl shadow-background-1"
       break
   default:
-    clases = 'h-screen my-10 bg-gray-100 rounded-lg shadow-lg shadow-background-1 my-10"';
+    clases = "text-primary mb-20 h-screen bg-gray-100 rounded-m-2xl shadow-xl shadow-background-1/50";
     break;
 }
 ---
-<section class={ clases }>
+<section class={ clases  + " " + className }>
   <slot/>
 </section>

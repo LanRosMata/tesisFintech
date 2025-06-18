@@ -1,0 +1,19 @@
+---
+const { class: className = "" } = Astro.props;
+---
+<div class={className}>
+  <div class="icon relative p-7 bg-secondary"></div>
+</div>
+
+<style>
+  .icon::before {
+    position: absolute;
+    content: "";
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: white;
+    width: 60%;
+    height: 40%;
+    top: 30%;
+    left: 20%;
+  }
+</style>

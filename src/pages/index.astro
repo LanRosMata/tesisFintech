@@ -3,11 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import imagensElements from "../utilitys/imagensElements";
 import Ondulaciones from "../assets/img/svg/ondulacionessvg.svg";
-const { lgUPH, alipay, paylpal, strapi, block, foto4 } = imagensElements;
+import MapHN from "../assets/img/svg/MapHN.svg";
+const { lgUPH, foto3, foto4, alipay, paylpal, strapi, block, nubank, pix, bitcoin, chivo, tigo, tengo, dilo, kash, pixelPay, pagadito, ginih, sube } = imagensElements;
 
 import HeroPortada from "../components/HeroPortada.astro";
 import SectionScreen from "../components/SectionScreen.astro";
 import CardImagenTit from "../components/CardImagenTit.astro";
+import IconFlecha from "../components/IconFlecha.astro";
+import TitleCard from "../components/TitleCard.astro";
 
 ---
 
@@ -15,28 +18,76 @@ import CardImagenTit from "../components/CardImagenTit.astro";
   <main class="mx-auto">
 		<!-- portada -->
 		<HeroPortada />
-		<!-- Antecedentes del problema -->
-		<div
-			class="py-10 text-center h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% shadow-lg shadow-background-1"
-		>
-			<div
-				class="bg-white mx-10 flex flex-row items-center justify-center md:gap-5 rounded-lg shadow-lg"
-			>
-				<div
-					class="h-full w-20 md:w-25 bg-secondary flex items-center justify-center"
-				>
-					<p class="text-5xl md:text-7xl font-black text-white">1</p>
-				</div>
-				<h3 class="text-5xl md:text-8xl text-primary py-10 lg:px-20">
-					Antecedentes del problema
-				</h3>
-			</div>
-		</div>
+
+		<!-- ===TEMA=== Antecedentes del problema -->
+     <SectionScreen tipo="degradado-1" class="relative overflow-hidden">
+        <TitleCard numero="01" titulo="Marco Teórico" />
+        <MapHN class="absolute z-0 -top-[5%] w-screen h-full scale-200 fill-background-1/20" />
+     </SectionScreen>
+
+     <!-- Definición de fintech -->
+     <SectionScreen tipo="azul">
+      <div class="flex flex-row items-center justify-center gap-20 h-full">
+        <div class="relative">
+          <IconFlecha class="rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] bg-secondary" />
+          <Image
+            src={foto3.img}
+            alt={foto3.alt}
+            width={500}
+            height={300}
+            class="w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+          />
+        </div>
+        <div class="flex flex-col items-baseLine justify-center gap-4 w-1/2">
+          <h2 class="text-secondary text-7xl border-b-2 border-white mb-2">Fintech</h2>
+          <p class="text-white text-4xl">
+            Nace de las palabras en inglés <span class=" text-secondary">Finance and Technology</span> y estas hace referencia a todas aquellas actividades que implique el uso de herramientas tecnológicas en búsqueda del desarrollo y la innovación de los productos y servicios financieros.
+          </p>
+        </div>
+      </div>
+     </SectionScreen>
+
+     <!-- Definiciones otras -->
+     <SectionScreen tipo="azul">
+      <div class="flex flex-row items-center justify-center gap-20 h-full">
+        <div class="flex flex-col items-baseLine justify-center gap-4 w-1/2">
+          <h2 class="text-secondary text-7xl border-b-2 border-white mb-2">
+            Dinero Electrónico
+          </h2>
+          <p class="text-white text-4xl">
+            Valor monetario almacenado en una billetera electrónica y aceptado como medio de pago por personas naturales y jurídicas.
+          </p>
+          <h2 class="text-secondary text-7xl border-b-2 border-white mb-2 mt-10">
+            Billetera electrónica
+          </h2>
+          <p class="text-white text-4xl">
+            Plataformas de pago en línea, cobre de remesas y medios digitales destinados únicamente transferencias entre bancos que no son ACH.
+          </p>
+        </div>
+        <div class="relative">
+          <IconFlecha class="rotate-270 absolute top-[30%] -left-[5%] w-[50px] h-[50px] bg-secondary" />
+          <Image
+            src={foto4.img}
+            alt={foto4.alt}
+            width={500}
+            height={300}
+            class="w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+          />
+        </div>
+      </div>
+     </SectionScreen>
+
+		<!-- ===TEMA=== Antecedentes del problema -->
+     <SectionScreen tipo="degradado-1" class="relative overflow-hidden">
+        <TitleCard numero="02" titulo="Antecedentes del Problema" />
+        <MapHN class="absolute z-0 -top-[5%] w-screen h-full scale-200 fill-background-1/20" />
+     </SectionScreen>
+
 		<!-- Logos Fintech en el mundo -->
-		<SectionScreen tipo="azul">
+		<SectionScreen tipo="azul" >
 			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
 				<div class="absolute z-10 ">
-					<h2 class="text-6xl mb-20 text-white">Principales Fintech en el mundo</h2>
+					<h2 class="text-center text-6xl mb-20 text-white">Principales Fintech en el mundo</h2>
 					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
 						<CardImagenTit image={alipay} />
 						<CardImagenTit image={paylpal} />	
@@ -47,38 +98,114 @@ import CardImagenTit from "../components/CardImagenTit.astro";
 				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
 			</div>
 		</SectionScreen>
+
+
+    <!-- Logos Fintech Latinoamérica -->
+		<SectionScreen tipo="azul" >
+			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
+				<div class="absolute z-10 ">
+					<h2 class="text-center text-6xl mb-20 text-white">
+            Principales Fintech América Latina
+          </h2>
+					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
+						<CardImagenTit image={nubank} />
+						<CardImagenTit image={pix} />	
+					</div>
+				</div>
+				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
+			</div>
+		</SectionScreen>
+
+    <!-- Logos Fintech Centroamérica -->
+		<SectionScreen tipo="azul" >
+			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
+				<div class="absolute z-10 ">
+					<h2 class="text-center text-6xl mb-20 text-white">
+            Principales Fintech Centroamérica
+          </h2>
+					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
+						<CardImagenTit image={bitcoin} />
+						<CardImagenTit image={chivo} />	
+					</div>
+				</div>
+				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
+			</div>
+		</SectionScreen>
+
+    <!-- Logos Fintech en el mundo -->
+		<SectionScreen tipo="azul" >
+			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
+				<div class="absolute z-10 ">
+					<h2 class="text-center text-6xl mb-20 text-white">Fintech en Honduras (Billeteras)</h2>
+					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
+						<CardImagenTit image={tigo} />
+						<CardImagenTit image={tengo} />	
+						<CardImagenTit image={dilo} />
+						<CardImagenTit image={kash} />
+					</div>
+				</div>
+				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
+			</div>
+		</SectionScreen>
+
+    <!-- Logos Fintech en el mundo -->
+		<SectionScreen tipo="azul" >
+			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
+				<div class="absolute z-10 ">
+					<h2 class="text-center text-6xl mb-20 text-white">Fintech en Honduras (Dinero Electrónico)</h2>
+					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
+						<CardImagenTit image={pixelPay} />
+						<CardImagenTit image={pagadito} />	
+						<CardImagenTit image={ginih} />
+						<CardImagenTit image={sube} />
+					</div>
+				</div>
+				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
+			</div>
+		</SectionScreen>
+
+
 		<!-- texto informativo -->
 		<SectionScreen tipo="">
 			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
 				<div class="absolute mt-10 z-10 bg-white w-[60%] h-[50%] p-10">
 					<h3>Tema del texto</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur praesentium facere soluta minima ducimus in deserunt consequatur! Repellat, ea eligendi nulla autem alias, incidunt sequi tempora vero error, consequatur voluptatem.</p>
+					<p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur praesentium facere soluta minima ducimus in deserunt consequatur! Repellat, ea eligendi nulla autem alias, incidunt sequi tempora vero error, consequatur voluptatem.
+          </p>
 					<div class="absolute w-full h-10 top-[92%] right-0 bg-gradient-to-r from-background-2 from-10% to-background-3/80 to-100%"></div>
 				</div>
 				<div class="rectangulo-morado"></div>
 
 			</div>
 		</SectionScreen>
+    <!-- seccion de temas -->
+
 
 
 
 		<!-- Test de cards estaditicos -->
 		<SectionScreen tipo="degradado-1" >
 			<div class=" h-full flex flex-col justify-center items-center gap-5">
-				<h2>Holas ajajksh</h2>
+        <!-- icono -->
+        <div class="icon relative w-[50px] h-[50px] bg-secondary"></div>
+
+				<h2 class="text-white">Holas ajajksh</h2>
 				<div class="flex flex-wrap gap-10 items-center justify-center">
 					<!-- inicio cards -->
 					<!-- 1 -->
-					<div class="w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
+					<div class="relative w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
+            <IconFlecha class="rotate-180 absolute -top-[10%]" />
 						<div class="">
-							<p class="font-black text-8xl text-secondary">0.55%</p>
+              <p class="font-black text-8xl text-secondary">0.55%</p>
 						</div>
 						<div class="">
-							<p class="text-3xl text-primary">del total de la región en 2023</p>
+              <p class="text-3xl text-primary">del total de la región en 2023</p>
 						</div>
 					</div>
 					<!-- 2 -->
-					<div class="w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
+					<div class="relative w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
+            <IconFlecha class="rotate-180 absolute -top-[10%]" />
 						<div class="">
 							<p class="font-black text-8xl text-secondary">18</p>
 						</div>
@@ -88,6 +215,10 @@ import CardImagenTit from "../components/CardImagenTit.astro";
 					</div>
 					<!-- fin cards -->
 				</div>
+        <p class="text-white text-2xl text-center mt-10 w-2/3">
+            “En Honduras, el sector fintech ha mostrado un crecimiento significativo, con un aumento del 0.55% en el total de la región durante 2023, lo que refleja un interés creciente en soluciones financieras digitales” (CNBS).
+          “El nivel de bancarización medida por la relación depósitos del público respecto al PIB registró el 78.4% a diciembre de 2023, 1.6% superior al 76.8% computado en el 2022, producto de un mayor crecimiento de los depósitos del público” (CNBS).
+        </p>
 			</div>
 		</SectionScreen>
 
@@ -211,4 +342,14 @@ import CardImagenTit from "../components/CardImagenTit.astro";
 		z-index: 0;
 		background-color: var(--color-background-1);
 	}
+  .icon::before{
+    position: absolute;
+    content: "";
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: white;
+    width: 60%;
+    height: 40%;
+    top: 30%;
+    left: 20%;
+  }
 </style>
