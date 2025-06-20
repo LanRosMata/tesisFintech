@@ -19,7 +19,7 @@ import TitleCard from "../components/TitleCard.astro";
 		<!-- portada -->
 		<HeroPortada />
 
-		<!-- ===TEMA=== Antecedentes del problema -->
+		<!-- ===TEMA=== Marco Teórico -->
      <SectionScreen tipo="degradado-1" class="relative overflow-hidden">
         <TitleCard numero="01" titulo="Marco Teórico" />
         <MapHN class="absolute z-0 -top-[5%] w-screen h-full scale-200 fill-background-1/20" />
@@ -27,9 +27,9 @@ import TitleCard from "../components/TitleCard.astro";
 
      <!-- Definición de fintech -->
      <SectionScreen tipo="azul">
-      <div class="flex flex-row items-center justify-center gap-20 h-full">
-        <div class="relative">
-          <IconFlecha class="rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] bg-secondary" />
+      <div class="flex flex-col md:flex-row items-center justify-center gap-20 h-full">
+        <div class="relative md:h-auto w-1/2">
+          <IconFlecha class="rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary" />
           <Image
             src={foto3.img}
             alt={foto3.alt}
@@ -38,9 +38,9 @@ import TitleCard from "../components/TitleCard.astro";
             class="w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
           />
         </div>
-        <div class="flex flex-col items-baseLine justify-center gap-4 w-1/2">
-          <h2 class="text-secondary text-7xl border-b-2 border-white mb-2">Fintech</h2>
-          <p class="text-white text-4xl">
+        <div class="flex flex-col items-baseLine justify-center gap-4 md:w-1/2 w-8/12">
+          <h2 class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">Fintech</h2>
+          <p class="text-white text-xl md:text-4xl">
             Nace de las palabras en inglés <span class=" text-secondary">Finance and Technology</span> y estas hace referencia a todas aquellas actividades que implique el uso de herramientas tecnológicas en búsqueda del desarrollo y la innovación de los productos y servicios financieros.
           </p>
         </div>
@@ -49,18 +49,18 @@ import TitleCard from "../components/TitleCard.astro";
 
      <!-- Definiciones otras -->
      <SectionScreen tipo="azul">
-      <div class="flex flex-row items-center justify-center gap-20 h-full">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-20 h-full">
         <div class="flex flex-col items-baseLine justify-center gap-4 w-1/2">
-          <h2 class="text-secondary text-7xl border-b-2 border-white mb-2">
+          <h2 class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
             Dinero Electrónico
           </h2>
-          <p class="text-white text-4xl">
+          <p class="text-white text-xl md:text-4xl">
             Valor monetario almacenado en una billetera electrónica y aceptado como medio de pago por personas naturales y jurídicas.
           </p>
-          <h2 class="text-secondary text-7xl border-b-2 border-white mb-2 mt-10">
+          <h2 class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10">
             Billetera electrónica
           </h2>
-          <p class="text-white text-4xl">
+          <p class="text-white text-xl md:text-4xl">
             Plataformas de pago en línea, cobre de remesas y medios digitales destinados únicamente transferencias entre bancos que no son ACH.
           </p>
         </div>

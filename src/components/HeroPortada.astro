@@ -3,108 +3,180 @@ import Image from "astro/components/Image.astro";
 import imagensElements from "../utilitys/imagensElements";
 import TecnoLineas from "../assets/img/svg/tecno-lineas.svg";
 import MapHN from "../assets/img/svg/MapHN.svg";
-const { lgUPH } = imagensElements;
-
+// const { lgUPH } = imagensElements;
+import LgUPH from "../assets/img/image2.svg";
 ---
 
-    <!-- Portada -->
-    <section
-      class=" hero w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white"
-    >
-      <div class="hero-portada w-full h-screen">
-        <TecnoLineas
-          class="absolute tecno-img w-5xl h-4xl fill-amber-700 rotate-180 -right-5 top-40"
-        />
-        <div class="absolute h-full flex flex-col z-10 top-[25%] left-[5%] ">
-					<Image
+
+<!-- Portada -->
+<section
+  class="hero w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white"
+>
+  <div class="hero-portada w-full h-screen">
+    <TecnoLineas
+      class="tecnoLineas absolute tecno-img w-5xl h-4xl fill-amber-700 rotate-180 -right-5 top-40"
+    />
+    <div class="absolute h-full flex flex-col z-10 top-[25%] left-[5%]">
+      <!-- <Image
 						src={lgUPH.img}
 						alt={lgUPH.alt}
 						width={500}
 						height={200}
 						class="lgUPH mx-auto mb-4"
-					/>
-          <h1 class="text-6xl text-white">Las Fintech y su Presencia en</h1>
-          <h1 class="text-6xl text-white">Honduras en el Año 2024</h1>
-          <h2 class="text-white">Presentado por:</h2>
-          <p class="text-4xl text-white">Allan Rosales</p>
-          <h2 class="text-white">Carrera:</h2>
-          <p class="text-4xl text-white">Ingeniería en Sistemas Computacionales</p>
-        </div>
-        <MapHN class="absolute w-5xl h-4xl fill-background-2/30  left-[0%] top-[0%] z-0 " />
-      </div>
-    </section>
+					/> -->
+      <LgUPH class="lg-uph hidden md:flex w-auto px-5 md:w-[500px] h-auto md:mx-auto mb-4" />
 
-    <style>
-    .hero-portada {
-      position: relative;
-      overflow: hidden;
-    }
+      <h1 class="text-6xl text-white">Las Fintech y su Presencia en</h1>
+      <h1 class="text-6xl text-white">Honduras en el Año 2024</h1>
+      <h2 class="text-white">Presentado por:</h2>
+      <p class="text-4xl text-white">Allan Rosales</p>
+      <h2 class="text-white">Carrera:</h2>
+      <p class="text-4xl text-white">Ingeniería en Sistemas Computacionales</p>
+    </div>
+    <MapHN
+      class="absolute w-5xl h-4xl fill-background-2/30 left-[0%] top-[0%] z-0"
+    />
+  </div>
+</section>
+
+<style>
+  .hero-portada {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-portada::after {
+    content: "";
+    clip-path: circle(30% at 50% 50%);
+    position: absolute;
+    background: radial-gradient(
+      circle at 70%,
+      var(--color-background-1),
+      var(--color-background-1),
+      var(--color-secondary-2)
+    );
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    right: -50%;
+  }
+  .hero-portada::before {
+    content: "";
+    clip-path: circle(50% at 50% 50%);
+    position: absolute;
+    background: radial-gradient(
+      var(--color-secondary-2),
+      transparent,
+      transparent,
+      transparent
+    );
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5);
+    right: -45%;
+    top: -8%;
+  }
+  .tecno-img {
+    mask-image: linear-gradient(to right, transparent 40%, black);
+  }
+  @media (max-width: 768px) {
     .hero-portada::after {
-      content: "";
-      clip-path: circle(30% at 50% 50%);
-      position: absolute;
-      background: radial-gradient(
-        circle at 70%,
-        var(--color-background-1),
-        var(--color-background-1),
-        var(--color-secondary-2)
-      );
-			top: 10%;
-      width: 100%;
-      height: 100%;
-      right: -50%;
+      clip-path: circle(50% at 90% 50%);
+      right: -30%;
     }
     .hero-portada::before {
-      content: "";
-      clip-path: circle(50% at 50% 50%);
-      position: absolute;
-      background: radial-gradient(
-        var(--color-secondary-2),
-        transparent,
-        transparent,
-        transparent
-      );
-      width: 100%;
-      height: 100%;
-      transform: scale(1.5);
+      clip-path: circle(50% at 90% 50%);
+      transform: scale(2.5, 1.8);
       right: -45%;
-      top: -8%;
+      top: -10%;
     }
-		.tecno-img{
-			mask-image: linear-gradient(to right , transparent 40% ,black);
-		}
-    @media (max-width: 768px) {
-      .hero-portada::after {
-        clip-path: circle(50% at 90% 50%);
-        right: -30%;
-      }
-      .hero-portada::before {
-        clip-path: circle(50% at 90% 50%);
-        transform: scale(2.5, 1.8);
-        right: -45%;
-        top: -10%;
-      }
-    }
+  }
+  .lg-uph {
+    opacity: 1;
+  } 
 </style>
 
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    const initialWidth = viewportWidth * 1;
-    const scaleFactor = initialWidth / 600
-       console.log(scaleFactor)
-
-  let tlHero = gsap.timeline({
-    scrollTrigger: {
-      scrub: 2,
-      trigger: '.hero',
-    }
+  gsap.set(".lg-uph", {
+    scale: (index, target) => { return (window.innerWidth / target?.getBoundingClientRect().width) - 0.5},
+    x: (index, target) => { 
+      const rest = window.innerWidth / 2 - target.getBoundingClientRect().left - target.getBoundingClientRect().width / 2
+      return rest
+    },
+    y: (index, target) => { return window.innerHeight / 2 - target.getBoundingClientRect().top - target.getBoundingClientRect().height / 2},
   });
+  gsap.to(".lg-uph", {
+    scale: 1,
+    x: 0,
+    y: 0,
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top top",
+      end: "+=200",
+      pin: true,
+      scrub: 1,
+      markers: true
+    },
+  })
 
-
+  function animateLogo (){
+    const lgUpTl = gsap.timeline({})
   
+    lgUpTl
+      .to(".lg-uph", {
+        opacity: 1,
+        duration: 0.2,
+      })
+      .from(".lg-uph1", {
+        y: 50,
+        opacity: 0,
+        ease: "elastic.out(1,0.3)",
+        duration: 1,
+      })
+      .from(".lg-uph2", {
+        y: 50,
+        opacity: 0,
+        delay: 0,
+        ease: "elastic.out(1,0.3)",
+        duration: 1,
+      })
+      .from(".lg-uph3", {
+        y: 50,
+        opacity: 0,
+        delay: 0,
+        ease: "elastic.out(1,0.3)",
+        duration: 1,
+      })
+      .from(".lg-uph4", {
+        scale: 0,
+        opacity: 1,
+        delay: 0,
+        transformOrigin: 'center center',
+        ease: "power2.out",
+        duration: 1,
+      },"<")
+      .from(".lg-uph5", {
+        x: -200,
+        opacity: 0,
+        delay: 0,
+        ease: "power2.out",
+        duration: 1,
+      },"<")
+      .from(".tecnoLineas path", {
+        duration:1,
+        x: -100,
+        opacity: 0,
+        transformOrigin: 'center right',
+        ease: "power2.out",
+        stagger: 0.4,
+      });
+  }
+
+
+
 </script>
+
