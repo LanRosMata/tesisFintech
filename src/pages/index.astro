@@ -28,7 +28,7 @@ import TitleCard from "../components/TitleCard.astro";
      <!-- Definición de fintech -->
      <SectionScreen tipo="azul">
       <div class="flex flex-col md:flex-row items-center justify-center gap-20 h-full">
-        <div class="relative md:h-auto w-1/2">
+        <div class="relative md:h-auto md:w-1/4 w-1/2">
           <IconFlecha class="rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary" />
           <Image
             src={foto3.img}
@@ -48,7 +48,7 @@ import TitleCard from "../components/TitleCard.astro";
      </SectionScreen>
 
      <!-- Definiciones otras -->
-     <SectionScreen tipo="azul">
+     <SectionScreen tipo="azul" class="md:h-screen h-[400vh]">
       <div class="flex flex-col md:flex-row items-center justify-center gap-20 h-full">
         <div class="flex flex-col items-baseLine justify-center gap-4 w-1/2">
           <h2 class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
@@ -64,8 +64,8 @@ import TitleCard from "../components/TitleCard.astro";
             Plataformas de pago en línea, cobre de remesas y medios digitales destinados únicamente transferencias entre bancos que no son ACH.
           </p>
         </div>
-        <div class="relative">
-          <IconFlecha class="rotate-270 absolute top-[30%] -left-[5%] w-[50px] h-[50px] bg-secondary" />
+        <div class="relative md:h-auto md:w-1/4 w-1/2">
+          <IconFlecha class="rotate-270 absolute top-[30%] -left-[5%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary" />
           <Image
             src={foto4.img}
             alt={foto4.alt}

@@ -17,34 +17,33 @@ import LgUPH from "../assets/img/image2.svg";
       class="tecnoLineas absolute tecno-img w-5xl h-4xl fill-amber-700 rotate-180 -right-5 top-40"
     />
     <div class="absolute h-full flex flex-col z-10 top-[25%] left-[5%]">
-      <!-- <Image
-						src={lgUPH.img}
-						alt={lgUPH.alt}
-						width={500}
-						height={200}
-						class="lgUPH mx-auto mb-4"
-					/> -->
-      <LgUPH class="lg-uph hidden md:flex w-auto px-5 md:w-[500px] h-auto md:mx-auto mb-4" />
+      <LgUPH class="lg-uph overflow-visible flex w-auto px-5 md:w-[500px] h-auto md:mx-auto mb-4" />
 
-      <h1 class="text-6xl text-white">Las Fintech y su Presencia en</h1>
-      <h1 class="text-6xl text-white">Honduras en el Año 2024</h1>
-      <h2 class="text-white">Presentado por:</h2>
-      <p class="text-4xl text-white">Allan Rosales</p>
-      <h2 class="text-white">Carrera:</h2>
-      <p class="text-4xl text-white">Ingeniería en Sistemas Computacionales</p>
+      <h1 class="textToAnimate text-6xl text-white">Las Fintech y su Presencia en</h1>
+      <h1 class="textToAnimate text-6xl text-white">Honduras en el Año 2024</h1>
+      <h2 class="textToAnimate text-white">Presentado por:</h2>
+      <p class="textToAnimate text-4xl text-white">Allan Rosales</p>
+      <h2 class="textToAnimate text-white">Carrera:</h2>
+      <p class="textToAnimate text-4xl text-white">Ingeniería en Sistemas Computacionales</p>
     </div>
     <MapHN
       class="absolute w-5xl h-4xl fill-background-2/30 left-[0%] top-[0%] z-0"
     />
+    <div class="planeta"></div>
+    <div class="resplandor"></div>
   </div>
 </section>
 
 <style>
+  .textToAnimate{
+    opacity: 1;
+  }
   .hero-portada {
     position: relative;
     overflow: hidden;
+    opacity: 1;
   }
-  .hero-portada::after {
+  .resplandor {
     content: "";
     clip-path: circle(30% at 50% 50%);
     position: absolute;
@@ -58,8 +57,9 @@ import LgUPH from "../assets/img/image2.svg";
     width: 100%;
     height: 100%;
     right: -50%;
+    opacity: 0;
   }
-  .hero-portada::before {
+  .planeta {
     content: "";
     clip-path: circle(50% at 50% 50%);
     position: absolute;
@@ -74,6 +74,7 @@ import LgUPH from "../assets/img/image2.svg";
     transform: scale(1.5);
     right: -45%;
     top: -8%;
+    opacity: 0;
   }
   .tecno-img {
     mask-image: linear-gradient(to right, transparent 40%, black);
@@ -99,82 +100,139 @@ import LgUPH from "../assets/img/image2.svg";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+  import { SplitText } from "gsap/SplitText";
 
-  gsap.set(".lg-uph", {
-    scale: (index, target) => { return (window.innerWidth / target?.getBoundingClientRect().width) - 0.5},
-    x: (index, target) => { 
-      const rest = window.innerWidth / 2 - target.getBoundingClientRect().left - target.getBoundingClientRect().width / 2
-      return rest
-    },
-    y: (index, target) => { return window.innerHeight / 2 - target.getBoundingClientRect().top - target.getBoundingClientRect().height / 2},
-  });
-  gsap.to(".lg-uph", {
-    scale: 1,
-    x: 0,
-    y: 0,
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top top",
-      end: "+=200",
-      pin: true,
-      scrub: 1,
-      markers: true
-    },
+  gsap.registerPlugin(ScrollTrigger, SplitText , DrawSVGPlugin);
+
+
+
+
+  const lgUpTlInt = gsap.timeline({})
+
+  lgUpTlInt
+  .to(".lg-uph", {
+    opacity: 1,
+    duration: 0.2,
   })
+  .from(".lg-uph1", {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.2,
+  })
+  .from(".lg-uph1", {
+    y: 50,
+    ease: "elastic.out(1,0.3)",
+    duration: 0.8,
+  },"<")
+  .from(".lg-uph2", {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.2,
+  })
+  .from(".lg-uph2", {
+    y: 50,
+    ease: "elastic.out(1,0.3)",
+    duration: 0.8,
+  },"<")
+  .from(".lg-uph3", {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.2,
+  })
+  .from(".lg-uph3", {
+    y: 50,
+    ease: "elastic.out(1,0.3)",
+    duration: 0.8,
+  },"<")
+  .from(".lg-uph4", {
+    scale: 0,
+    opacity: 1,
+    delay: 0,
+    transformOrigin: 'center center',
+    ease: "power2.out",
+    duration: 1,
+  },"<")
+  .from(".lg-uph5", {
+    x: -200,
+    opacity: 0,
+    delay: 0,
+    ease: "power2.out",
+    duration: 1,
+  },"<")
 
-  function animateLogo (){
-    const lgUpTl = gsap.timeline({})
-  
-    lgUpTl
-      .to(".lg-uph", {
-        opacity: 1,
-        duration: 0.2,
-      })
-      .from(".lg-uph1", {
+
+// TimeLine de l Fondo
+  const tlFondo = gsap.timeline()
+  tlFondo
+  .to(".resplandor",{
+    opacity: 1,
+    duration: 3,
+  })  
+  .to(".planeta",{
+    opacity: 1,
+    duration: 3,
+  },"-=0.5")
+  .from(".tecnoLineas path", {
+    duration:0.5,
+    x: -100,
+    opacity: 0,
+    transformOrigin: 'center right',
+    ease: "power2.out",
+    stagger: 0.1,
+  },"<")
+document.querySelectorAll("#mapHN path").forEach((path, index) => {
+  tlFondo.from(path, {
+    scale: 0,
+    opacity: 0,
+    duration: 0.2,
+    delay: index * 0.01,
+  },"<")
+})
+
+//TimeLine del Texto
+const tlTexto = gsap.timeline();
+document.querySelectorAll(".textToAnimate").forEach((element) => {
+    const splitText = new SplitText(element, { type: "words" });
+    tlTexto
+      .from(splitText.words, {
+        opacity: 0,
         y: 50,
-        opacity: 0,
-        ease: "elastic.out(1,0.3)",
-        duration: 1,
-      })
-      .from(".lg-uph2", {
-        y: 50,
-        opacity: 0,
-        delay: 0,
-        ease: "elastic.out(1,0.3)",
-        duration: 1,
-      })
-      .from(".lg-uph3", {
-        y: 50,
-        opacity: 0,
-        delay: 0,
-        ease: "elastic.out(1,0.3)",
-        duration: 1,
-      })
-      .from(".lg-uph4", {
-        scale: 0,
-        opacity: 1,
-        delay: 0,
-        transformOrigin: 'center center',
         ease: "power2.out",
-        duration: 1,
-      },"<")
-      .from(".lg-uph5", {
-        x: -200,
-        opacity: 0,
-        delay: 0,
-        ease: "power2.out",
-        duration: 1,
-      },"<")
-      .from(".tecnoLineas path", {
-        duration:1,
-        x: -100,
-        opacity: 0,
-        transformOrigin: 'center right',
-        ease: "power2.out",
-        stagger: 0.4,
+        duration: 0.5,
       });
-  }
+  });
+
+
+
+//Timeline Principal
+  const tlMain = gsap.timeline({
+    defaults: {
+      ease: "power2.out",
+    },
+  });
+  tlMain
+    .set(".lg-uph", {
+      scale: (index, target) => { 
+        return (window.innerWidth / target?.getBoundingClientRect().width) - 0.5
+      },
+      x: (index, target) => { 
+        const rest = window.innerWidth / 2 - target.getBoundingClientRect().left - target.getBoundingClientRect().width / 2
+        return rest
+      },
+      y: (index, target) => { 
+        return window.innerHeight / 2 - target.getBoundingClientRect().top - target.getBoundingClientRect().height / 2
+      },
+      duration: 0.5,
+  })
+  .add(lgUpTlInt)
+  .add(tlFondo)
+  .to(".lg-uph", {
+      scale: 1,
+      x: 0,
+      y: 0,
+      duration: 1,
+    },"<")
+  .add(tlTexto, "<2")
 
 
 
