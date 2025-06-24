@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import IconFlecha from "../../components/IconFlecha.astro";
+import SectionScreen from "../../components/SectionScreen.astro";
+import imagensElements from "../../utilitys/imagensElements";
+
+const { foto3 } = imagensElements;
+
+
+---
+
+<SectionScreen tipo="azul">
+  <div
+    class="flex flex-col md:flex-row items-center justify-center gap-20 h-full"
+  >
+    <div class="relative md:h-auto md:w-1/4 w-1/2">
+      <IconFlecha
+        class="rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary"
+      />
+      <Image
+        src={foto3.img}
+        alt={foto3.alt}
+        width={500}
+        height={300}
+        class="w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+      />
+    </div>
+    <div
+      class="flex flex-col items-baseLine justify-center gap-4 md:w-1/2 w-8/12"
+    >
+      <h2
+        class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2"
+      >
+        Fintech
+      </h2>
+      <p class="text-white text-xl md:text-4xl">
+        Nace de las palabras en inglés <span class="text-secondary"
+          >Finance and Technology</span
+        > y estas hace referencia a todas aquellas actividades que implique el uso
+        de herramientas tecnológicas en búsqueda del desarrollo y la innovación de
+        los productos y servicios financieros.
+      </p>
+    </div>
+  </div>
+</SectionScreen>

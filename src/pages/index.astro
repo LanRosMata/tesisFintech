@@ -7,45 +7,29 @@ import MapHN from "../assets/img/svg/MapHN.svg";
 const { lgUPH, foto3, foto4, alipay, paylpal, strapi, block, nubank, pix, bitcoin, chivo, tigo, tengo, dilo, kash, pixelPay, pagadito, ginih, sube } = imagensElements;
 
 import HeroPortada from "../components/HeroPortada.astro";
-import SectionScreen from "../components/SectionScreen.astro";
 import CardImagenTit from "../components/CardImagenTit.astro";
 import IconFlecha from "../components/IconFlecha.astro";
 import TitleCard from "../components/TitleCard.astro";
+
+import MarcoTeorico from "../layouts/Secciones/MarcoTeorico.astro";
+import NavSup from "../components/NavSup.astro";
+import SectionScreen from "../components/SectionScreen.astro";
+import MtFintech from "../layouts/Secciones/MtFintech.astro";
 
 ---
 
 <Layout>
   <main class="mx-auto">
+    <NavSup />
 		<!-- portada -->
 		<HeroPortada />
 
 		<!-- ===TEMA=== Marco Teórico -->
-     <SectionScreen tipo="degradado-1" class="relative overflow-hidden">
-        <TitleCard numero="01" titulo="Marco Teórico" />
-        <MapHN class="absolute z-0 -top-[5%] w-screen h-full scale-200 fill-background-1/20" />
-     </SectionScreen>
+    <MarcoTeorico />
 
      <!-- Definición de fintech -->
-     <SectionScreen tipo="azul">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-20 h-full">
-        <div class="relative md:h-auto md:w-1/4 w-1/2">
-          <IconFlecha class="rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary" />
-          <Image
-            src={foto3.img}
-            alt={foto3.alt}
-            width={500}
-            height={300}
-            class="w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
-          />
-        </div>
-        <div class="flex flex-col items-baseLine justify-center gap-4 md:w-1/2 w-8/12">
-          <h2 class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">Fintech</h2>
-          <p class="text-white text-xl md:text-4xl">
-            Nace de las palabras en inglés <span class=" text-secondary">Finance and Technology</span> y estas hace referencia a todas aquellas actividades que implique el uso de herramientas tecnológicas en búsqueda del desarrollo y la innovación de los productos y servicios financieros.
-          </p>
-        </div>
-      </div>
-     </SectionScreen>
+    <MtFintech />
+
 
      <!-- Definiciones otras -->
      <SectionScreen tipo="azul" class="md:h-screen h-[400vh]">
@@ -330,7 +314,6 @@ import TitleCard from "../components/TitleCard.astro";
 
 <style>
 	.fig-hondu {
-  /* La sintaxis incorrecta era: linear-gradient(circle to right, transparent 40%, black); */
   mask-image: radial-gradient(circle, black, transparent 80%);
 	}
 	.rectangulo-morado {
@@ -353,3 +336,8 @@ import TitleCard from "../components/TitleCard.astro";
     left: 20%;
   }
 </style>
+
+<script>
+
+
+</script>

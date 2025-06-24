@@ -1,0 +1,33 @@
+---
+import LgUPH from "../assets/img/image2.svg";
+
+---
+<section class="nav-bar w-screen h-24 bg-background-1 flex items-center justify-between pt-3 px-15 fixed top-0 z-80 shadow-lg shadow-white/15 border-b-2 border-white/40">
+  <LgUPH class="w-auto h-15" />
+  <h1 class="text-white font-bold">Las Fintech y su Presencia en Honduras en el Año 2024 </h1>
+  <a href="#" class=" font-black text-2xl text-secondary-2">Indice</a>
+</section>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(".nav-bar", {
+    y: -100,
+    opacity: 0,
+  })
+
+  gsap.to(".nav-bar", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "80% center",
+      toggleActions: "play none play reverse",
+      markers: false,
+    }
+  });
+
+</script>

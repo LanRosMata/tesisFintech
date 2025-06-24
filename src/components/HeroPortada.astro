@@ -10,7 +10,7 @@ import LgUPH from "../assets/img/image2.svg";
 
 <!-- Portada -->
 <section
-  class="hero w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white"
+  class="hero w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white "
 >
   <div class="hero-portada w-full h-screen">
     <TecnoLineas
@@ -21,13 +21,13 @@ import LgUPH from "../assets/img/image2.svg";
 
       <h1 class="textToAnimate text-6xl text-white">Las Fintech y su Presencia en</h1>
       <h1 class="textToAnimate text-6xl text-white">Honduras en el Año 2024</h1>
-      <h2 class="textToAnimate text-white">Presentado por:</h2>
+      <h2 class="textToAnimate text-secondary-2">Presentado por:</h2>
       <p class="textToAnimate text-4xl text-white">Allan Rosales</p>
-      <h2 class="textToAnimate text-white">Carrera:</h2>
+      <h2 class="textToAnimate text-secondary-2">Carrera:</h2>
       <p class="textToAnimate text-4xl text-white">Ingeniería en Sistemas Computacionales</p>
     </div>
     <MapHN
-      class="absolute w-5xl h-4xl fill-background-2/30 left-[0%] top-[0%] z-0"
+      class="mapHN-hero absolute w-5xl h-4xl fill-background-2/30 left-[0%] top-[0%] z-0"
     />
     <div class="planeta"></div>
     <div class="resplandor"></div>
@@ -104,11 +104,7 @@ import LgUPH from "../assets/img/image2.svg";
 
   gsap.registerPlugin(ScrollTrigger, SplitText , DrawSVGPlugin);
 
-
-
-
   const lgUpTlInt = gsap.timeline({})
-
   lgUpTlInt
   .to(".lg-uph", {
     opacity: 1,
@@ -161,7 +157,7 @@ import LgUPH from "../assets/img/image2.svg";
   },"<")
 
 
-// TimeLine de l Fondo
+// TimeLine de Fondo
   const tlFondo = gsap.timeline()
   tlFondo
   .to(".resplandor",{
@@ -180,7 +176,7 @@ import LgUPH from "../assets/img/image2.svg";
     ease: "power2.out",
     stagger: 0.1,
   },"<")
-document.querySelectorAll("#mapHN path").forEach((path, index) => {
+document.querySelectorAll(".mapHN-hero path").forEach((path, index) => {
   tlFondo.from(path, {
     scale: 0,
     opacity: 0,
@@ -201,8 +197,6 @@ document.querySelectorAll(".textToAnimate").forEach((element) => {
         duration: 0.5,
       });
   });
-
-
 
 //Timeline Principal
   const tlMain = gsap.timeline({
