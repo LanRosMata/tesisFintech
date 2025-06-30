@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import NavSup from "../../components/NavSup.astro";
 import SectionScreen from "../../components/SectionScreen.astro";
-import IconFlecha from "../../components/IconFlecha.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
 import NormasLegislacion from "../../layouts/Secciones/NormasLegislacion.astro";
 import DataBoxTit from "../../components/DataBoxTit.astro";
@@ -61,4 +60,26 @@ import DataBoxRect from "../../components/DataBoxRect.astro";
       </div>
     </div>
   </SectionScreen>
+  <NavFooterSection
+    anterior={{
+      href: "/04-preguntas-de-investigacion",
+      text: "Pregunta de Investigación",
+    }}
+    siguiente={{
+      href: "/06-metodologia",
+      text: "Metodología",
+    }}
+  />
+
 </Layout>
+
+<style>
+  .gradiant-text {
+    width: fit-content;
+      color: #3d56cf; 
+      background-image: linear-gradient(45deg, var(--color-secondary-2) , var(--color-secondary)); 
+      background-clip: text; 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
+  }
+</style>
