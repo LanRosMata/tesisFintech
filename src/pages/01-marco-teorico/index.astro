@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavSup from "../../components/NavSup.astro";
+import MarcoTeorico from "../../layouts/Secciones/MarcoTeorico.astro";
+import MtFintech from "../../layouts/Secciones/MtFintech.astro";
+import MtOtras from "../../layouts/Secciones/MtOtras.astro";
+import NavFooterSection from "../../components/NavFooterSection.astro";
+const titles = "Marco Teórico"
+
+---
+
+<Layout title={titles}>
+  <NavSup />
+
+  <!-- ===TEMA=== Marco Teórico -->
+  <MarcoTeorico title={titles} />
+  <!-- Definición de fintech -->
+  <MtFintech />
+  <!-- Definiciones otras -->
+  <MtOtras />
+
+  <NavFooterSection
+    anterior={{
+      href: "/",
+      text: "Inicio",
+    }}
+    siguiente={{
+      href: "/02-antecedentes-del-problema",
+      text: "Antecedentes del Problema",
+    }}
+  />
+</Layout>

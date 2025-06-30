@@ -1,0 +1,23 @@
+---
+import IconFlecha from "../components/IconFlecha.astro";
+
+type Props = {
+  data: string;
+  description: string;
+  class?: string;
+}
+const { data, description, class: className = "" } = Astro.props;
+
+---
+
+<div
+  class="relative w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50"
+>
+  <IconFlecha class="rotate-180 absolute -top-[10%]" />
+  <div class="">
+    <p class="font-black text-8xl text-secondary">{ data }</p>
+  </div>
+  <div class="">
+    <p class="text-3xl text-primary">{ description }</p>
+  </div>
+</div>

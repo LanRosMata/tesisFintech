@@ -1,0 +1,64 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavSup from "../../components/NavSup.astro";
+import SectionScreen from "../../components/SectionScreen.astro";
+import IconFlecha from "../../components/IconFlecha.astro";
+import NavFooterSection from "../../components/NavFooterSection.astro";
+import NormasLegislacion from "../../layouts/Secciones/NormasLegislacion.astro";
+import DataBoxTit from "../../components/DataBoxTit.astro";
+import DataBoxRect from "../../components/DataBoxRect.astro";
+
+---
+<Layout title="Pregunta de investigación">
+  <NavSup />
+  <NormasLegislacion />
+  <SectionScreen tipo="degradado-3" class="">
+    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 py-10">
+      <h2 class="text-6xl md:text-7xl text-secondary-2 text-center">Normas y Estándares</h2>
+      <div class="flex flex-wrap justify-center-safe items-center-safe gap-20 px-5">
+          <DataBoxTit
+            data="ISO 27001"
+            description="Establece un marco para implementar, mantener y mejorar la seguridad de la información en una organización"
+          />
+          <DataBoxTit
+            data="ISO 20022"
+            description="Estándar de mensajes de pagos e informes que utiliza una sintaxis estructurada conocida como Lenguaje de Marcado Extensible.Swift y SIPA"
+          />
+          <DataBoxTit
+            data="PCI DSS"
+            description="Conjunto de estándares de seguridad diseñado para garantizar que todas las empresas que aceptan procesan o almacenan información de tarjetas de crédito mantengan un entorno seguro."
+          />
+      </div>
+    </div>
+  </SectionScreen>
+  <SectionScreen tipo="degradado-3" class="">
+    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 p-10">
+      <h2 class="text-6xl md:text-7xl text-secondary-2 text-center">
+        Legislación
+      </h2>
+      <div class="flex flex-col justify-center-safe items-center-safe gap-20 md:w-5/6">
+          <DataBoxRect
+            data="Reglamento para los Servicios de Pago y Transferencia Utilizando Dinero Electrónico - BCH (Acuerdo No. 12-2022):"
+            description="Regula las operaciones de pago y transferencia que utilizan dinero electrónico, estableciendo requisitos para las INDEL, las IFI y las CAC."
+          />
+          <DataBoxRect
+            data="Reglamento para los Servicios Ofrecidos por las Entidades Proveedoras de Servicios de Pagos Electrónicos (EPSPE) - BCH (Acuerdo No. 13-2022):"
+            description="Regula la organización, operación y funcionamiento de las EPSPE, que facilitan la interconexión entre diferentes actores del sistema financiero para la realización de pagos electrónicos."
+          />
+      </div>
+    </div>
+  </SectionScreen>
+  <SectionScreen tipo="degradado-3" class="">
+    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 p-10">
+      <h2 class="text-6xl md:text-7xl text-secondary-2 text-center">
+        Legislación
+      </h2>
+      <div class="flex flex-col justify-center-safe items-center-safe gap-20 w-5/6">
+          <DataBoxRect
+            data="Normas para la Supervisión de las Instituciones No Bancarias de Dinero Electrónico - CNBS:"
+            description="Establecen los requisitos prudenciales y de gestión de riesgos para las INDEL."
+          />
+      </div>
+    </div>
+  </SectionScreen>
+</Layout>

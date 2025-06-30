@@ -13,6 +13,7 @@ import LgUPH from "../assets/img/image2.svg";
   class="hero w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white "
 >
   <div class="hero-portada w-full h-screen">
+    <a href="/01-marco-teorico" class="btn-mt font-bold text-3xl text-white bg-secondary p-4 rounded-2xl hover:bg-secondary/80 cursor-pointer absolute z-40 top-[80%] right-[45%] opacity-0">Marco Teórico</a>
     <TecnoLineas
       class="tecnoLineas absolute tecno-img w-5xl h-4xl fill-amber-700 rotate-180 -right-5 top-40"
     />
@@ -227,6 +228,10 @@ document.querySelectorAll(".textToAnimate").forEach((element) => {
       duration: 1,
     },"<")
   .add(tlTexto, "<2")
+  .to(".btn-mt", {
+      opacity: 1,
+      duration: 1,
+    },"+=1")
 
 
 

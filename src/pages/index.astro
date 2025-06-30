@@ -2,151 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import imagensElements from "../utilitys/imagensElements";
-import Ondulaciones from "../assets/img/svg/ondulacionessvg.svg";
-import MapHN from "../assets/img/svg/MapHN.svg";
-const { lgUPH, foto3, foto4, alipay, paylpal, strapi, block, nubank, pix, bitcoin, chivo, tigo, tengo, dilo, kash, pixelPay, pagadito, ginih, sube } = imagensElements;
+const { lgUPH,foto4, alipay, paylpal, } = imagensElements;
 
 import HeroPortada from "../components/HeroPortada.astro";
-import CardImagenTit from "../components/CardImagenTit.astro";
-import IconFlecha from "../components/IconFlecha.astro";
-import TitleCard from "../components/TitleCard.astro";
-
-import MarcoTeorico from "../layouts/Secciones/MarcoTeorico.astro";
-import NavSup from "../components/NavSup.astro";
 import SectionScreen from "../components/SectionScreen.astro";
-import MtFintech from "../layouts/Secciones/MtFintech.astro";
 
 ---
 
 <Layout>
   <main class="mx-auto">
-    <NavSup />
 		<!-- portada -->
 		<HeroPortada />
 
-		<!-- ===TEMA=== Marco Teórico -->
-    <MarcoTeorico />
-
-     <!-- Definición de fintech -->
-    <MtFintech />
-
-
-     <!-- Definiciones otras -->
-     <SectionScreen tipo="azul" class="md:h-screen h-[400vh]">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-20 h-full">
-        <div class="flex flex-col items-baseLine justify-center gap-4 w-1/2">
-          <h2 class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
-            Dinero Electrónico
-          </h2>
-          <p class="text-white text-xl md:text-4xl">
-            Valor monetario almacenado en una billetera electrónica y aceptado como medio de pago por personas naturales y jurídicas.
-          </p>
-          <h2 class="text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10">
-            Billetera electrónica
-          </h2>
-          <p class="text-white text-xl md:text-4xl">
-            Plataformas de pago en línea, cobre de remesas y medios digitales destinados únicamente transferencias entre bancos que no son ACH.
-          </p>
-        </div>
-        <div class="relative md:h-auto md:w-1/4 w-1/2">
-          <IconFlecha class="rotate-270 absolute top-[30%] -left-[5%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary" />
-          <Image
-            src={foto4.img}
-            alt={foto4.alt}
-            width={500}
-            height={300}
-            class="w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
-          />
-        </div>
-      </div>
-     </SectionScreen>
-
 		<!-- ===TEMA=== Antecedentes del problema -->
-     <SectionScreen tipo="degradado-1" class="relative overflow-hidden">
-        <TitleCard numero="02" titulo="Antecedentes del Problema" />
-        <MapHN class="absolute z-0 -top-[5%] w-screen h-full scale-200 fill-background-1/20" />
-     </SectionScreen>
-
-		<!-- Logos Fintech en el mundo -->
-		<SectionScreen tipo="azul" >
-			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
-				<div class="absolute z-10 ">
-					<h2 class="text-center text-6xl mb-20 text-white">Principales Fintech en el mundo</h2>
-					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
-						<CardImagenTit image={alipay} />
-						<CardImagenTit image={paylpal} />	
-						<CardImagenTit image={strapi} />
-						<CardImagenTit image={block} />
-					</div>
-				</div>
-				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
-			</div>
-		</SectionScreen>
-
-
-    <!-- Logos Fintech Latinoamérica -->
-		<SectionScreen tipo="azul" >
-			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
-				<div class="absolute z-10 ">
-					<h2 class="text-center text-6xl mb-20 text-white">
-            Principales Fintech América Latina
-          </h2>
-					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
-						<CardImagenTit image={nubank} />
-						<CardImagenTit image={pix} />	
-					</div>
-				</div>
-				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
-			</div>
-		</SectionScreen>
-
-    <!-- Logos Fintech Centroamérica -->
-		<SectionScreen tipo="azul" >
-			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
-				<div class="absolute z-10 ">
-					<h2 class="text-center text-6xl mb-20 text-white">
-            Principales Fintech Centroamérica
-          </h2>
-					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
-						<CardImagenTit image={bitcoin} />
-						<CardImagenTit image={chivo} />	
-					</div>
-				</div>
-				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
-			</div>
-		</SectionScreen>
-
-    <!-- Logos Fintech en el mundo -->
-		<SectionScreen tipo="azul" >
-			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
-				<div class="absolute z-10 ">
-					<h2 class="text-center text-6xl mb-20 text-white">Fintech en Honduras (Billeteras)</h2>
-					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
-						<CardImagenTit image={tigo} />
-						<CardImagenTit image={tengo} />	
-						<CardImagenTit image={dilo} />
-						<CardImagenTit image={kash} />
-					</div>
-				</div>
-				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
-			</div>
-		</SectionScreen>
-
-    <!-- Logos Fintech en el mundo -->
-		<SectionScreen tipo="azul" >
-			<div class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden">
-				<div class="absolute z-10 ">
-					<h2 class="text-center text-6xl mb-20 text-white">Fintech en Honduras (Dinero Electrónico)</h2>
-					<div class="rectangulo-contenido w-full flex flex-wrap  items-center justify-center gap-10">
-						<CardImagenTit image={pixelPay} />
-						<CardImagenTit image={pagadito} />	
-						<CardImagenTit image={ginih} />
-						<CardImagenTit image={sube} />
-					</div>
-				</div>
-				<Ondulaciones class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20" />
-			</div>
-		</SectionScreen>
+    
 
 
 		<!-- texto informativo -->
@@ -169,42 +38,7 @@ import MtFintech from "../layouts/Secciones/MtFintech.astro";
 
 
 		<!-- Test de cards estaditicos -->
-		<SectionScreen tipo="degradado-1" >
-			<div class=" h-full flex flex-col justify-center items-center gap-5">
-        <!-- icono -->
-        <div class="icon relative w-[50px] h-[50px] bg-secondary"></div>
 
-				<h2 class="text-white">Holas ajajksh</h2>
-				<div class="flex flex-wrap gap-10 items-center justify-center">
-					<!-- inicio cards -->
-					<!-- 1 -->
-					<div class="relative w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
-            <IconFlecha class="rotate-180 absolute -top-[10%]" />
-						<div class="">
-              <p class="font-black text-8xl text-secondary">0.55%</p>
-						</div>
-						<div class="">
-              <p class="text-3xl text-primary">del total de la región en 2023</p>
-						</div>
-					</div>
-					<!-- 2 -->
-					<div class="relative w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50">
-            <IconFlecha class="rotate-180 absolute -top-[10%]" />
-						<div class="">
-							<p class="font-black text-8xl text-secondary">18</p>
-						</div>
-						<div class="">
-							<p class="text-3xl text-primary">Fintech Honduras</p>
-						</div>
-					</div>
-					<!-- fin cards -->
-				</div>
-        <p class="text-white text-2xl text-center mt-10 w-2/3">
-            “En Honduras, el sector fintech ha mostrado un crecimiento significativo, con un aumento del 0.55% en el total de la región durante 2023, lo que refleja un interés creciente en soluciones financieras digitales” (CNBS).
-          “El nivel de bancarización medida por la relación depósitos del público respecto al PIB registró el 78.4% a diciembre de 2023, 1.6% superior al 76.8% computado en el 2022, producto de un mayor crecimiento de los depósitos del público” (CNBS).
-        </p>
-			</div>
-		</SectionScreen>
 
 
 
@@ -313,9 +147,7 @@ import MtFintech from "../layouts/Secciones/MtFintech.astro";
 </Layout>
 
 <style>
-	.fig-hondu {
-  mask-image: radial-gradient(circle, black, transparent 80%);
-	}
+
 	.rectangulo-morado {
 		position: absolute;
 		width: 70%;
@@ -337,7 +169,3 @@ import MtFintech from "../layouts/Secciones/MtFintech.astro";
   }
 </style>
 
-<script>
-
-
-</script>

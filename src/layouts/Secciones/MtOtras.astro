@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets";
+import IconFlecha from "../../components/IconFlecha.astro";
+import SectionScreen from "../../components/SectionScreen.astro";
+import imagensElements from "../../utilitys/imagensElements";
+
+const { foto4 } = imagensElements;
+
+
+---
+
+<SectionScreen tipo="azul" class="mt-o">
+<div class="flex flex-col md:flex-row items-center justify-center gap-20 h-full py-10">
+  <div class="flex flex-col items-baseLine justify-center gap-4 w-1/2">
+    <h2 class="titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
+      Dinero Electrónico
+    </h2>
+    <p class="cont-txt-mto  text-white text-xl md:text-4xl">
+      Valor monetario almacenado en una billetera electrónica y aceptado como medio de pago por personas naturales y jurídicas.
+    </p>
+    <h2 class=" titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10">
+      Billetera electrónica
+    </h2>
+    <p class="cont-txt-mto text-white text-xl md:text-4xl">
+      Plataformas de pago en línea, cobre de remesas y medios digitales destinados únicamente transferencias entre bancos que no son ACH.
+    </p>
+  </div>
+  <div class="relative md:h-auto md:w-1/4 w-1/2">
+    <IconFlecha class="flecha-mto rotate-270 absolute top-[30%] -left-[5%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary z-10" />
+    <div class="cont-img-mto relative w-full h-full overflow-hidden">
+      <div class="rect-img-mto absolute w-full h-full bg-secondary opacity-0 rounded-2xl "></div>
+      <Image
+        src={foto4.img}
+        alt={foto4.alt}
+        width={500}
+        height={300}
+        class="img-mto w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50 opacity-0"
+      />
+    </div>
+  </div>
+</div>
+</SectionScreen>
+
+
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  const contenedor = document.querySelector(".mt-o")
+  const imagElement = document.querySelector(".img-mto");
+  const rectImg = document.querySelector(".rect-img-mto");
+  const icoFlecha = document.querySelector(".flecha-mto");
+  const lineTitle = document.querySelectorAll(".titulo-mto")
+  const imgContainer = document.querySelector(".cont-img-mto")
+
+  const titleText = new SplitText(".titulo-mto", { type: "words" });
+  const containerContent = new SplitText(".cont-txt-mto", { type: "words" });
+
+  const tlMtFintech = gsap.timeline({
+    scrollTrigger: {
+      trigger: contenedor,
+      start: "30% center",
+      toggleActions: "play none none none",
+      markers: false,
+    },
+  });
+
+  tlMtFintech
+    .set(imagElement, {
+      opacity: 0,
+    })
+    .set(rectImg, {
+      xPercent: 100,
+    })
+    .to(rectImg, {
+      opacity: 1,
+      duration: 0.1,
+      ease: "power2.inOut",
+    })
+    .to(rectImg, {
+      xPercent: 0,
+      duration: 0.2,
+      ease: "power2.Out",
+    })
+    .from(icoFlecha,{
+      scale: 0,
+      duration: 0.5,
+    })
+    .set(imagElement, {
+      opacity: 1,
+    })
+    .to(rectImg, {
+      scale: 0,
+      duration: 0.5,
+      ease: "power2.inOut",
+    })
+    .to(imgContainer, {
+      overflow: "visible",
+    })
+    .from(lineTitle, {
+      xPercent: -1000,
+      duration: 1,
+    },"<")
+    .from(titleText.words, {
+      xPercent: 50,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 1,
+    })
+    .from(containerContent.words, {
+      yPercent: 50,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 1,
+    })
+</script>
