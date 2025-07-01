@@ -45,6 +45,10 @@ import entrevista2IMG from '../assets/img/entrevista/image26.png'
 import entrevista3IMG from '../assets/img/entrevista/image27.png'
 import entrevista4IMG from '../assets/img/entrevista/image28.jpeg'
 
+import webTfhnIMG from '../assets/img/webTFHN.png'
+import estructuraIMG from '../assets/img/estructura.png'
+
+
 
 
 const imagensElements = {
@@ -176,7 +180,15 @@ const imagensElements = {
       nombre: 'Heiner Jiménez ',
       cargo: 'Gerente de Transferencias Banco Azteca'
     },
-    
+    webTfhn:{
+      img: webTfhnIMG,
+      alt: 'Sitio web de Tesis Fintech Honduras',
+      site: 'https://tfhn.honux.pro/'
+    },
+    estructura:{
+      img: estructuraIMG,
+      alt: 'Estructura del sitio Tecno Finanzas HN',
+    },
 };
 
 export default imagensElements
