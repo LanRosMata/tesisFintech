@@ -39,6 +39,12 @@ import foto8IMG from '../assets/img/stock/image30.jpeg'
 import foto9IMG from '../assets/img/stock/image31.jpeg'
 import foto10IMG from '../assets/img/stock/image32.jpeg'
 
+// Entrevistas
+import entrevista1IMG from '../assets/img/entrevista/image25.png'
+import entrevista2IMG from '../assets/img/entrevista/image26.png'
+import entrevista3IMG from '../assets/img/entrevista/image27.png'
+import entrevista4IMG from '../assets/img/entrevista/image28.jpeg'
+
 
 
 const imagensElements = {
@@ -150,6 +156,27 @@ const imagensElements = {
       img : foto10IMG,
       alt: 'Foto 10'
     },
+    entrevista1:{
+      img: entrevista1IMG,
+      nombre: 'Ángel Alberto Arita',
+      cargo: 'Asesor del BCH (Opinión Personal)'
+    },
+    entrevista2:{
+      img: entrevista2IMG,
+      nombre: 'Rony López',
+      cargo: 'Gerente de IT de PixelPay'
+    },
+    entrevista3:{
+      img: entrevista3IMG,
+      nombre: 'Ángel Castillo',
+      cargo: 'Gte. y Admin. de Sistemas CEPROBAN'
+    },
+    entrevista4:{
+      img: entrevista4IMG,
+      nombre: 'Heiner Jiménez ',
+      cargo: 'Gerente de Transferencias Banco Azteca'
+    },
+    
 };
 
 export default imagensElements

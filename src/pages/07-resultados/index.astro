@@ -1,0 +1,106 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavSup from "../../components/NavSup.astro";
+import SectionScreen from "../../components/SectionScreen.astro";
+import NavFooterSection from "../../components/NavFooterSection.astro";
+import imagensElements from "../../utilitys/imagensElements";
+import Resultados from "../../layouts/Secciones/Resultados.astro";
+import IconFlecha from "../../components/IconFlecha.astro";
+import { Image } from "astro:assets";
+
+const { foto9, foto10 } = imagensElements;
+
+---
+
+<Layout title="Resultados">
+  <NavSup />
+  <Resultados />
+
+  <SectionScreen tipo="azul" class="mt-0">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-20 h-full py-10">
+    <div class="relative h-auto lg:w-1/4 w-1/2">
+      <IconFlecha class="flecha-mto rotate-180 lg:rotate-90 absolute top-40 lg:top-50 -right-5 lg:scale-100 scale-60 bg-secondary z-10" />
+      <div class="cont-img-mto relative w-full h-full">
+        <div class="rect-img-mto absolute w-full h-full bg-secondary opacity-0 rounded-2xl "></div>
+        <Image
+          src={foto9.img}
+          alt={foto9.alt}
+          width={500}
+          height={300}
+          class="img-mto w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col items-baseLine justify-center gap-4 px-10 lg:px-1 lg:w-1/2">
+      <h2 class="titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
+        Importancia de la regulación:
+      </h2>
+      <p class="cont-txt-mto  text-white text-xl md:text-4xl">
+        Los tres expertos coinciden en la necesidad de un marco regulatorio claro y equilibrado para el desarrollo de las Fintech en Honduras. Este marco debe promover la innovación y la competencia, al tiempo que protege a los consumidores y la estabilidad del sistema financiero.
+      </p>
+      <h2 class=" titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10">
+        Educación financiera:
+      </h2>
+      <p class="cont-txt-mto text-white text-xl md:text-4xl">
+        Se destaca la importancia de la educación financiera y tecnológica para que la población pueda comprender y utilizar los servicios Fintech de manera responsable.
+      </p>
+    </div>
+  </div>
+  </SectionScreen>
+
+  <SectionScreen tipo="azul" class="mt-0">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-20 h-full py-10">
+    <div class="relative h-auto lg:w-1/4 w-1/2">
+      <IconFlecha class="flecha-mto rotate-180 lg:rotate-90 absolute top-40 lg:top-50 -right-5 lg:scale-100 scale-60 bg-secondary z-10" />
+      <div class="cont-img-mto relative w-full h-full">
+        <div class="rect-img-mto absolute w-full h-full bg-secondary opacity-0 rounded-2xl "></div>
+        <Image
+          src={foto10.img}
+          alt={foto10.alt}
+          width={500}
+          height={300}
+          class="img-mto w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col items-baseLine justify-center gap-4 px-10 lg:px-1 lg:w-1/2">
+      <h2 class="titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
+        Confianza y colaboración:
+      </h2>
+      <p class="cont-txt-mto  text-white text-xl md:text-4xl">
+        Se enfatiza la necesidad de fomentar la confianza y la colaboración entre los diferentes actores del ecosistema Fintech, incluyendo bancos, Fintech e instituciones gubernamentales.
+      </p>
+      <h2 class=" titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10">
+        Oportunidades:
+      </h2>
+      <p class="cont-txt-mto text-white text-xl md:text-4xl">
+        Los tres expertos reconocen el potencial de las Fintech para impulsar la inclusión financiera y el desarrollo económico en Honduras, especialmente considerando la alta penetración de la telefonía móvil y el acceso a internet.
+      </p>
+    </div>
+  </div>
+  </SectionScreen>
+
+
+
+  <NavFooterSection
+    anterior={{
+      href: "/05-normas-legislación",
+      text: "Normas y legislación",
+    }}
+    siguiente={{
+      href: "/07-resultados",
+      text: "Resultados",
+    }}
+  />
+</Layout>
+
+<style>
+  .gradiant-text {
+    width: fit-content;
+      color: #3d56cf; 
+      background-image: linear-gradient(45deg, var(--color-secondary-2) , var(--color-secondary)); 
+      background-clip: text; 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
+  }
+</style>

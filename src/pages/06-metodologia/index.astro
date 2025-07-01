@@ -3,17 +3,20 @@ import Layout from "../../layouts/Layout.astro";
 import NavSup from "../../components/NavSup.astro";
 import SectionScreen from "../../components/SectionScreen.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
-import NormasLegislacion from "../../layouts/Secciones/NormasLegislacion.astro";
-import DataBoxTit from "../../components/DataBoxTit.astro";
-import DataBoxRect from "../../components/DataBoxRect.astro";
+import Metodologia from "../../layouts/Secciones/Metodologia.astro";
+import imagensElements from "../../utilitys/imagensElements";
+import CardProfile from "../../components/CardProfile.astro";
+
+const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
 
 ---
-<Layout title="Pregunta de investigación">
+<Layout title="Metodología">
   <NavSup />
+  <Metodologia />
   <SectionScreen tipo="azul">
     <div class="h-screen flex flex-row justify-between">
-      <div class="h-full lg:w-3/6 md:w-3/12 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-150% md:flex hidden"></div>
-      <div class=" w-3/8 md:w-full bg-white py-15 lg:py-10">
+      <div class="h-full lg:w-3/10 md:w-3/12 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-150% md:flex hidden"></div>
+      <div class=" w-3/7 md:w-3/4 bg-white py-15 lg:py-10">
         <ul class="h-full flex flex-col items-center md:items-end-safe justify-center gap-15 lg:gap-20 px-10">
           <li><p class="text-3xl lg:text-8xl font-bold">Enfoque:</p></li>
           <li><p class="text-3xl lg:text-8xl font-bold gradiant-text">Alcance:</p></li>
@@ -31,6 +34,33 @@ import DataBoxRect from "../../components/DataBoxRect.astro";
       </div>
     </div>
   </SectionScreen>
+
+  <SectionScreen tipo="degradado-3" >
+    <div class="h-full flex flex-col items-center justify-center py-20">
+      <h2 class="text-secondary-2 text-3xl md:text-6xl lg:text-8xl text-center">
+        Entrevistas a expertos
+      </h2>
+      <div class="mt-20 flex flex-wrap items-center justify-center gap-5">
+        <CardProfile data={entrevista1} />
+        <CardProfile data={entrevista2} />
+        <CardProfile data={entrevista3} />
+        <CardProfile data={entrevista4} />
+      </div>
+    </div>
+
+  </SectionScreen>
+
+  <NavFooterSection
+    anterior={{
+      href: "/05-normas-legislación",
+      text: "Normas y legislación",
+    }}
+    siguiente={{
+      href: "/07-resultados",
+      text: "Resultados",
+    }}
+  />
+
 </Layout>
 
 <style>

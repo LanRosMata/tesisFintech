@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import IconFlecha from './IconFlecha.astro';
+
+const { data } = Astro.props;
+
+---
+<div>
+  <div
+    class="flex flex-col justify-between w-[18rem] h-[28rem] bg-white rounded-2xl shadow-lg shadow-secondary/50"
+  >
+    <div class="relative flex flex-col items-center justify-center">
+      <div class="absolute -top-1 w-3/4 h-2 bg-secondary"></div>
+      <Image
+        src={data.img}
+        width={600}
+        height={300}
+        alt={data.nombre}
+        class="aspect-[2/2] rounded-t-2xl object-cover object-[40%_0%] w-2xs"
+      />
+      <IconFlecha class="scale-60 rotate-180 absolute -bottom-6 left-5" />
+    </div>
+    <div class="py-6 flex flex-col ">
+      <p class="font-bold text-2xl text-secondary ml-3">{data.nombre}</p>
+      <div class="w-1/2 border-b-1 border-primary my-2"></div>
+      <p class="text-lg text-primary ml-3">{data.cargo}</p>
+    </div>
+  </div>
+</div>
