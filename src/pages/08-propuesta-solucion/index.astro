@@ -4,14 +4,11 @@ import NavSup from "../../components/NavSup.astro";
 import SectionScreen from "../../components/SectionScreen.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
 import imagensElements from "../../utilitys/imagensElements";
-import Tfhn from "../../assets/img/tfhn.svg"
+import Tfhn from "../../assets/img/tfhn.svg";
 import PropuestaSolucion from "../../layouts/Secciones/PropuestaSolucion.astro";
-import IconFlecha from "../../components/IconFlecha.astro";
 import { Image } from "astro:assets";
 
 const { webTfhn, estructura } = imagensElements;
-
-
 ---
 
 <Layout title="Propuesta de Solución">
@@ -19,49 +16,65 @@ const { webTfhn, estructura } = imagensElements;
   <PropuestaSolucion />
 
   <SectionScreen tipo="degradado-3" class="">
-    <div class="h-screen flex flex-col items-center justify-center py-5 md:py-15">
-      <p class="text-2xl md:text-6xl text-white text-center px-10 lg:px-40">Muchas<span class="gradiant-text font-bold"> Fintech </span>no solo son empres <spam class=" gradiant-text font-bold">Pyme</spam>, sino que también ayudan al comercio tanto formal como informal. Por ello la importancia de<spam class=" gradiant-text font-bold"> conocer estas tecnologías y su uso seguro</spam>  es de gran importancia.
+    <div
+      class="h-screen flex flex-col items-center justify-center py-5 md:py-15"
+    >
+      <p class="text-2xl md:text-6xl text-white text-center px-10 lg:px-40">
+        Muchas
+        <span class="gradiant-text font-bold"> Fintech </span>
+        no solo son empresas <spam class="gradiant-text font-bold">Pyme</spam>,
+        sino que también ayudan al comercio tanto formal como informal. Por ello
+        la importancia de<spam class="gradiant-text font-bold">
+          conocer estas tecnologías y su uso seguro</spam
+        > es de gran importancia.
       </p>
     </div>
   </SectionScreen>
   <SectionScreen tipo="degradado-3" class="">
-    <div class="h-screen flex flex-col items-center justify-center py-5 md:py-15">
-      <p class=" font-medium text-6xl md:text-8xl text-white text-center px-10 lg:px-40">Si quiero saber algo<spam class=" gradiant-text font-bold"> ¿dónde lo Busco?</spam>
+    <div
+      class="h-screen flex flex-col items-center justify-center py-5 md:py-15"
+    >
+      <p
+        class="font-medium text-6xl md:text-8xl text-white text-center px-10 lg:px-40"
+      >
+        Si quiero saber algo<spam class="gradiant-text font-bold">
+          ¿dónde lo Busco?</spam
+        >
       </p>
     </div>
   </SectionScreen>
 
   <SectionScreen tipo="azul" class="overflow-hidden">
-    <div class="pt-10 h-full md:h-screen flex flex-col items-center justify-center">
-      <div class="h-full flex-1/2 ">
+    <div
+      class="pt-10 h-full md:h-screen flex flex-col items-center justify-center"
+    >
+      <div class="h-full flex-1/2">
         <div class="h-full flex flex-col justify-center align-center">
-          <h3 class=" font-black text-6xl md:text-8xl">
-            Pilares
-          </h3>
+          <h3 class="font-black text-6xl md:text-8xl">Pilares</h3>
         </div>
-
       </div>
-      <div class="h-full flex flex-wrap items-center justify-evenly gap-20 py-10 lg:py-0">
-
+      <div
+        class="h-full flex flex-wrap items-center justify-evenly gap-20 py-10 lg:py-0"
+      >
         <div class="h-full w-xs bg-secondary p-5">
           <h4 class="font-black text-4xl md:text-6xl text-secondary-2 my-10">
             Sencillo
           </h4>
           <p class="mb-auto text-white text-2xl">
-            Textos claros y un contraste agradable. Sin elementos innecesarios, evitando la sobre carga visual.
+            Textos claros y un contraste agradable. Sin elementos innecesarios,
+            evitando la sobre carga visual.
           </p>
         </div>
-
 
         <div class="h-full w-xs bg-secondary p-5">
           <h4 class="font-black text-4xl md:text-6xl text-secondary-2 my-10">
             Fácil Uso
           </h4>
           <p class="mb-auto text-white text-2xl">
-            Información Organizada con una estructura clara (Contar Una historia) y Resumida complementada, conectada y ampliable.
+            Información Organizada con una estructura clara (Contar Una
+            historia) y Resumida complementada, conectada y ampliable.
           </p>
         </div>
-
 
         <div class="h-full w-xs bg-secondary p-5">
           <h4 class="font-black text-4xl md:text-6xl text-secondary-2 my-10">
@@ -71,62 +84,88 @@ const { webTfhn, estructura } = imagensElements;
             Bajo consumo del lado del cliente y el servidor.
           </p>
         </div>
-
-
       </div>
     </div>
   </SectionScreen>
 
   <SectionScreen tipo="azul" class="overflow-hidden">
-    <div class="h-[100vh] md:h-full lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 md:mt-60 ">
-      <div class=" h-auto flex flex-col items-center ml-10">
+    <div
+      class="h-[100vh] md:h-full lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 md:mt-60"
+    >
+      <div class="h-auto flex flex-col items-center ml-10">
         <Image
           src={estructura.img}
           alt={estructura.alt}
           width={1000}
           height={600}
           class="w-xs md:w-xs lg:w-xl h-auto rounded-lg shadow-2xl shadow-secondary mt-10"
-          />
+        />
       </div>
-      <div class=" flex flex-col items-center ">
+      <div class="flex flex-col items-center">
         <div class="mt-0 lg:mt-50 w-2/3 lg:w-2/2 text-left">
           <h2 class="text-4xl lg:text-8xl font-bold gradiant-text mb-5">
             Estructura
           </h2>
           <ul class="list-disc text-xl lg:text-3xl text-secondary mb-10">
-            <li><p class="text-xl lg:text-4xl text-white mb-5">Sin CMSs ni consultas a una base de datos.</p></li>
-            <li><p class="text-xl lg:text-4xl text-white mb-5">Contenido fácilmente editable con una estructura clara.</p></li>
-            <li><p class="text-xl lg:text-4xl text-white mb-5">Componetización de los elementos, Código limpio y Modular.</p></li>
-            <li><p class="text-xl lg:text-4xl text-white mb-5">Estructura Escalable y liviana.</p></li>
+            <li>
+              <p class="text-xl lg:text-4xl text-white mb-5">
+                Sin CMSs ni consultas a una base de datos.
+              </p>
+            </li>
+            <li>
+              <p class="text-xl lg:text-4xl text-white mb-5">
+                Contenido fácilmente editable con una estructura clara.
+              </p>
+            </li>
+            <li>
+              <p class="text-xl lg:text-4xl text-white mb-5">
+                Componetización de los elementos, Código limpio y Modular.
+              </p>
+            </li>
+            <li>
+              <p class="text-xl lg:text-4xl text-white mb-5">
+                Estructura Escalable y liviana.
+              </p>
+            </li>
           </ul>
-
         </div>
       </div>
     </div>
   </SectionScreen>
 
   <SectionScreen tipo="azul" class="overflow-hidden">
-    <div class="h-[150vh] md:h-screen lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 lg:mt-30 ">
+    <div
+      class="h-[150vh] md:h-screen lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 lg:mt-30"
+    >
       <div class="relative h-auto flex flex-col items-center ml-10">
-        <Tfhn class="hidden md:block w-50 lg:w-2xs absolute lg:-right-35 " />
+        <Tfhn class="hidden md:block w-50 lg:w-2xs absolute lg:-right-35" />
         <Image
           src={webTfhn.img}
           alt={webTfhn.alt}
           width={1000}
           height={600}
           class="w-xs md:w-xs lg:w-2xl h-auto rounded-lg shadow-2xl shadow-green-500 mt-10"
-          />
+        />
       </div>
-      <div class="flex-1/3 flex flex-col items-center ">
+      <div class="flex-1/3 flex flex-col items-center">
         <div class="mt-0 lg:mt-50 w-2/3 text-left">
           <h2 class="text-4xl lg:text-8xl font-black gradiant-text mb-5">
             Sitio Web
           </h2>
           <p class="text-xl lg:text-2xl text-white mb-10">
-            El sitio web se desarrolló con el framework Astro para crear páginas estáticas, garantizando una alta velocidad y eficiencia. En lugar de una base de datos, el contenido se gestiona a través de archivos Markdown, y todo se compila previamente en un HTML optimizado. Esto resulta en una experiencia de carga muy rápida y ligera para el usuario final, al evitar el procesamiento del lado del servidor en cada visita.
+            El sitio web se desarrolló con el framework Astro para crear páginas
+            estáticas, garantizando una alta velocidad y eficiencia. En lugar de
+            una base de datos, el contenido se gestiona a través de archivos
+            Markdown, y todo se compila previamente en un HTML optimizado. Esto
+            resulta en una experiencia de carga muy rápida y ligera para el
+            usuario final, al evitar el procesamiento del lado del servidor en
+            cada visita.
           </p>
-          <a href="https:/tfhn.honux.pro/" class="font-bold text-3xl text-secondary-2 hover:text-amber-700">tfhn.honux.pro/</a>
-
+          <a
+            href="https:/tfhn.honux.pro/"
+            class="font-bold text-3xl text-secondary-2 hover:text-amber-700"
+            >tfhn.honux.pro/</a
+          >
         </div>
       </div>
     </div>
@@ -146,10 +185,14 @@ const { webTfhn, estructura } = imagensElements;
 <style>
   .gradiant-text {
     width: fit-content;
-      color: #3d56cf; 
-      background-image: linear-gradient(45deg, var(--color-secondary-2) , var(--color-secondary)); 
-      background-clip: text; 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent;
+    color: #3d56cf;
+    background-image: linear-gradient(
+      45deg,
+      var(--color-secondary-2),
+      var(--color-secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
