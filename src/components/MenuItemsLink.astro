@@ -4,7 +4,7 @@ const { href, titulo, numero, class: className = "" } = Astro.props;
 <li class={`w-full md:h-auto h-16 ${className}`}>
   <a href={href} class="grid grid-cols-4 grid-rows-1 gap-0 h-full group">
     <p class="text-center font-black text-lg lg:text-3xl bg-secondary text-white p-1 lg:p-3 transition-colors duration-300 group-hover:bg-red-400">{numero}</p>
-    <p class="col-span-3 font-bold text-lg lg:text-3xl bg-white text-primary p-1 lg:p-3 transition-colors duration-300 group-hover:bg-secondary group-hover:text-white">
+    <p class="col-span-3 font-bold text-base lg:text-3xl bg-white text-primary p-1 lg:p-3 transition-colors duration-300 group-hover:bg-secondary group-hover:text-white">
       {titulo}
     </p>
   </a>
