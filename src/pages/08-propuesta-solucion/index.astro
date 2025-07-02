@@ -5,16 +5,18 @@ import SectionScreen from "../../components/SectionScreen.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
 import imagensElements from "../../utilitys/imagensElements";
 import Tfhn from "../../assets/img/tfhn.svg"
-import Resultados from "../../layouts/Secciones/Resultados.astro";
+import PropuestaSolucion from "../../layouts/Secciones/PropuestaSolucion.astro";
 import IconFlecha from "../../components/IconFlecha.astro";
 import { Image } from "astro:assets";
 
 const { webTfhn, estructura } = imagensElements;
 
+
 ---
 
 <Layout title="Propuesta de Solución">
   <NavSup />
+  <PropuestaSolucion />
 
   <SectionScreen tipo="degradado-3" class="">
     <div class="h-screen flex flex-col items-center justify-center py-5 md:py-15">
@@ -132,12 +134,12 @@ const { webTfhn, estructura } = imagensElements;
 
   <NavFooterSection
     anterior={{
-      href: "/05-normas-legislación",
-      text: "Normas y legislación",
+      href: "/07-resultados",
+      text: "Resultados",
     }}
     siguiente={{
-      href: "/08-propuesta-solucion",
-      text: "Propuesta de Solución",
+      href: "/09-conclusiones",
+      text: "Conclusiones",
     }}
   />
 </Layout>

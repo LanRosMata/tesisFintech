@@ -1,0 +1,151 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NavSup from "../../components/NavSup.astro";
+import SectionScreen from "../../components/SectionScreen.astro";
+import NavFooterSection from "../../components/NavFooterSection.astro";
+import imagensElements from "../../utilitys/imagensElements";
+import Tfhn from "../../assets/img/tfhn.svg"
+import Conclusiones from "../../layouts/Secciones/Conclusiones.astro";
+import IconFlecha from "../../components/IconFlecha.astro";
+import { Image } from "astro:assets";
+
+const { webTfhn, estructura } = imagensElements;
+
+
+---
+
+<Layout title="Propuesta de Solución">
+  <NavSup />
+  <Conclusiones />
+  <SectionScreen tipo="degradado-3" class="">
+    <div class="h-full w-full grid lg:grid-cols-2 gap-10 place-items-center lg:px-10 mt-40">
+
+      <div class="flex flex-col items-center justify-center mt-10">
+        
+        <div class="w-4/5 mb-10 relative">
+          <p class="absolute font-black text-9xl scale-200  mask-b-from-0 text-secondary z-0">P</p>
+          <h2 class="font-bold text-4xl md:text-6xl text-white relative z-10">
+            Portal Educativo
+          </h2>
+          <p class="text-2xl text-white mt-5 relative z-10">
+            Se desarrolló el sitio web "Tecno Finanzas HN" para funcionar como una plataforma centralizada y segura de información sobre las tecnologías financieras en Honduras. El objetivo principal es educar al público y aumentar la confianza en servicios como las billeteras digitales, abordando directamente el desconocimiento y la aprensión que existen hacia estas herramientas.
+          </p>
+        </div>
+        
+        <div class="w-4/5 mb-10 relative">
+          <p class="absolute font-black text-9xl scale-200 mask-b-from-0 text-purple-800 z-0">E</p>
+          <h2 class="font-bold text-4xl md:text-6xl text-white relative z-10">
+            Ecosistema Fintech
+          </h2>
+          <p class="text-2xl text-white mt-5 relative z-10">
+            La investigación reveló que las Fintech más importantes de Honduras son extensiones de los bancos tradicionales, lo que ha creado un ecosistema cerrado con muy poca interconexión. Esta falta de un modelo de "Banco Abierto" limita la competencia y obstaculiza el crecimiento y la innovación del sector, a pesar de que ofrecen servicios demandados como billeteras electrónicas y pago de remesas.
+          </p>
+        </div>  
+
+      </div>
+
+      <!-- col -->
+      <div class="flex flex-col items-center justify-center md:mt-10">
+        
+        <div class="w-4/5 mb-10 relative">
+          <p class="absolute font-black text-9xl scale-200 mask-b-from-0 text-secondary-2 z-0">F</p>
+          <h2 class="font-bold text-4xl md:text-6xl text-white relative z-10">
+            Fortalecimiento
+          </h2>
+          <p class="text-2xl text-white mt-5 relative z-10">
+            Para que el ecosistema Fintech progrese en el país, es indispensable adoptar un enfoque integral. Se deben crear programas de educación financiera, desarrollar un marco legal que sea claro y flexible, invertir en infraestructura para cerrar la brecha digital y, fundamentalmente, promover la colaboración entre las nuevas Fintech y los bancos tradicionales.
+          </p>
+        </div>
+        
+        <div class="w-4/5 mb-10 relative">
+          <p class="absolute font-black text-9xl scale-200 mask-b-from-0 text-background-3/60 z-0">M</p>
+          <h2 class="font-bold text-4xl md:text-6xl text-white relative z-10">
+            Marco Legal
+          </h2>
+          <p class="text-2xl text-white mt-5 relative z-10">
+            La evaluación del marco regulatorio actual determinó que es incipiente y no cuenta con una ley específica para el sector Fintech, lo que genera una gran incertidumbre para los inversores. Las normativas existentes están dispersas, son complejas y no promueven adecuadamente la innovación ni la competencia, lo que frena la consolidación de un ecosistema financiero más moderno y sólido.
+          </p>
+        </div>  
+
+      </div>
+
+
+    </div>
+  </SectionScreen>
+
+
+
+  <footer
+    class="flex flex-col items-center justify-center-safe h-screen bg-background-2 px-10 not-only-of-type:"
+  >
+    <div class="text-center mt-auto py-5"
+      >
+      <h2 class="gradiant-text font-black md:text-7xl lg:text-9xl mt-15 lg:mt-0 py-5">
+        Gracias por tu atención.
+      </h2>
+    </div>
+    <div
+      class="flex flex-col-reverse lg:flex-row items-center justify-center md:justify-between gap-5 md:gap-10 scale-70"
+    >
+      <a href={"/08-propuesta-solucion"} class="">
+        <div class=` text-center flex flex-col items-center justify-center  `>
+          <div
+            class="z-10 bg-white mx-10 flex flex-row items-center justify-center gap-2 rounded-lg shadow-lg"
+          >
+            <p
+              class="py-12 px-2 md:px-5 text-3xl md:text-5xl text-white bg-secondary"
+            >
+              {"<<"}
+            </p>
+            <div class="flex flex-col text-left px-5 lg:px-15 p-1">
+              <p class="font-bold text-secondary md:text-2xl">Anterior</p>
+              <h3 class="text-3xl md:text-5xl text-primary">
+                {"Propuesta de Solución"}
+              </h3>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href={"/"} class="">
+        <div class=` text-center flex flex-col items-center justify-center `>
+          <div
+            class="z-10 bg-white mx-10 flex flex-row items-center justify-center gap-2 rounded-lg shadow-lg"
+          >
+            <div class="flex flex-col text-right px-5 lg:px-15 p-1">
+              <p class="font-bold text-secondary md:text-2xl">Ir a</p>
+              <h3 class="text3xl md:text-5xl text-primary">
+                {"Inicio"}
+              </h3>
+            </div>
+            <p
+              class="py-12 px-2 md:px-5 text-3xl md:text-5xl text-white bg-secondary"
+            >
+              {">>"}
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class=" text-center mb-10 mt-auto">
+      <p class="text-white">Presentación de Tesis.</p>
+      <p class="text-white">
+        Sitio realizado por <a
+          href="https://allanrosales.dev"
+          class="text-secondary-2">allanrosales.dev</a
+        > | 2025
+      </p>
+    </div>
+  </footer>
+
+</Layout>
+<style>
+  .gradiant-text {
+    width: fit-content;
+      color: #3d56cf; 
+      background-image: linear-gradient(45deg, var(--color-secondary-2) 10% , var(--color-secondary) 100%); 
+      background-clip: text; 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
+  }
+</style>

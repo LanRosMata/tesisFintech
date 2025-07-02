@@ -1,0 +1,87 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import MenuItemsLink from "../../components/MenuItemsLink.astro";
+import LgUPH from "../../assets/img/image2.svg";
+
+
+---
+<Layout title="Indice">
+  <section id="menu" class="h-screen w-full bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% rounded-m-2xl shadow-xl shadow-background-2">
+    <div class="h-full flex flex-col items-center justify-start py-10 lg:py-20 ">
+      <div class="flex flex-row md:flex-col items-center justify-center text-center gap-10 md:gap-0">
+        <LgUPH class="w-auto h-12 md:h-15 lg:h-25 mb-0 md:mb-5" />
+        <div class="text-center md:block hidden">
+          <p class="text-4xl text-white">Las Fintech y su Presencia en</p>
+          <p class="text-4xl text-white">Honduras en el Año 2024</p>
+        </div>
+        <p class="font-bold text-3xl lg:text-6xl text-secondary md:mt-5 py-1 border-b-2 border-white">Indice</p>
+      </div>
+      <nav class="mt-10">
+        <ul class="grid grid-cols-2 grid-rows-5 gap-5 lg:gap-10 w-full px-5 grid-flow-col">
+          <MenuItemsLink
+            href="/"
+            numero="00"
+            titulo="Portada"
+            class=""
+          />
+          <MenuItemsLink
+            href="/01-marco-teorico"
+            numero="01"
+            titulo="Marco Teórico"
+            class=""
+          />
+          <MenuItemsLink
+            href="/02-antecedentes-del-problema"
+            numero="02"
+            titulo="Antecedente de Problema"
+            class=""
+          />
+          <MenuItemsLink
+            href="/03-objetivos"
+            numero="03"
+            titulo="Objetivos de la Investigación"
+          />
+          <MenuItemsLink
+            href="04-preguntas-de-investigacion"
+            numero="04"
+            titulo="Preguntas de Investigación"
+          />
+          <MenuItemsLink
+            href="05-normas-legislación"
+            numero="05"
+            titulo="Normas y Legislación"
+          />
+          <MenuItemsLink
+            href="06-metodologia"
+            numero="06"
+            titulo="Metodología"
+          />
+          <MenuItemsLink
+            href="/07-resultados"
+            numero="07"
+            titulo="Resultados"
+          />
+          <MenuItemsLink
+            href="/08-propuesta-solucion"
+            numero="08"
+            titulo="Propuesta de Solución"
+          />
+          <MenuItemsLink
+            href="/09-conclusiones"
+            numero="09"
+            titulo="Conclusiones"
+          />
+        </ul>
+      </nav>
+          <div class=" text-center mt-5 lg:mt-15">
+        <p class="text-white">Presentación de Tesis.</p>
+        <p class="text-white">
+          Sitio realizado por <a
+            href="https://allanrosales.dev"
+            class="text-secondary-2">allanrosales.dev</a
+          > | 2025
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

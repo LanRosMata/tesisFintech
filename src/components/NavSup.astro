@@ -1,11 +1,90 @@
 ---
 import LgUPH from "../assets/img/image2.svg";
+import MenuItemsLink from "./MenuItemsLink.astro";
 
 ---
+<section id="menu" class="hidden opacity-0 h-screen w-full fixed top-[100%] left-0  z-100 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% rounded-m-2xl shadow-xl shadow-background-2">
+  <div class="h-full flex flex-col items-center justify-start mt-10 lg:mt-20">
+    <div class="flex flex-row md:flex-col items-center justify-center text-center gap-10 md:gap-0">
+      <LgUPH class="w-auto h-12 md:h-15 lg:h-25 mb-0 md:mb-5" />
+      <div class="text-center md:block hidden">
+        <p class="text-4xl text-white">Las Fintech y su Presencia en</p>
+        <p class="text-4xl text-white">Honduras en el Año 2024</p>
+      </div>
+      <button class="font-bold text-xl lg:text-4xl bg-secondary  py-1 px-2 lg:py-2 lg:px-4 rounded-3xl mt-2 lg:mt-5 hover:bg-red-400 cursor-pointer" id="btn-close">Cerrar Indice</button>
+    </div>
+    <nav class="mt-10">
+      <ul class="grid grid-cols-2 grid-rows-5 gap-5 lg:gap-10 w-full px-5 grid-flow-col">
+        <MenuItemsLink
+          href="/"
+          numero="00"
+          titulo="Portada"
+          class=""
+        />
+        <MenuItemsLink
+          href="/01-marco-teorico"
+          numero="01"
+          titulo="Marco Teórico"
+          class=""
+        />
+        <MenuItemsLink
+          href="/02-antecedentes-del-problema"
+          numero="02"
+          titulo="Antecedente de Problema"
+          class=""
+        />
+        <MenuItemsLink
+          href="/03-objetivos"
+          numero="03"
+          titulo="Objetivos de la Investigación"
+        />
+        <MenuItemsLink
+          href="04-preguntas-de-investigacion"
+          numero="04"
+          titulo="Preguntas de Investigación"
+        />
+        <MenuItemsLink
+          href="05-normas-legislación"
+          numero="05"
+          titulo="Normas y Legislación"
+        />
+        <MenuItemsLink
+          href="06-metodologia"
+          numero="06"
+          titulo="Metodología"
+        />
+        <MenuItemsLink
+          href="/07-resultados"
+          numero="07"
+          titulo="Resultados"
+        />
+        <MenuItemsLink
+          href="/08-propuesta-solucion"
+          numero="08"
+          titulo="Propuesta de Solución"
+        />
+        <MenuItemsLink
+          href="/09-conclusiones"
+          numero="09"
+          titulo="Conclusiones"
+        />
+      </ul>
+    </nav>
+        <div class=" text-center mt-5 lg:mt-15">
+      <p class="text-white">Presentación de Tesis.</p>
+      <p class="text-white">
+        Sitio realizado por <a
+          href="https://allanrosales.dev"
+          class="text-secondary-2">allanrosales.dev</a
+        > | 2025
+      </p>
+    </div>
+  </div>
+</section>
 <section class="nav-bar w-screen h-24 bg-background-1 flex items-center justify-between pt-3 px-5 md:px-15 fixed top-0 z-80 shadow-lg shadow-white/15 border-b-2 border-white/40 text-center">
   <a href="/" class=""><LgUPH class="w-auto h-10 md:h-15" /></a>
   <h1 class="text-white font-bold md:text-xl lg:text-4xl text-base px-2 hidden md:block">Las Fintech y su Presencia en Honduras en el Año 2024 </h1>
-  <a href="#" class=" font-black text-xl lg:text-2xl text-secondary-2">Indice</a>
+  <button id="btnOpenMenu"  class=" font-black text-xl lg:text-2xl text-secondary-2 hover:text-amber-700 cursor-pointer">Indice</button>
 </section>
 
 <script>
@@ -30,5 +109,42 @@ import LgUPH from "../assets/img/image2.svg";
     }
   });
 
+  const btnClose = document.getElementById("btn-close");
+  btnClose?.addEventListener("click", () => {
+    document.body.style.overflow = "auto"; // Permitir el scroll del body
+    const menu = document.getElementById("menu");
+    gsap.to(menu, {
+      yPercent: 100,
+      opacity: 0,
+      duration: 1,
+      onComplete: () => {
+        if (menu) menu.style.display = "none";
+      }
+    });
+  });
+
+  const btnOpenMenu = document.getElementById("btnOpenMenu");
+  btnOpenMenu?.addEventListener("click", () => {
+    //Evitar el scroll del body
+    document.body.style.overflow = "hidden";
+    const menu = document.getElementById("menu");
+    if (menu) menu.style.display = "block";
+    
+    gsap.to(menu, {
+      yPercent: -100,
+      opacity: 1,
+      duration: 0.5,
+    });
+  });
+
+
 </script>
 
+
+
+
+<!-- 
+<div className="grid grid-cols-4 grid-rows-1 gap-0">
+    <div >1</div>
+    <div class="col-span-3">2</div
+</div> -->
