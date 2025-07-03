@@ -7,6 +7,7 @@ import imagensElements from "../../utilitys/imagensElements";
 import Resultados from "../../layouts/Secciones/Resultados.astro";
 import IconFlecha from "../../components/IconFlecha.astro";
 import { Image } from "astro:assets";
+import TitlePinSub from "../../components/TitlePinSub.astro";
 
 const { foto9, foto10 } = imagensElements;
 
@@ -14,7 +15,9 @@ const { foto9, foto10 } = imagensElements;
 
 <Layout title="Propuesta de Solución">
   <NavSup />
-  <Resultados />
+
+  <TitlePinSub number="07" title="Propuesta de Solución" />
+
 
   <SectionScreen tipo="azul" class="mt-0">
   <div class="flex flex-col lg:flex-row items-center justify-center gap-20 h-full py-10">

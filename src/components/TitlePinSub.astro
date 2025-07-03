@@ -1,12 +1,12 @@
 ---
-import SectionScreen from '../../components/SectionScreen.astro';
-import TitleCard from '../../components/TitleCard.astro';
-import MapHN from '../../assets/img/svg/MapHN.svg'
-const { title } = Astro.props;
+import SectionScreen from '../components/SectionScreen.astro';
+import TitleCard from '../components/TitleCard.astro';
+import MapHN from '../assets/img/svg/MapHN.svg'
+const { number, title } = Astro.props;
 
 ---
 <SectionScreen tipo="degradado-1" class="st-MT relative overflow-hidden hero">
-  <TitleCard numero="00" titulo={"Objetivos de la investigación"} class="tl-card z-50" />
+  <TitleCard numero={number} titulo={title} class="tl-card z-50" />
   <MapHN
     class="absolute z-0 -top-[5%] w-screen h-full scale-200 fill-background-1/20"
   />
@@ -39,6 +39,13 @@ const { title } = Astro.props;
   //Calculo de la longitud del documento para el Scroll
   const aniEnd = lengBody - heightWindow;
 
+  //calcular inicio y fin de la animacion
+  const aniScrollStart = (heightWindow/lengBody ) - 0.05
+  const aniScrollEnd = (aniEnd/lengBody) - 0.1
+
+  console.log(aniScrollStart)
+  console.log(aniScrollEnd)
+
   const tlMT = gsap.timeline({
     scrollTrigger: {
       trigger: Tlcard,
@@ -63,10 +70,12 @@ const { title } = Astro.props;
       // yPercent: -85,
       yPercent: TopicY,
       scale:0.3,
-    }, ">+1")
+      duration: 0.1
+    }, aniScrollStart)
     .to(Tlcard, {
       xPercent: -35,
       yPercent: -100,
-    }, ">+=5")
+      duration: 0.1
+    }, aniScrollEnd)
 
 </script>

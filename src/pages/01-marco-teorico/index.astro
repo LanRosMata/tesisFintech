@@ -5,6 +5,9 @@ import MarcoTeorico from "../../layouts/Secciones/MarcoTeorico.astro";
 import MtFintech from "../../layouts/Secciones/MtFintech.astro";
 import MtOtras from "../../layouts/Secciones/MtOtras.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
+import SectionScreen from "../../components/SectionScreen.astro";
+import DataBoxTit from "../../components/DataBoxTit.astro";
+import TitlePinSub from "../../components/TitlePinSub.astro";
 const titles = "Marco Teórico"
 
 ---
@@ -13,11 +16,33 @@ const titles = "Marco Teórico"
   <NavSup />
 
   <!-- ===TEMA=== Marco Teórico -->
-  <MarcoTeorico title={titles} />
+   <TitlePinSub number="01" title={titles} />
+
   <!-- Definición de fintech -->
   <MtFintech />
   <!-- Definiciones otras -->
   <MtOtras />
+  <SectionScreen tipo="degradado-3" class="card-rt-hn">
+    <div class="h-full flex flex-col items-center justify-center py-10">
+      <h2 class="tit-rt-hn font-bold text-center text-5xl md:text-6xl text-secondary-2 mb-10">
+        Reglamentos Honduras
+      </h2>
+      <div class="flex flex-wrap items-center justify-center gap-20 py-10">
+        <DataBoxTit
+            data="INDEL"
+            description="Instituciones de Dinero Electrónico. Son entidades financieras no bancarias autorizadas para emitir y administrar dinero electrónico, facilitando así pagos, transferencias y otras transacciones de forma digital."
+            class="dataBoxTit"
+          />
+          <DataBoxTit
+            data="EPSPE"
+            description="Entidades Proveedoras de Servicios de Pagos Electrónicos, son empresas que facilitan transacciones financieras digitales, como pasarelas de pago y procesamiento de transacciones, sin necesariamente emitir dinero electrónico. Deben estar registradas en el Banco Central de Honduras."
+            class="dataBoxTit"
+          />
+      </div>
+      
+    </div>
+
+  </SectionScreen>
 
   <NavFooterSection
     anterior={{
@@ -30,3 +55,52 @@ const titles = "Marco Teórico"
     }}
   />
 </Layout>
+
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+  const splitText = new SplitText(".tit-rt-hn", {type: "words"})
+  const tlCards = gsap.timeline({});
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".card-rt-hn",
+      start: "10%, center",
+      toggleActions: "play none none node",
+      markers: false,
+    }
+  });
+
+
+
+  document.querySelectorAll(".dataBoxTit").forEach((el, index) => {
+    gsap.set(el, {
+      transformOrigin: 'bottom center'
+    });
+    tlCards.fromTo(el, {
+      rotateX: -90,
+      opacity: 0,
+    }, {
+      rotateX: 0,
+      opacity: 1,
+      duration: 0.5,
+      delay: index * 0.5,
+      ease: "power2.out"
+    }, index * 0.3);
+  },"<+1");
+
+
+  tl.fromTo(splitText.words,{
+      xPercent: -10,
+      opacity: 0,
+    },{
+      xPercent: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: "power1.inOut"
+    })
+    .add(tlCards)
+  
+</script>

@@ -6,11 +6,15 @@ import NavFooterSection from "../../components/NavFooterSection.astro";
 import NormasLegislacion from "../../layouts/Secciones/NormasLegislacion.astro";
 import DataBoxTit from "../../components/DataBoxTit.astro";
 import DataBoxRect from "../../components/DataBoxRect.astro";
+import TitlePinSub from "../../components/TitlePinSub.astro";
 
 ---
 <Layout title="Normas y Legislación">
   <NavSup />
-  <NormasLegislacion />
+
+  <TitlePinSub number="05" title="Normas y Legislación" />
+
+
   <SectionScreen tipo="degradado-3" class="">
     <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 py-10">
       <h2 class="text-6xl md:text-7xl text-secondary-2 text-center">Normas y Estándares</h2>

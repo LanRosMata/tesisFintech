@@ -5,13 +5,16 @@ import Objetivos from "../../layouts/Secciones/Objetivos.astro";
 import SectionScreen from "../../components/SectionScreen.astro";
 import IconFlecha from "../../components/IconFlecha.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
+import TitlePinSub from "../../components/TitlePinSub.astro";
 
 
 ---
 
 <Layout title="Objetivos de la investigación">
   <NavSup />
-  <Objetivos />
+
+  <TitlePinSub number="03" title="Objetivos de la investigación" />
+
   <SectionScreen tipo="azul">
     <div class="h-full flex flex-col justify-center items-center gap-5 text-center py-10">
       <h1 class="gradiant-text text-4xl md:text-8xl">Objetivo General</h1>

@@ -8,6 +8,7 @@ import Tfhn from "../../assets/img/tfhn.svg"
 import Conclusiones from "../../layouts/Secciones/Conclusiones.astro";
 import IconFlecha from "../../components/IconFlecha.astro";
 import { Image } from "astro:assets";
+import TitlePinSub from "../../components/TitlePinSub.astro";
 
 const { webTfhn, estructura } = imagensElements;
 
@@ -16,7 +17,9 @@ const { webTfhn, estructura } = imagensElements;
 
 <Layout title="Propuesta de Solución">
   <NavSup />
-  <Conclusiones />
+
+  <TitlePinSub number="09" title="Conclusiones" />
+  
   <SectionScreen tipo="degradado-3" class="">
     <div class="h-full w-full grid lg:grid-cols-2 gap-10 place-items-center lg:px-10 mt-40">
 

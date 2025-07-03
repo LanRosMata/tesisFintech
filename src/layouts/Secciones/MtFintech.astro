@@ -17,7 +17,7 @@ const { foto3 } = imagensElements;
       <IconFlecha
         class="flecha-mtf rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary z-10"
       />
-      <div class="cont-img relative w-full h-full overflow-hidden">
+      <div class="cont-img-mtf relative w-full h-full overflow-hidden">
         <div class="rect-img-mtf absolute w-full h-full bg-secondary opacity-0 rounded-2xl "></div>
         <Image
           src={foto3.img}
@@ -63,12 +63,12 @@ const { foto3 } = imagensElements;
   const imgContainer = document.querySelector(".cont-img-mtf")
 
   const titleText = new SplitText(".titulo-mtf", { type: "words" });
-  const containerContent = new SplitText(".cont-txt-mtf", { type: "words" });
+  const containerContent = new SplitText(".cont-txt-mtf", { type: "lines" });
 
   const tlMtFintech = gsap.timeline({
     scrollTrigger: {
       trigger: contenedor,
-      start: "30% center",
+      start: "10% center",
       toggleActions: "play none none none",
       markers: false,
     },
@@ -116,7 +116,7 @@ const { foto3 } = imagensElements;
       stagger: 0.1,
       duration: 1,
     })
-    .from(containerContent.words, {
+    .from(containerContent.lines, {
       yPercent: 50,
       opacity: 0,
       stagger: 0.1,

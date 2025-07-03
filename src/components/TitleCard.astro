@@ -9,8 +9,8 @@ import MapHN from "../assets/img/svg/MapHN.svg";
 const { numero, titulo, class: className = "" } = Astro.props
 ---
 <div class={className}>
-  <div class= `m-10 relative overflow-hidden py-10 text-center h-screen flex flex-col items-center justify-center `>
-    <div class="absolute z-10 bg-white mx-10 flex flex-row items-center justify-center gap-0 md:gap-5 rounded-lg shadow-lg">
+  <div class= `relative overflow-hidden text-center h-screen flex flex-col items-center justify-center `>
+    <div class="absolute z-10 bg-white mx-10 lg:mx-0 flex flex-row items-center justify-center gap-0 md:gap-5 rounded-lg shadow-lg">
       <p class="py-15 px-2 md:px-5 text-3xl md:text-7xl font-black text-white bg-secondary">
         { numero }
       </p>

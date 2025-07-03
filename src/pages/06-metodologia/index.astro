@@ -6,13 +6,17 @@ import NavFooterSection from "../../components/NavFooterSection.astro";
 import Metodologia from "../../layouts/Secciones/Metodologia.astro";
 import imagensElements from "../../utilitys/imagensElements";
 import CardProfile from "../../components/CardProfile.astro";
+import TitlePinSub from "../../components/TitlePinSub.astro";
 
 const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
 
 ---
 <Layout title="Metodología">
   <NavSup />
-  <Metodologia />
+
+  <TitlePinSub number="06" title="Metodología" />
+
+
   <SectionScreen tipo="azul">
     <div class="h-screen flex flex-row justify-between">
       <div class="h-full lg:w-3/10 md:w-3/12 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-150% md:flex hidden"></div>

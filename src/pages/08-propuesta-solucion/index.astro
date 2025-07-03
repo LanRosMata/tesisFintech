@@ -7,13 +7,16 @@ import imagensElements from "../../utilitys/imagensElements";
 import Tfhn from "../../assets/img/tfhn.svg";
 import PropuestaSolucion from "../../layouts/Secciones/PropuestaSolucion.astro";
 import { Image } from "astro:assets";
+import TitlePinSub from "../../components/TitlePinSub.astro";
 
 const { webTfhn, estructura } = imagensElements;
 ---
 
 <Layout title="Propuesta de Solución">
   <NavSup />
-  <PropuestaSolucion />
+
+  <TitlePinSub number="08" title="Propuesta de Solución" />
+
 
   <SectionScreen tipo="degradado-3" class="">
     <div
