@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import NavSup from "../../components/NavSup.astro";
-import AntecedentesProblema from "../../layouts/Secciones/AntecedentesProblema.astro";
 import SectionScreen from "../../components/SectionScreen.astro";
 import imagensElements from "../../utilitys/imagensElements";
 import Ondulaciones from "../../assets/img/svg/ondulacionessvg.svg";
@@ -37,12 +36,12 @@ const {
   <TitlePinSub number="02" title="Antecedentes del Problema" />
 
   <!-- Logos Fintech en el mundo -->
-  <SectionScreen tipo="azul" class="overflox-x-scroll">
+  <SectionScreen tipo="azul" class="section-content-ant">
     <div
-      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden p-10"
+      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden py-30 lg:py-10"
     >
       <div class="z-10">
-        <h2 class="text-center text-4xl md:text-6xl mb-20 text-white">
+        <h2 class="text-center text-4xl lg:text-6xl m mb-20 text-white ">
           Principales Fintech en el mundo
         </h2>
         <div
@@ -55,18 +54,18 @@ const {
         </div>
       </div>
       <Ondulaciones
-        class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20"
+        class="fig-hondu absolute h-[1920px] w-auto fill-amber-100/20"
       />
     </div>
   </SectionScreen>
 
   <!-- Logos Fintech Latinoamérica -->
-  <SectionScreen tipo="azul">
+  <SectionScreen tipo="azul" class="section-content-ant">
     <div
-      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden p-10"
+      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden py-30 lg:py-10"
     >
       <div class="z-10">
-        <h2 class="text-center text-4xl md:text-6xl mb-20 text-white">
+        <h2 class="text-center text-4xl lg:text-6xl mb-20 text-white">
           Principales Fintech América Latina
         </h2>
         <div
@@ -77,18 +76,18 @@ const {
         </div>
       </div>
       <Ondulaciones
-        class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20"
+        class="fig-hondu absolute h-[1920px] w-auto fill-amber-100/20"
       />
     </div>
   </SectionScreen>
 
   <!-- Logos Fintech Centroamérica -->
-  <SectionScreen tipo="azul">
+  <SectionScreen tipo="azul" class="section-content-ant">
     <div
-      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden p-10"
+      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden py-30 lg:py-10"
     >
       <div class="z-10">
-        <h2 class="text-center text-4xl md:text-6xl mb-20 text-white">
+        <h2 class="text-center text-4xl lg:text-6xl m mb-20 text-white">
           Principales Fintech Centroamérica
         </h2>
         <div
@@ -99,18 +98,18 @@ const {
         </div>
       </div>
       <Ondulaciones
-        class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20"
+        class="fig-hondu absolute h-[1920px] w-auto fill-amber-100/20"
       />
     </div>
   </SectionScreen>
 
   <!-- Logos Fintech en el mundo -->
-  <SectionScreen tipo="azul">
+  <SectionScreen tipo="azul" class="section-content-ant">
     <div
-      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden p-10"
+      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden py-30 lg:py-10"
     >
       <div class="z-10">
-        <h2 class="text-center text-4xl md:text-6xl mb-20 text-white">
+        <h2 class="text-center text-4xl lg:text-6xl m mb-20 text-white">
           Fintech en Honduras (Billeteras)
         </h2>
         <div
@@ -123,18 +122,18 @@ const {
         </div>
       </div>
       <Ondulaciones
-        class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20"
+        class="fig-hondu absolute h-[1920px] w-auto fill-amber-100/20"
       />
     </div>
   </SectionScreen>
 
   <!-- Logos Fintech en el mundo -->
-  <SectionScreen tipo="azul" class="py-10">
+  <SectionScreen tipo="azul" class="section-content-ant">
     <div
-      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden p-10"
+      class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden py-30 lg:py-10"
     >
       <div class="z-10">
-        <h2 class="text-center text-4xl md:text-6xl mb-20 text-white">
+        <h2 class="text-center text-4xl lg:text-6xl m mb-20 text-white">
           Fintech en Honduras (Dinero Electrónico)
         </h2>
         <div
@@ -147,11 +146,11 @@ const {
         </div>
       </div>
       <Ondulaciones
-        class="fig-hondu absolute h-[1920px] w-[2000px] fill-amber-100/20"
+        class="fig-hondu absolute h-[1920px] w-auto fill-amber-100/20"
       />
     </div>
   </SectionScreen>
-  <SectionScreen tipo="degradado-2" class="overflow-hidden py-10">
+  <SectionScreen tipo="degradado-2" class="overflow-hidden py-30 lg:py-10 section-content-ant">
     <div class="h-full flex flex-col justify-center items-center gap-5">
       <p class="text-white text-3xl text-center my-10 md:w-2/3 m-5 md:m-20">
         “En Honduras, el sector fintech ha mostrado un crecimiento
@@ -175,7 +174,7 @@ const {
     </div>
   </SectionScreen>
 
-  <SectionScreen tipo="degradado-2" class="overflow-hidden py-10">
+  <SectionScreen tipo="degradado-2" class="overflow-hidden py-30 lg:py-10 section-content-ant">
     <div class="h-full flex flex-col justify-center items-center gap-5">
       <p class="text-white text-3xl text-center my-10 md:w-2/3 m-5 md:m-20">
         Según cifras del Banco Mundial por cada 1 millón de personas Honduras
@@ -200,13 +199,13 @@ const {
           />
           <!-- fin cards -->
         </div>
-        <p class="text-white text-3xl text-center my-10 md:w-2/3 m-5 md:m-20">
-         (CNBS, Reporte de Inclusión Financiera, 2024, pág. 12).
+        <p class="text-white text-xs lg:text-xl text-center my-5 md:w-2/3 m-5 md:m-20">
+         (CNBS, Reporte de Inclusión Financiera, 2024).
         </p>
     </div>
   </SectionScreen>
 
-    <SectionScreen tipo="degradado-2" class="overflow-hidden py-10">
+    <SectionScreen tipo="degradado-2" class="overflow-hidden py-30 lg:py-10 section-content-ant">
     <div class="h-full flex flex-col justify-center items-center gap-5">
       <p class="text-white text-3xl text-center my-10 md:w-2/3 m-5 md:m-20">
         Al 2023 el número de puntos de atención por cada <span class="text-secondary">10,000 adultos</span> mayores a 18 años:
@@ -214,8 +213,8 @@ const {
       <div class="flex flex-wrap gap-10 items-center justify-center">
         <!-- inicio cards -->
         <DataBox
-          data="3"
-          description="Oficinas"
+          data="3 / 1"
+          description="Oficinas / Ventanilla"
         />
         <DataBox
           data="148"
@@ -229,13 +228,9 @@ const {
           data="21"
           description="agentes corresponsales"
         />
-        <DataBox
-          data="1"
-          description="Ventanilla"
-        />
           <!-- fin cards -->
         </div>
-        <p class="text-white text-3xl text-center my-10 md:w-2/3 m-5 md:m-20">
+        <p class="text-white text-xs lg:text-xl text-center my-5 md:w-2/3 m-5 md:m-20">
          (CNBS, Reporte de Inclusión Financiera, 2024).
         </p>
     </div>
@@ -258,3 +253,72 @@ const {
     mask-image: radial-gradient(circle, black, transparent 80%);
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  ScrollTrigger.batch(".section-content-ant", {
+    onEnter: ( batch ) => {
+      batch.forEach((elemento, index) => {
+        const cardsData = elemento.querySelectorAll(".card-data");
+        const cardsImg = elemento.querySelectorAll(".card-img");
+        const title = elemento.querySelectorAll("h2");
+        const parrafo = elemento.querySelectorAll("p");
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: elemento,
+            start: "20% center",
+          },
+        });
+
+
+        if(title.length > 0){
+          const splitTitle = new SplitText(title, { type: "words" });
+          tl.from(splitTitle.words, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+          })
+        }
+
+        if(parrafo.length > 0){
+          const splitParrafo = new SplitText(parrafo, { type: "lines" });
+          tl.from(splitParrafo.lines, {
+            x: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+          })
+        }
+
+        if(cardsImg.length > 0){
+          tl.from(cardsImg, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power2.out",
+          }, "<")
+        }
+        if(cardsData.length > 0){
+          tl.from(cardsData, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power2.out",
+          }, "<")
+        }
+        
+      })
+    },
+    
+  })
+
+
+</script>

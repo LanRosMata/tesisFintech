@@ -3,19 +3,19 @@ const { tipo, class: className = "" } = Astro.props;
 let clases;
 switch (tipo) {
   case 'degradado-1':
-      clases = "text-white h-screen mb-20 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% rounded-m-2xl shadow-xl shadow-background-2"
+      clases = "text-white h-screen mb-20 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% rounded-m-2xl shadow-xl shadow-background-2 overflow-hidden"
       break
   case 'degradado-2':
-      clases = "text-white h-auto min-h-screen lg:h-screen mb-20 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% rounded-m-2xl shadow-xl shadow-background-2"
+      clases = "text-white h-auto min-h-screen lg:h-screen mb-20 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-200% rounded-m-2xl shadow-xl shadow-background-2 overflow-hidden"
       break
   case 'degradado-3':
-      clases = "text-white h-auto min-h-screen lg:h-screen mb-20 bg-gradient-to-bl from-background-2 to-background-1 rounded-m-2xl shadow-xl shadow-background-2"
+      clases = "text-white h-auto min-h-screen lg:h-screen mb-20 bg-gradient-to-bl from-background-2 to-background-1 rounded-m-2xl shadow-xl shadow-background-2 overflow-hidden"
       break
   case 'azul':
-      clases = "text-white mb-20 h-auto min-h-screen lg:h-screen bg-background-1 rounded-m-2xl shadow-xl shadow-background-1"
+      clases = "text-white mb-20 h-auto min-h-screen lg:h-screen bg-background-1 rounded-m-2xl shadow-xl shadow-background-1 overflow-hidden"
       break
   default:
-    clases = "text-primary mb-20 h-auto min-h-screen lg:h-screen bg-gray-100 rounded-m-2xl shadow-xl shadow-background-1/50";
+    clases = "text-primary mb-20 h-auto min-h-screen lg:h-screen bg-gray-100 rounded-m-2xl shadow-xl shadow-background-1/50 overflow-hidden";
     break;
 }
 ---

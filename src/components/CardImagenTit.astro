@@ -1,10 +1,10 @@
 ---
 import Image from "astro/components/Image.astro";
-const { image, titulo = image.alt } = Astro.props;
+const { image, titulo = image.alt, class: className = "" } = Astro.props;
 ---
 
 <div
-  class="card-img w-[250px] h-[300px] border-2 flex flex-col items-center justify-center bg-white border-secondary-2 rounded-lg p-5 shadow-xl shadow-secondary-2/50"
+  class=`card-img lg:w-[250px] lg:h-[300px] w-[150px] h-[200px] border-2 flex flex-col items-center justify-center bg-white border-secondary-2 rounded-lg p-5 shadow-xl shadow-secondary-2/50 ${className}`
 >
 <div class="img-card max-h-40 max-w-40 flex items-center justify-center my-auto">
   <Image
@@ -15,10 +15,5 @@ const { image, titulo = image.alt } = Astro.props;
     class=" w-full h-auto mx-auto mb-4"
   />
 </div>
-  <p class="text-center font-bold text-4xl text-secondary-2 ">{ titulo }</p>
+  <p class="text-center font-bold text-2xl lg:text-4xl text-secondary-2 ">{ titulo }</p>
 </div>
-
-<style>
-
-
-</style>

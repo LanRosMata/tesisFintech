@@ -11,13 +11,13 @@ const { data, description, class: className = "" } = Astro.props;
 ---
 
 <div
-  class="relative w-[350px] h-[250px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50"
+  class="card-data  relative lg:w-[350px] lg:h-[250px] w-[150px] h-[180px] p-5 flex flex-col items-center justify-center text-center gap-1 bg-white border-secondary border-1 rounded-lg shadow-xl shadow-secondary/50"
 >
-  <IconFlecha class="rotate-180 absolute -top-[10%]" />
+  <IconFlecha class="rotate-180 absolute -top-[15%]  lg:-top-[10%] scale-50 lg:scale-100" />
   <div class="">
-    <p class="font-black text-8xl text-secondary">{ data }</p>
+    <p class="font-black text-5xl lg:text-8xl text-secondary">{ data }</p>
   </div>
   <div class="">
-    <p class="text-3xl text-primary">{ description }</p>
+    <p class="text-xl lg:text-3xl text-primary">{ description }</p>
   </div>
 </div>
