@@ -16,30 +16,30 @@ const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
   <TitlePinSub number="06" title="Metodología" />
 
 
-  <SectionScreen tipo="azul">
+  <SectionScreen tipo="azul" class="card-met-1">
     <div class="h-screen flex flex-row justify-between">
-      <div class="h-full lg:w-3/10 md:w-3/12 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-150% md:flex hidden"></div>
+      <div class="rect-lat h-full lg:w-3/10 md:w-3/12 bg-gradient-to-b from-background-1 from-10% via-background-2 via-60% to-background-3 to-150% md:flex hidden"></div>
       <div class=" w-3/7 md:w-3/4 bg-white py-15 lg:py-10">
         <ul class="h-full flex flex-col items-center md:items-end-safe justify-center gap-15 lg:gap-20 px-10">
-          <li><p class="text-3xl lg:text-8xl font-bold">Enfoque:</p></li>
-          <li><p class="text-3xl lg:text-8xl font-bold gradiant-text">Alcance:</p></li>
-          <li><p class="text-3xl lg:text-8xl font-bold">Diseño:</p></li>
-          <li><p class="text-3xl lg:text-8xl font-bold gradiant-text">Muestreo:</p></li>
+          <li><p class="li1 text-3xl lg:text-8xl font-bold">Enfoque:</p></li>
+          <li><p class="li1 text-3xl lg:text-8xl font-bold gradiant-text">Alcance:</p></li>
+          <li><p class="li1 text-3xl lg:text-8xl font-bold">Diseño:</p></li>
+          <li><p class="li1 text-3xl lg:text-8xl font-bold gradiant-text">Muestreo:</p></li>
         </ul>
       </div>
       <div class=" w-full bg-background-2 px-5 lg:px-10 py-15 lg:py-10 ">
         <ul class="h-full flex flex-col items-start justify-center gap-10 lg:gap-20 md:mt-0 lg:mt-5 mt-8">
-          <li><p class="text-2xl lg:text-5xl py-2 lg:py-5 text-white">Cuantitativo</p></li>
-          <li><p class="text-2xl lg:text-5xl py-2 lg:py-5 text-white">Descriptivo</p></li>
-          <li><p class="text-1xl lg:text-5xl py-2 lg:py-5 text-white">No Experimental y Transversal:</p></li>
-          <li><p class="text-1xl lg:text-5xl py-2 lg:py-5 text-white">No probabilístico por conveniencia, basado en expertos</p></li>
+          <li><p class="li2 text-2xl lg:text-5xl py-2 lg:py-5 text-white">Cuantitativo</p></li>
+          <li><p class="li2 text-2xl lg:text-5xl py-2 lg:py-5 text-white">Descriptivo</p></li>
+          <li><p class="li2 text-1xl lg:text-5xl py-2 lg:py-5 text-white">No Experimental y Transversal:</p></li>
+          <li><p class="li2 text-1xl lg:text-5xl py-2 lg:py-5 text-white">No probabilístico por conveniencia, basado en expertos</p></li>
         </ul>
       </div>
     </div>
   </SectionScreen>
 
-  <SectionScreen tipo="degradado-3" >
-    <div class="h-full flex flex-col items-center justify-center py-20">
+  <SectionScreen tipo="degradado-3" class="card-met-2" >
+    <div class="h-full flex flex-col items-center justify-center py-25 overflow-hidden">
       <h2 class="text-secondary-2 text-3xl md:text-6xl lg:text-8xl text-center">
         Entrevistas a expertos
       </h2>
@@ -76,3 +76,62 @@ const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
       -webkit-text-fill-color: transparent;
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  const tlDip1 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".card-met-1",
+        start: "10% center",
+        toggleActions: "play none none none",
+      },
+    })
+    tlDip1
+      .from(".rect-lat",{
+        width: "200%",
+        duration: 0.5,
+        ease: "power2.out",
+        delay: 0.2
+      })
+      .from(".li1",{
+        x: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        delay:0.2
+      },">")
+      .from(".li2",{
+        x: -100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.5,
+      },"<0.2")
+
+  const tlDip2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".card-met-2",
+        start: "10% center",
+        toggleActions: "play none none none",
+      },
+    })
+
+  tlDip2
+    .from("h2",{
+      x: 100,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+      delay: 0.2
+    })
+    .from(".card-profile",{
+      y: 50,
+      opacity: 0,
+      stagger: 0.5,
+      duration: 0.5,
+    })
+
+</script>

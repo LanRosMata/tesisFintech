@@ -14,8 +14,8 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
   <TitlePinSub number="05" title="Normas y Legislación" />
 
 
-  <SectionScreen tipo="degradado-3" class="">
-    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 py-10">
+  <SectionScreen tipo="degradado-3" class="section-content-nl">
+    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 py-25 lg:py-10">
       <h2 class="text-6xl md:text-7xl text-secondary-2 text-center">Normas y Estándares</h2>
       <div class="flex flex-wrap justify-center-safe items-center-safe gap-20 px-5">
           <DataBoxTit
@@ -33,8 +33,8 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
       </div>
     </div>
   </SectionScreen>
-  <SectionScreen tipo="degradado-3" class="">
-    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 p-10">
+  <SectionScreen tipo="degradado-3" class="section-content-nl">
+    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 py-25 lg:p-10">
       <h2 class="text-6xl md:text-7xl text-secondary-2 text-center">
         Legislación
       </h2>
@@ -50,8 +50,8 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
       </div>
     </div>
   </SectionScreen>
-  <SectionScreen tipo="degradado-3" class="">
-    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 p-10">
+  <SectionScreen tipo="degradado-3" class="section-content-nl">
+    <div class="h-full flex flex-col justify-center-safe items-center-safe gap-20 py-25 lg:p-10">
       <h2 class="text-6xl md:text-7xl text-secondary-2 text-center">
         Legislación
       </h2>
@@ -86,3 +86,58 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
       -webkit-text-fill-color: transparent;
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  ScrollTrigger.batch(".section-content-nl", {
+    onEnter: ( batch ) => {
+      batch.forEach((elemento, index) => {
+        const cardsData = elemento.querySelectorAll(".data-card-tit");
+        const cardsDataRect = elemento.querySelectorAll(".data-card-rect");
+        const title = elemento.querySelectorAll("h2");
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: elemento,
+            start: "10% center",
+          },
+        });
+        if(title.length > 0){
+          const splitTitle = new SplitText(title, { type: "words" });
+          tl.from(splitTitle.words, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power2.inOut",
+          })
+        }
+        if(cardsDataRect.length > 0){
+          tl.from(cardsDataRect, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power2.inOut",
+          })
+        }
+        if(cardsData.length > 0){
+          tl.from(cardsData, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power2.inOut",
+          })
+        }
+        
+      })
+    },
+  })
+
+
+</script>

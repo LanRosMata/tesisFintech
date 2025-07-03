@@ -171,7 +171,7 @@ import LgUPH from "../assets/img/image2.svg";
   .to(".planeta",{
     opacity: 1,
     duration: 3,
-  },"-=0.5")
+  },"<0.5")
   .from(".tecnoLineas path", {
     duration:0.5,
     x: -100,
@@ -198,7 +198,7 @@ document.querySelectorAll(".textToAnimate").forEach((element) => {
         opacity: 0,
         y: 50,
         ease: "power2.out",
-        duration: 0.5,
+        duration: 0.2,
       });
   });
 
@@ -210,15 +210,23 @@ document.querySelectorAll(".textToAnimate").forEach((element) => {
   });
   tlMain
     .set(".lg-uph", {
-      scale: (index, target) => { 
-        return (window.innerWidth / target?.getBoundingClientRect().width) - 0.5
+      scale: (index, target) => {
+        if (window.innerWidth < 768) {
+          return window.innerWidth / target?.getBoundingClientRect().width
+        } 
+        const rest = (window.innerWidth / target?.getBoundingClientRect().width) - 0.5;
+        console.log(rest)
+        return rest
       },
-      x: (index, target) => { 
+      x: (index, target) => {
         const rest = window.innerWidth / 2 - target.getBoundingClientRect().left - target.getBoundingClientRect().width / 2
+        console.log(rest)
         return rest
       },
       y: (index, target) => { 
-        return window.innerHeight / 2 - target.getBoundingClientRect().top - target.getBoundingClientRect().height / 2
+        const rest = window.innerHeight / 2 - target.getBoundingClientRect().top - target.getBoundingClientRect().height / 2
+        console.log(rest)
+        return rest
       },
       duration: 0.5,
   })

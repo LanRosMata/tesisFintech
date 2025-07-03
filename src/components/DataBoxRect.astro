@@ -10,13 +10,13 @@ const { data, description, class: className = "" } = Astro.props;
 ---
 
 <div
-  class="relative w-full h-auto p-10 flex flex-col justify-self-start gap-2 bg-white border-secondary-2 border-1 rounded-lg shadow-xl shadow-secondary-2/50"
+  class="data-card-rect relative w-4/5 lg:w-full h-auto p-5 lg:p-10 flex flex-col justify-self-start gap-2 bg-white border-secondary-2 border-1 rounded-lg shadow-xl shadow-secondary-2/50"
 >
-  <IconFlecha2 class="rotate-90 absolute -left-[10%] md:-left-[5%]" />
+  <IconFlecha2 class="flecha rotate-90 absolute -left-[18%] md:-left-[8%] lg:-left-[2.5%]" />
   <p
-  class="font-bold text-3xl text-left text-secondary-2">
+  class="font-bold text-xl lg:text-3xl text-left text-secondary-2">
     {data}
   </p>
-  <p class="text-3xl text-primary text-left">{description}</p>
+  <p class="text-xl lg:text-3xl text-primary text-left">{description}</p>
 
 </div>

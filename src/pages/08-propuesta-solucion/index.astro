@@ -17,11 +17,11 @@ const { webTfhn, estructura } = imagensElements;
   <TitlePinSub number="08" title="Propuesta de Solución" />
 
 
-  <SectionScreen tipo="degradado-3" class="">
+  <SectionScreen tipo="degradado-3" class="section-content-ps">
     <div
       class="h-screen flex flex-col items-center justify-center py-5 md:py-15"
     >
-      <p class="text-2xl md:text-6xl text-white text-center px-10 lg:px-40">
+      <p class="parrafo text-2xl md:text-6xl text-white text-center px-10 lg:px-40">
         Muchas
         <span class="gradiant-text font-bold"> Fintech </span>
         no solo son empresas <spam class="gradiant-text font-bold">Pyme</spam>,
@@ -32,12 +32,12 @@ const { webTfhn, estructura } = imagensElements;
       </p>
     </div>
   </SectionScreen>
-  <SectionScreen tipo="degradado-3" class="">
+  <SectionScreen tipo="degradado-3" class="section-content-ps">
     <div
       class="h-screen flex flex-col items-center justify-center py-5 md:py-15"
     >
       <p
-        class="font-medium text-6xl md:text-8xl text-white text-center px-10 lg:px-40"
+        class="parrafo font-medium text-6xl md:text-8xl text-white text-center px-10 lg:px-40"
       >
         Si quiero saber algo<spam class="gradiant-text font-bold">
           ¿dónde lo Busco?</spam
@@ -46,19 +46,19 @@ const { webTfhn, estructura } = imagensElements;
     </div>
   </SectionScreen>
 
-  <SectionScreen tipo="azul" class="overflow-hidden">
+  <SectionScreen tipo="azul" class="section-content-ps">
     <div
-      class="pt-10 h-full md:h-screen flex flex-col items-center justify-center"
+      class="pt-10 h-full md:h-screen flex flex-col items-center justify-center my-30 lg:my-10"
     >
       <div class="h-full flex-1/2">
         <div class="h-full flex flex-col justify-center align-center">
-          <h3 class="font-black text-6xl md:text-8xl">Pilares</h3>
+          <h3 class="titulo font-black text-6xl md:text-8xl">Pilares</h3>
         </div>
       </div>
       <div
-        class="h-full flex flex-wrap items-center justify-evenly gap-20 py-10 lg:py-0"
+        class="h-full flex flex-wrap items-center justify-evenly gap-20 mb-10 lg:mb-0 py-10 lg:py-0"
       >
-        <div class="h-full w-xs bg-secondary p-5">
+        <div class="card-data lg:h-full w-xs bg-secondary p-5">
           <h4 class="font-black text-4xl md:text-6xl text-secondary-2 my-10">
             Sencillo
           </h4>
@@ -68,7 +68,7 @@ const { webTfhn, estructura } = imagensElements;
           </p>
         </div>
 
-        <div class="h-full w-xs bg-secondary p-5">
+        <div class="card-data lg:h-full w-xs bg-secondary p-5">
           <h4 class="font-black text-4xl md:text-6xl text-secondary-2 my-10">
             Fácil Uso
           </h4>
@@ -78,11 +78,11 @@ const { webTfhn, estructura } = imagensElements;
           </p>
         </div>
 
-        <div class="h-full w-xs bg-secondary p-5">
+        <div class="card-data lg:h-full w-xs bg-secondary p-5">
           <h4 class="font-black text-4xl md:text-6xl text-secondary-2 my-10">
             Liviano
           </h4>
-          <p class="mb-auto text-white text-2xl">
+          <p class="parrafomb-auto text-white text-2xl">
             Bajo consumo del lado del cliente y el servidor.
           </p>
         </div>
@@ -90,17 +90,17 @@ const { webTfhn, estructura } = imagensElements;
     </div>
   </SectionScreen>
 
-  <SectionScreen tipo="azul" class="overflow-hidden">
+  <SectionScreen tipo="azul" class="section-content-ps">
     <div
-      class="h-[100vh] md:h-full lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 md:mt-60"
+      class="h-[100vh] md:h-full lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 md:mt-60 py-10 md:py-0"
     >
-      <div class="h-auto flex flex-col items-center ml-10">
+      <div class="h-auto flex flex-col items-center ml-10 .card-img">
         <Image
           src={estructura.img}
           alt={estructura.alt}
           width={1000}
           height={600}
-          class="w-xs md:w-xs lg:w-xl h-auto rounded-lg shadow-2xl shadow-secondary mt-10"
+          class="w-xs md:w-xs lg:w-xl h-auto rounded-lg shadow-2xl shadow-secondary mt-10 card-img"
         />
       </div>
       <div class="flex flex-col items-center">
@@ -108,7 +108,7 @@ const { webTfhn, estructura } = imagensElements;
           <h2 class="text-4xl lg:text-8xl font-bold gradiant-text mb-5">
             Estructura
           </h2>
-          <ul class="list-disc text-xl lg:text-3xl text-secondary mb-10">
+          <ul class="parrafo list-disc text-xl lg:text-3xl text-secondary mb-10">
             <li>
               <p class="text-xl lg:text-4xl text-white mb-5">
                 Sin CMSs ni consultas a una base de datos.
@@ -135,26 +135,26 @@ const { webTfhn, estructura } = imagensElements;
     </div>
   </SectionScreen>
 
-  <SectionScreen tipo="azul" class="overflow-hidden">
+  <SectionScreen tipo="azul" class="section-content-ps">
     <div
-      class="h-[150vh] md:h-screen lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 lg:mt-30"
+      class="h-[150vh] md:h-screen lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 lg:mt-30 py-10 md:py-0 "
     >
       <div class="relative h-auto flex flex-col items-center ml-10">
-        <Tfhn class="hidden md:block w-50 lg:w-2xs absolute lg:-right-35" />
+        <Tfhn class="hidden md:block w-50 lg:w-2xs absolute lg:-right-35 card-img z-20" />
         <Image
           src={webTfhn.img}
           alt={webTfhn.alt}
           width={1000}
           height={600}
-          class="w-xs md:w-xs lg:w-2xl h-auto rounded-lg shadow-2xl shadow-green-500 mt-10"
+          class="w-xs md:w-xs lg:w-2xl h-auto rounded-lg shadow-2xl shadow-green-500 mt-10 card-img"
         />
       </div>
       <div class="flex-1/3 flex flex-col items-center">
         <div class="mt-0 lg:mt-50 w-2/3 text-left">
-          <h2 class="text-4xl lg:text-8xl font-black gradiant-text mb-5">
+          <h2 class="text-4xl lg:text-8xl font-black gradiant-text p-2 mb-5">
             Sitio Web
           </h2>
-          <p class="text-xl lg:text-2xl text-white mb-10">
+          <p class="parrafo text-xl lg:text-2xl text-white mb-10">
             El sitio web se desarrolló con el framework Astro para crear páginas
             estáticas, garantizando una alta velocidad y eficiencia. En lugar de
             una base de datos, el contenido se gestiona a través de archivos
@@ -164,8 +164,9 @@ const { webTfhn, estructura } = imagensElements;
             cada visita.
           </p>
           <a
-            href="https:/tfhn.honux.pro/"
-            class="font-bold text-3xl text-secondary-2 hover:text-amber-700"
+            href="https://tfhn.honux.pro/"
+            class="parrafo font-bold text-3xl text-secondary-2 hover:text-amber-700"
+            target="_blank"
             >tfhn.honux.pro/</a
           >
         </div>
@@ -187,7 +188,6 @@ const { webTfhn, estructura } = imagensElements;
 <style>
   .gradiant-text {
     width: fit-content;
-    color: #3d56cf;
     background-image: linear-gradient(
       45deg,
       var(--color-secondary-2),
@@ -198,3 +198,81 @@ const { webTfhn, estructura } = imagensElements;
     -webkit-text-fill-color: transparent;
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  ScrollTrigger.batch(".section-content-ps", {
+    onEnter: ( batch ) => {
+      batch.forEach((elemento, index) => {
+        const cardsData = elemento.querySelectorAll(".card-data");
+        const cardsImg = elemento.querySelectorAll(".card-img");
+        const gradiantText = elemento.querySelectorAll(".gradiant-text");
+        const title = elemento.querySelectorAll(".titulo");
+        const parrafo = elemento.querySelectorAll(".parrafo");
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: elemento,
+            start: "10% center",
+          },
+        });
+        if(title.length > 0){
+          const splitTitle = new SplitText(title, { type: "words" });
+          tl.from(splitTitle.words, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+          })
+        }
+
+        if(gradiantText.length > 0){
+          tl.from(gradiantText, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 1,
+            ease: "power2.inOut",
+          })
+        }
+
+        if(parrafo.length > 0){
+          const splitParrafo = new SplitText(parrafo, { type: "lines" });
+          tl.from(splitParrafo.lines, {
+            x: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+          })
+        }
+
+        if(cardsImg.length > 0){
+          tl.from(cardsImg, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power2.out",
+          })
+        }
+        if(cardsData.length > 0){
+          tl.from(cardsData, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power2.out",
+          })
+        }
+        
+      })
+    },
+    
+  })
+
+
+</script>
