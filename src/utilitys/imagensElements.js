@@ -63,7 +63,7 @@ const imagensElements = {
     },
     paylpal:{
       img : paylapIMG,
-      alt: 'Paylpal'
+      alt: 'PaylPal'
     },
     block:{
       img : blockIMG,

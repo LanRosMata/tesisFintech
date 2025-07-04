@@ -45,7 +45,7 @@ const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
         >
           <li>
             <p class="li2 text-2xl lg:text-5xl py-2 lg:py-5 text-white">
-              Cuantitativo
+              Cualitativo
             </p>
           </li>
           <li>
@@ -70,12 +70,12 @@ const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
 
   <SectionScreen tipo="degradado-3" class="card-met-2">
     <div
-      class="h-full flex flex-col items-center justify-center py-25 overflow-hidden"
+      class="h-full w-full flex flex-col items-center justify-center py-25 overflow-hidden"
     >
       <h2 class="text-secondary-2 text-3xl md:text-6xl lg:text-8xl text-center">
         Entrevistas a expertos
       </h2>
-      <div class="mt-20 flex flex-wrap items-center justify-center gap-5">
+      <div class="mt-20 flex flex-col md:flex-wrap items-center justify-center gap-5 overflow-hidden">
         <CardProfile data={entrevista1} />
         <CardProfile data={entrevista2} />
         <CardProfile data={entrevista3} />
