@@ -5,40 +5,65 @@ import SectionScreen from "../../components/SectionScreen.astro";
 import IconFlecha from "../../components/IconFlecha.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
 import TitlePinSub from "../../components/TitlePinSub.astro";
-
-
 ---
 
-<Layout title="Objetivos de la investigación">
+<Layout
+  title="Objetivos de la investigación"
+  preCarga="/05-preguntas-de-investigacion"
+>
   <NavSup />
 
   <TitlePinSub number="04" title="Objetivos de la investigación" />
 
   <SectionScreen tipo="azul" class="section-content-obj">
-    <div class="h-full flex flex-col justify-center items-center gap-5 text-center py-25 lg:py-10">
+    <div
+      class="h-full flex flex-col justify-center items-center gap-5 text-center py-25 lg:py-10"
+    >
       <h2 class="gradiant-text text-4xl md:text-8xl">Objetivo General</h2>
       <div class="linea border-b-2 border-secondary-2 w-sm lg:w-5xl"></div>
-      <p class="text-2xl md:text-4xl text-white px-5 md:px-20 mt-10">Diseñar e implementar un sitio web intuitiva y fácil de usar que contenga toda la información necesarios para la utilización segura de aplicaciones Fintech como billeteras electrónicas o medio de pago digitales, aumentando la confianza del uso de estas.</p>
+      <p class="text-2xl md:text-4xl text-white px-5 md:px-20 mt-10">
+        Diseñar e implementar un sitio web intuitiva y fácil de usar que
+        contenga toda la información necesarios para la utilización segura de
+        aplicaciones Fintech como billeteras electrónicas o medio de pago
+        digitales, aumentando la confianza del uso de estas.
+      </p>
     </div>
   </SectionScreen>
 
   <SectionScreen tipo="azul" class="section-content-obj">
-    <div class="h-full flex flex-col justify-center items-center gap-5 text-center py-25 lg:py-10">
-      <h2 class="gradiant-text  text-4xl md:text-8xl">Objetivos Específicos</h2>
+    <div
+      class="h-full flex flex-col justify-center items-center gap-5 text-center py-25 lg:py-10"
+    >
+      <h2 class="gradiant-text text-4xl md:text-8xl">Objetivos Específicos</h2>
       <div class="linea border-b-2 border-secondary-2 w-sm lg:w-5xl"></div>
-      <div class="flex flex-row items-center justify-start gap-5 mt-10 md:w-3/4 px-5">
+      <div
+        class="flex flex-row items-center justify-start gap-5 mt-10 md:w-3/4 px-5"
+      >
         <IconFlecha class="flecha rotate-90 md:scale-100 scale-80" />
-        <p class="text-2xl md:text-4xl text-white text-left">Identificar y caracterizar las principales empresas Fintech que operan en Honduras, los servicios que ofrecen y su público objetivo.</p>
+        <p class="text-2xl md:text-4xl text-white text-left">
+          Identificar y caracterizar las principales empresas Fintech que operan
+          en Honduras, los servicios que ofrecen y su público objetivo.
+        </p>
       </div>
-      <div class="flex flex-row items-center justify-start gap-5 mt-10 md:w-3/4 px-5">
+      <div
+        class="flex flex-row items-center justify-start gap-5 mt-10 md:w-3/4 px-5"
+      >
         <IconFlecha class="flecha rotate-90 md:scale-100 scale-80" />
-        <p class="text-2xl md:text-4xl text-white text-left">Proponer recomendaciones para fortalecer el ecosistema Fintech en Honduras, de esta forma contribuir al desarrollo de un ecosistema más robusto e inclusivo en el país</p>
+        <p class="text-2xl md:text-4xl text-white text-left">
+          Proponer recomendaciones para fortalecer el ecosistema Fintech en
+          Honduras, de esta forma contribuir al desarrollo de un ecosistema más
+          robusto e inclusivo en el país
+        </p>
       </div>
-      <div class="flex flex-row items-center justify-start gap-5 mt-10 md:w-3/4 px-5">
+      <div
+        class="flex flex-row items-center justify-start gap-5 mt-10 md:w-3/4 px-5"
+      >
         <IconFlecha class="flecha rotate-90 md:scale-100 scale-80" />
-        <p class="text-2xl md:text-4xl text-white text-left">Evaluar el marco legal y regulatorio actual del Fintech en Honduras, identificando sus fortalezas, debilidades y áreas de mejora.</p>
+        <p class="text-2xl md:text-4xl text-white text-left">
+          Evaluar el marco legal y regulatorio actual del Fintech en Honduras,
+          identificando sus fortalezas, debilidades y áreas de mejora.
+        </p>
       </div>
-
     </div>
   </SectionScreen>
   <NavFooterSection
@@ -51,93 +76,98 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
       text: "Preguntas de investigación",
     }}
   />
-
 </Layout>
 
 <style>
   .gradiant-text {
     width: fit-content;
-      color: #3d56cf; 
-      background-image: linear-gradient(45deg, var(--color-secondary-2) , var(--color-secondary)); 
-      background-clip: text; 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent;
+    color: #3d56cf;
+    background-image: linear-gradient(
+      45deg,
+      var(--color-secondary-2),
+      var(--color-secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
-
 
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollTrigger.batch(".section-content-obj", {
+      onEnter: (batch) => {
+        batch.forEach((elemento, index) => {
+          const gradiantText = elemento.querySelectorAll(".gradiant-text");
+          const lineas = elemento.querySelectorAll(".linea");
+          const flecha = elemento.querySelectorAll(".flecha");
+          const parrafo = elemento.querySelectorAll("p");
 
-  ScrollTrigger.batch(".section-content-obj", {
-    onEnter: ( batch ) => {
-      batch.forEach((elemento, index) => {
-        const gradiantText = elemento.querySelectorAll(".gradiant-text");
-        const lineas = elemento.querySelectorAll(".linea");
-        const flecha = elemento.querySelectorAll(".flecha");
-        const parrafo = elemento.querySelectorAll("p");
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: elemento,
+              start: "20% center",
+            },
+          });
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: elemento,
-            start: "20% center",
-          },
+          if (gradiantText.length > 0) {
+            tl.from(gradiantText, {
+              y: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 1,
+              delay: 0.1,
+              ease: "power2.inOut",
+            });
+          }
+          if (lineas.length > 0) {
+            tl.from(lineas, {
+              scale: 0,
+              rotateY: 45,
+              stagger: 0.1,
+              duration: 0.8,
+              delay: 0.0,
+              ease: "power2.inOut",
+            });
+          }
+          if (parrafo.length > 0 && flecha.length > 0) {
+            const splitParrafo = new SplitText(parrafo, { type: "lines" });
+            tl.from(splitParrafo.lines, {
+              x: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              delay: 0.1,
+              ease: "power2.inOut",
+            }).from(
+              flecha,
+              {
+                scale: 0,
+                rotateY: 45,
+                stagger: 0.1,
+                duration: 0.8,
+                delay: 0.0,
+                ease: "power2.inOut",
+              },
+              "<"
+            );
+          } else if (parrafo.length > 0) {
+            const splitParrafo = new SplitText(parrafo, { type: "lines" });
+            tl.from(splitParrafo.lines, {
+              x: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              delay: 0.1,
+              ease: "power2.inOut",
+            });
+          }
         });
-
-        if(gradiantText.length > 0){
-          tl.from(gradiantText, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 1,
-            delay: 0.1,
-            ease: "power2.inOut",
-          })
-        }
-        if(lineas.length > 0){
-          tl.from(lineas,{
-            scale: 0,
-            rotateY: 45,
-            stagger: 0.1,
-            duration: 0.8,
-            delay: 0.0,
-            ease: "power2.inOut",
-          })
-        }
-        if(parrafo.length > 0 && flecha.length > 0){
-          const splitParrafo = new SplitText(parrafo, { type: "lines" });
-          tl.from(splitParrafo.lines, {
-            x: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            delay: 0.1,
-            ease: "power2.inOut",
-          })
-          .from(flecha,{
-            scale: 0,
-            rotateY: 45,
-            stagger: 0.1,
-            duration: 0.8,
-            delay: 0.0,
-            ease: "power2.inOut",
-          },"<")
-        } else if (parrafo.length > 0) {
-          const splitParrafo = new SplitText(parrafo, { type: "lines" });
-          tl.from(splitParrafo.lines, {
-            x: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            delay: 0.1,
-            ease: "power2.inOut",
-          })
-        }
-        
-      })
-    },
-  })
+      },
+    });
+  });
 </script>

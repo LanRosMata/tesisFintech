@@ -9,7 +9,6 @@ import DataBox from "../../components/DataBox.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
 import TitlePinSub from "../../components/TitlePinSub.astro";
 
-
 const {
   alipay,
   paylpal,
@@ -30,9 +29,9 @@ const {
 } = imagensElements;
 ---
 
-<Layout title="Antecedentes del Problema">
+<Layout title="Antecedentes del Problema" preCarga="/03-normas-legislación">
   <NavSup />
-  
+
   <TitlePinSub number="02" title="Antecedentes del Problema" />
 
   <!-- Logos Fintech en el mundo -->
@@ -41,7 +40,7 @@ const {
       class="relative h-full flex flex-col justify-center items-center gap-5 overflow-hidden py-30 lg:py-10"
     >
       <div class="z-10">
-        <h2 class="text-center text-4xl lg:text-6xl m mb-20 text-white ">
+        <h2 class="text-center text-4xl lg:text-6xl m mb-20 text-white">
           Principales Fintech en el mundo
         </h2>
         <div
@@ -150,9 +149,14 @@ const {
       />
     </div>
   </SectionScreen>
-  <SectionScreen tipo="degradado-2" class="overflow-hidden py-30 lg:py-10 section-content-ant">
+  <SectionScreen
+    tipo="degradado-2"
+    class="overflow-hidden py-30 lg:py-10 section-content-ant"
+  >
     <div class="h-full flex flex-col justify-center items-center gap-5">
-      <p class="text-white text-3xl lg:text-4xl text-center my-10 md:w-2/3 m-5 md:m-20">
+      <p
+        class="text-white text-3xl lg:text-4xl text-center my-10 md:w-2/3 m-5 md:m-20"
+      >
         “En Honduras, el sector fintech ha mostrado un crecimiento
         significativo, lo que refleja un interés creciente en soluciones
         financieras digitales” (CNBS).
@@ -174,64 +178,58 @@ const {
     </div>
   </SectionScreen>
 
-  <SectionScreen tipo="degradado-2" class="overflow-hidden py-30 lg:py-10 section-content-ant">
+  <SectionScreen
+    tipo="degradado-2"
+    class="overflow-hidden py-30 lg:py-10 section-content-ant"
+  >
     <div class="h-full flex flex-col justify-center items-center gap-5">
-      <p class="text-white text-3xl lg:text-4xl text-center my-10 md:w-2/3 m-5 md:m-20">
-        Según cifras del Banco Mundial <span class="text-secondary">por cada 1 millón de personas</span> Honduras
+      <p
+        class="text-white text-3xl lg:text-4xl text-center my-10 md:w-2/3 m-5 md:m-20"
+      >
+        Según cifras del Banco Mundial <span class="text-secondary"
+          >por cada 1 millón de personas</span
+        > Honduras
       </p>
       <div class="flex flex-wrap gap-10 items-center justify-center">
         <!-- inicio cards -->
-        <DataBox
-          data="8.1"
-          description="Servidores de internet seguros"
-        />
-        <DataBox
-          data="4.1"
-          description="Subscriptores de banda ancha"
-        />
-        <DataBox
-          data="76.1"
-          description="suscripciones a celulares móviles"
-        />
-        <DataBox
-          data="48.1"
-          description="Utilizan internet  móviles"
-          />
-          <!-- fin cards -->
-        </div>
-        <p class="text-white text-xs lg:text-xl text-center my-5 md:w-2/3 m-5 md:m-20">
-         (CNBS, Reporte de Inclusión Financiera, 2024).
-        </p>
+        <DataBox data="8.1" description="Servidores de internet seguros" />
+        <DataBox data="4.1" description="Subscriptores de banda ancha" />
+        <DataBox data="76.1" description="suscripciones a celulares móviles" />
+        <DataBox data="48.1" description="Utilizan internet  móviles" />
+        <!-- fin cards -->
+      </div>
+      <p
+        class="text-white text-xs lg:text-xl text-center my-5 md:w-2/3 m-5 md:m-20"
+      >
+        (CNBS, Reporte de Inclusión Financiera, 2024).
+      </p>
     </div>
   </SectionScreen>
-  <SectionScreen tipo="degradado-2" class="overflow-hidden py-30 lg:py-10 section-content-ant">
+  <SectionScreen
+    tipo="degradado-2"
+    class="overflow-hidden py-30 lg:py-10 section-content-ant"
+  >
     <div class="h-full flex flex-col justify-center items-center gap-5">
-      <p class="text-white text-3xl lg:text-4xl text-center my-10 md:w-2/3 m-5 md:m-20">
-        Al 2023 el número de puntos de atención por cada <span class="text-secondary">10,000 adultos</span> mayores a 18 años:
+      <p
+        class="text-white text-3xl lg:text-4xl text-center my-10 md:w-2/3 m-5 md:m-20"
+      >
+        Al 2023 el número de puntos de atención por cada <span
+          class="text-secondary">10,000 adultos</span
+        > mayores a 18 años:
       </p>
       <div class="flex flex-wrap gap-10 items-center justify-center">
         <!-- inicio cards -->
-        <DataBox
-          data="3 / 1"
-          description="Oficinas / Ventanilla"
-        />
-        <DataBox
-          data="148"
-          description="POS"
-        />
-        <DataBox
-          data="3"
-          description="ATMs"
-        />
-        <DataBox
-          data="21"
-          description="agentes corresponsales"
-        />
-          <!-- fin cards -->
-        </div>
-        <p class="text-white text-xs lg:text-xl text-center my-5 md:w-2/3 m-5 md:m-20">
-         (CNBS, Reporte de Inclusión Financiera, 2024).
-        </p>
+        <DataBox data="3 / 1" description="Oficinas / Ventanilla" />
+        <DataBox data="148" description="POS" />
+        <DataBox data="3" description="ATMs" />
+        <DataBox data="21" description="agentes corresponsales" />
+        <!-- fin cards -->
+      </div>
+      <p
+        class="text-white text-xs lg:text-xl text-center my-5 md:w-2/3 m-5 md:m-20"
+      >
+        (CNBS, Reporte de Inclusión Financiera, 2024).
+      </p>
     </div>
   </SectionScreen>
 
@@ -259,65 +257,70 @@ const {
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  ScrollTrigger.batch(".section-content-ant", {
-    onEnter: ( batch ) => {
-      batch.forEach((elemento, index) => {
-        const cardsData = elemento.querySelectorAll(".card-data");
-        const cardsImg = elemento.querySelectorAll(".card-img");
-        const title = elemento.querySelectorAll("h2");
-        const parrafo = elemento.querySelectorAll("p");
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollTrigger.batch(".section-content-ant", {
+      onEnter: (batch) => {
+        batch.forEach((elemento, index) => {
+          const cardsData = elemento.querySelectorAll(".card-data");
+          const cardsImg = elemento.querySelectorAll(".card-img");
+          const title = elemento.querySelectorAll("h2");
+          const parrafo = elemento.querySelectorAll("p");
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: elemento,
-            start: "20% center",
-          },
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: elemento,
+              start: "20% center",
+            },
+          });
+
+          if (title.length > 0) {
+            const splitTitle = new SplitText(title, { type: "words" });
+            tl.from(splitTitle.words, {
+              y: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+            });
+          }
+
+          if (parrafo.length > 0) {
+            const splitParrafo = new SplitText(parrafo, { type: "lines" });
+            tl.from(splitParrafo.lines, {
+              x: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+            });
+          }
+
+          if (cardsImg.length > 0) {
+            tl.from(
+              cardsImg,
+              {
+                y: 50,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.5,
+                ease: "power2.out",
+              },
+              "<"
+            );
+          }
+          if (cardsData.length > 0) {
+            tl.from(
+              cardsData,
+              {
+                y: 50,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.5,
+                ease: "power2.out",
+              },
+              "<"
+            );
+          }
         });
-
-
-        if(title.length > 0){
-          const splitTitle = new SplitText(title, { type: "words" });
-          tl.from(splitTitle.words, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-          })
-        }
-
-        if(parrafo.length > 0){
-          const splitParrafo = new SplitText(parrafo, { type: "lines" });
-          tl.from(splitParrafo.lines, {
-            x: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-          })
-        }
-
-        if(cardsImg.length > 0){
-          tl.from(cardsImg, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.out",
-          }, "<")
-        }
-        if(cardsData.length > 0){
-          tl.from(cardsData, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.out",
-          }, "<")
-        }
-        
-      })
-    },
-    
-  })
-
-
+      },
+    });
+  });
 </script>

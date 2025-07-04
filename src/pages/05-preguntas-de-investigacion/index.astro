@@ -4,26 +4,37 @@ import NavSup from "../../components/NavSup.astro";
 import SectionScreen from "../../components/SectionScreen.astro";
 import NavFooterSection from "../../components/NavFooterSection.astro";
 import TitlePinSub from "../../components/TitlePinSub.astro";
-
 ---
-<Layout title="Preguntas de investigación">
+
+<Layout title="Preguntas de investigación" preCarga="/06-metodologia">
   <NavSup />
   <TitlePinSub number="05" title="Preguntas de Investigación" />
   <SectionScreen tipo="azul" class="section-content-adp">
-    <div class="h-full flex flex-col justify-center items-center gap-5 text-center py-20 lg:py-10">
-      <h1 class="gradiant-text  text-4xl md:text-8xl py-5">Preguntas de investigación</h1>
+    <div
+      class="h-full flex flex-col justify-center items-center gap-5 text-center py-20 lg:py-10"
+    >
+      <h1 class="gradiant-text text-4xl md:text-8xl py-5">
+        Preguntas de investigación
+      </h1>
       <div class="linea border-b-2 border-secondary-2 w-sm lg:w-5xl"></div>
-      <div class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5">
+      <div
+        class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5"
+      >
         <p class="text-2xl md:text-4xl text-white text-left">
           <span class="text-secondary font-bold text-3xl md:text-5xl">¿</span>
-          Cómo implementar una página web simple, amigable y accesible que muestre la información necesaria y organizada de cómo utilizar de forma segura una página web
+          Cómo implementar una página web simple, amigable y accesible que muestre
+          la información necesaria y organizada de cómo utilizar de forma segura
+          una página web
           <span class="text-secondary font-bold text-3xl md:text-5xl">?</span>
         </p>
       </div>
-      <div class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5">
+      <div
+        class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5"
+      >
         <p class="text-2xl md:text-4xl text-white text-left">
           <span class="text-secondary font-bold text-3xl md:text-5xl">¿</span>
-          Cuáles son las principales empresas Fintech que operan en Honduras, los servicios que ofrecen y su público objetivo
+          Cuáles son las principales empresas Fintech que operan en Honduras, los
+          servicios que ofrecen y su público objetivo
           <span class="text-secondary font-bold text-3xl md:text-5xl">?</span>
         </p>
       </div>
@@ -31,20 +42,31 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
   </SectionScreen>
 
   <SectionScreen tipo="azul" class="section-content-adp">
-    <div class="h-full flex flex-col justify-center items-center gap-5 text-center py-20 lg:py-10">
-      <h1 class="gradiant-text  text-4xl md:text-8xl py-5">Preguntas de investigación</h1>
+    <div
+      class="h-full flex flex-col justify-center items-center gap-5 text-center py-20 lg:py-10"
+    >
+      <h1 class="gradiant-text text-4xl md:text-8xl py-5">
+        Preguntas de investigación
+      </h1>
       <div class="linea border-b-2 border-secondary-2 w-sm lg:w-5xl"></div>
-      <div class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5">
+      <div
+        class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5"
+      >
         <p class="text-2xl md:text-4xl text-white text-left">
           <span class="text-secondary font-bold text-3xl md:text-5xl">¿</span>
-          Qué recomendaciones se pueden dar para fortalecer el ecosistema Fintech en Honduras, considerando las mejores prácticas internacionales y las particularidades del contexto local
+          Qué recomendaciones se pueden dar para fortalecer el ecosistema Fintech
+          en Honduras, considerando las mejores prácticas internacionales y las particularidades
+          del contexto local
           <span class="text-secondary font-bold text-3xl md:text-5xl">?</span>
         </p>
       </div>
-            <div class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5">
+      <div
+        class="flex flex-row items-center justify-center gap-5 mt-10 md:w-3/4 px-5"
+      >
         <p class="text-2xl md:text-4xl text-white text-left">
           <span class="text-secondary font-bold text-3xl md:text-5xl">¿</span>
-          Cuáles son las principales fortalezas y debilidades de las regulaciones actuales sobre las Fintech
+          Cuáles son las principales fortalezas y debilidades de las regulaciones
+          actuales sobre las Fintech
           <span class="text-secondary font-bold text-3xl md:text-5xl">?</span>
         </p>
       </div>
@@ -61,17 +83,20 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
       text: "Metodología",
     }}
   />
-
 </Layout>
 
 <style>
   .gradiant-text {
     width: fit-content;
-      color: #3d56cf; 
-      background-image: linear-gradient(45deg, var(--color-secondary-2) , var(--color-secondary)); 
-      background-clip: text; 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent;
+    color: #3d56cf;
+    background-image: linear-gradient(
+      45deg,
+      var(--color-secondary-2),
+      var(--color-secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
 
@@ -80,53 +105,57 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollTrigger.batch(".section-content-adp", {
+      onEnter: (batch) => {
+        batch.forEach((elemento, index) => {
+          const gradiantText = elemento.querySelectorAll(".gradiant-text");
+          const lineas = elemento.querySelectorAll(".linea");
+          const parrafo = elemento.querySelectorAll("p");
 
-  ScrollTrigger.batch(".section-content-adp", {
-    onEnter: ( batch ) => {
-      batch.forEach((elemento, index) => {
-        const gradiantText = elemento.querySelectorAll(".gradiant-text");
-        const lineas = elemento.querySelectorAll(".linea");
-        const parrafo = elemento.querySelectorAll("p");
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: elemento,
-            start: "20% center",
-          },
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: elemento,
+              start: "20% center",
+            },
+          });
+          if (gradiantText.length > 0) {
+            tl.from(
+              gradiantText,
+              {
+                y: 50,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 1,
+                delay: 0.1,
+                ease: "power2.inOut",
+              },
+              "<"
+            );
+          }
+          if (lineas.length > 0) {
+            tl.from(lineas, {
+              scale: 0,
+              rotateY: 45,
+              stagger: 0.1,
+              duration: 0.8,
+              delay: 0.0,
+              ease: "power2.inOut",
+            });
+          }
+          if (parrafo.length > 0) {
+            const splitParrafo = new SplitText(parrafo, { type: "lines" });
+            tl.from(splitParrafo.lines, {
+              x: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              delay: 0.1,
+              ease: "power2.inOut",
+            });
+          }
         });
-        if(gradiantText.length > 0){
-          tl.from(gradiantText, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 1,
-            delay: 0.1,
-            ease: "power2.inOut",
-          }, "<")
-        }
-        if(lineas.length > 0){
-          tl.from(lineas,{
-            scale: 0,
-            rotateY: 45,
-            stagger: 0.1,
-            duration: 0.8,
-            delay: 0.0,
-            ease: "power2.inOut",
-          })
-        }
-        if(parrafo.length > 0){
-          const splitParrafo = new SplitText(parrafo, { type: "lines" });
-          tl.from(splitParrafo.lines, {
-            x: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            delay: 0.1,
-            ease: "power2.inOut",
-          })
-        }
-
-      })
-    },
-  })
+      },
+    });
+  });
 </script>

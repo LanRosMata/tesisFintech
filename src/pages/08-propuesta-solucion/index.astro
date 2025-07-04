@@ -11,17 +11,18 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
 const { webTfhn, estructura } = imagensElements;
 ---
 
-<Layout title="Propuesta de Solución">
+<Layout title="Propuesta de Solución" preCarga="/09-conclusiones">
   <NavSup />
 
   <TitlePinSub number="08" title="Propuesta de Solución" />
-
 
   <SectionScreen tipo="degradado-3" class="section-content-ps">
     <div
       class="h-screen flex flex-col items-center justify-center py-5 md:py-15"
     >
-      <p class="parrafo text-2xl md:text-6xl text-white text-center px-10 lg:px-40">
+      <p
+        class="parrafo text-2xl md:text-6xl text-white text-center px-10 lg:px-40"
+      >
         Muchas
         <span class="gradiant-text font-bold"> Fintech </span>
         no solo son empresas <spam class="gradiant-text font-bold">Pyme</spam>,
@@ -108,7 +109,9 @@ const { webTfhn, estructura } = imagensElements;
           <h2 class="text-4xl lg:text-8xl font-bold gradiant-text mb-5">
             Estructura
           </h2>
-          <ul class="parrafo list-disc text-xl lg:text-3xl text-secondary mb-10">
+          <ul
+            class="parrafo list-disc text-xl lg:text-3xl text-secondary mb-10"
+          >
             <li>
               <p class="text-xl lg:text-4xl text-white mb-5">
                 Sin CMSs ni consultas a una base de datos.
@@ -137,10 +140,12 @@ const { webTfhn, estructura } = imagensElements;
 
   <SectionScreen tipo="azul" class="section-content-ps">
     <div
-      class="h-[150vh] md:h-screen lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 lg:mt-30 py-10 md:py-0 "
+      class="h-[150vh] md:h-screen lg:h-full flex flex-col-reverse md:flex-row justify-evenly mt-10 lg:mt-30 py-10 md:py-0"
     >
       <div class="relative h-auto flex flex-col items-center ml-10">
-        <Tfhn class="hidden md:block w-50 lg:w-2xs absolute lg:-right-35 card-img z-20" />
+        <Tfhn
+          class="hidden md:block w-50 lg:w-2xs absolute lg:-right-35 card-img z-20"
+        />
         <Image
           src={webTfhn.img}
           alt={webTfhn.alt}
@@ -166,8 +171,7 @@ const { webTfhn, estructura } = imagensElements;
           <a
             href="https://tfhn.honux.pro/"
             class="parrafo font-bold text-3xl text-secondary-2 hover:text-amber-700"
-            target="_blank"
-            >tfhn.honux.pro/</a
+            target="_blank">tfhn.honux.pro/</a
           >
         </div>
       </div>
@@ -204,75 +208,72 @@ const { webTfhn, estructura } = imagensElements;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollTrigger.batch(".section-content-ps", {
+      onEnter: (batch) => {
+        batch.forEach((elemento, index) => {
+          const cardsData = elemento.querySelectorAll(".card-data");
+          const cardsImg = elemento.querySelectorAll(".card-img");
+          const gradiantText = elemento.querySelectorAll(".gradiant-text");
+          const title = elemento.querySelectorAll(".titulo");
+          const parrafo = elemento.querySelectorAll(".parrafo");
 
-  ScrollTrigger.batch(".section-content-ps", {
-    onEnter: ( batch ) => {
-      batch.forEach((elemento, index) => {
-        const cardsData = elemento.querySelectorAll(".card-data");
-        const cardsImg = elemento.querySelectorAll(".card-img");
-        const gradiantText = elemento.querySelectorAll(".gradiant-text");
-        const title = elemento.querySelectorAll(".titulo");
-        const parrafo = elemento.querySelectorAll(".parrafo");
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: elemento,
+              start: "10% center",
+            },
+          });
+          if (title.length > 0) {
+            const splitTitle = new SplitText(title, { type: "words" });
+            tl.from(splitTitle.words, {
+              y: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+            });
+          }
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: elemento,
-            start: "10% center",
-          },
+          if (gradiantText.length > 0) {
+            tl.from(gradiantText, {
+              y: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 1,
+              ease: "power2.inOut",
+            });
+          }
+
+          if (parrafo.length > 0) {
+            const splitParrafo = new SplitText(parrafo, { type: "lines" });
+            tl.from(splitParrafo.lines, {
+              x: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+            });
+          }
+
+          if (cardsImg.length > 0) {
+            tl.from(cardsImg, {
+              y: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          }
+          if (cardsData.length > 0) {
+            tl.from(cardsData, {
+              y: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          }
         });
-        if(title.length > 0){
-          const splitTitle = new SplitText(title, { type: "words" });
-          tl.from(splitTitle.words, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-          })
-        }
-
-        if(gradiantText.length > 0){
-          tl.from(gradiantText, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 1,
-            ease: "power2.inOut",
-          })
-        }
-
-        if(parrafo.length > 0){
-          const splitParrafo = new SplitText(parrafo, { type: "lines" });
-          tl.from(splitParrafo.lines, {
-            x: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-          })
-        }
-
-        if(cardsImg.length > 0){
-          tl.from(cardsImg, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.out",
-          })
-        }
-        if(cardsData.length > 0){
-          tl.from(cardsData, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.out",
-          })
-        }
-        
-      })
-    },
-    
-  })
-
-
+      },
+    });
+  });
 </script>

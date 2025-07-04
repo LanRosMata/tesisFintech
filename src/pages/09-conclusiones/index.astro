@@ -8,7 +8,7 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
 const { webTfhn, estructura } = imagensElements;
 ---
 
-<Layout title="Propuesta de Solución">
+<Layout title="Propuesta de Solución" preCarga="/">
   <NavSup />
 
   <TitlePinSub number="09" title="Conclusiones" />
@@ -193,45 +193,53 @@ const { webTfhn, estructura } = imagensElements;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollTrigger.batch(".content-conclusiones", {
+      onEnter: (batch) => {
+        batch.forEach((elemento, index) => {
+          const title = elemento.querySelectorAll(".titulo");
+          const letterBg = elemento.querySelectorAll(".letter-bg");
+          const textContent = elemento.querySelectorAll(".text-content");
 
-  ScrollTrigger.batch(".content-conclusiones", {
-    onEnter: (batch) => {
-      batch.forEach((elemento, index) => {
-        const title = elemento.querySelectorAll(".titulo");
-        const letterBg = elemento.querySelectorAll(".letter-bg");
-        const textContent = elemento.querySelectorAll(".text-content");
+          const splitTitle = new SplitText(title, { type: "words" });
 
-        const splitTitle = new SplitText(title, { type: "words" });
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: elemento,
+              start: "top center",
+            },
+          });
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: elemento,
-            start: "top center",
-          },
+          tl.from(letterBg, {
+            y: 100,
+            opacity: 0,
+            duration: 3,
+            ease: "power2.out",
+          })
+            .from(
+              splitTitle.words,
+              {
+                x: 100,
+                opacity: 0,
+                duration: 0.5,
+                ease: "power2.out",
+                stagger: 1,
+              },
+              "<0.5"
+            )
+            .from(
+              textContent,
+              {
+                y: 50,
+                opacity: 0,
+                duration: 0.5,
+                ease: "power2.out",
+                stagger: 1,
+              },
+              "<"
+            );
         });
-        
-        tl.from(letterBg, {
-          y: 100,
-          opacity: 0,
-          duration: 3,
-          ease: "power2.out",
-        })
-        .from(splitTitle.words,{
-            x: 100,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-            stagger: 1,
-        },"<0.5")
-        .from(textContent,{
-            y: 50,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-            stagger: 1,
-          }, "<" );
-      });
-    },
+      },
+    });
   });
-
 </script>

@@ -9,80 +9,112 @@ import { Image } from "astro:assets";
 import TitlePinSub from "../../components/TitlePinSub.astro";
 
 const { foto9, foto10 } = imagensElements;
-
 ---
 
-<Layout title="Propuesta de Solución">
+<Layout title="Resultados" preCarga="/08-propuesta-solucion">
   <NavSup />
 
-  <TitlePinSub number="07" title="Propuesta de Solución" />
-
+  <TitlePinSub number="07" title="Resultados" />
 
   <SectionScreen tipo="azul" class="mt-0 section-content-res">
-  <div class="flex flex-col lg:flex-row items-center justify-center gap-20 h-full py-25 lg:py-10">
-    <div class="card-img relative h-auto lg:w-1/4 w-1/2">
-      <IconFlecha class="flecha-mto rotate-180 lg:rotate-90 absolute top-40 lg:top-50 -right-5 lg:scale-100 scale-60 bg-secondary z-10" />
-      <div class="cont-img-mto relative w-full h-full">
-        <div class="rect-img-mto absolute w-full h-full bg-secondary opacity-0 rounded-2xl "></div>
-        <Image
-          src={foto9.img}
-          alt={foto9.alt}
-          width={500}
-          height={300}
-          class="img-mto w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+    <div
+      class="flex flex-col lg:flex-row items-center justify-center gap-20 h-full py-25 lg:py-10"
+    >
+      <div class="card-img relative h-auto lg:w-1/4 w-1/2">
+        <IconFlecha
+          class="flecha-mto rotate-180 lg:rotate-90 absolute top-40 lg:top-50 -right-5 lg:scale-100 scale-60 bg-secondary z-10"
         />
+        <div class="cont-img-mto relative w-full h-full">
+          <div
+            class="rect-img-mto absolute w-full h-full bg-secondary opacity-0 rounded-2xl"
+          >
+          </div>
+          <Image
+            src={foto9.img}
+            alt={foto9.alt}
+            width={500}
+            height={300}
+            class="img-mto w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-baseLine justify-center gap-4 px-10 lg:px-1 lg:w-1/2"
+      >
+        <h2
+          class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2"
+        >
+          Importancia de la regulación:
+        </h2>
+        <p class="cont-txt-mto text-white text-xl md:text-4xl">
+          Los cuatro expertos coinciden en la necesidad de un marco regulatorio
+          claro y equilibrado para el desarrollo de las Fintech en Honduras.
+          Este marco debe promover la innovación y la competencia, al tiempo que
+          protege a los consumidores y la estabilidad del sistema financiero.
+        </p>
+        <h2
+          class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10"
+        >
+          Educación financiera:
+        </h2>
+        <p class="cont-txt-mto text-white text-xl md:text-4xl">
+          Se destaca la importancia de la educación financiera y tecnológica
+          para que la población pueda comprender y utilizar los servicios
+          Fintech de manera responsable.
+        </p>
       </div>
     </div>
-    <div class="flex flex-col items-baseLine justify-center gap-4 px-10 lg:px-1 lg:w-1/2">
-      <h2 class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
-        Importancia de la regulación:
-      </h2>
-      <p class="cont-txt-mto  text-white text-xl md:text-4xl">
-        Los tres expertos coinciden en la necesidad de un marco regulatorio claro y equilibrado para el desarrollo de las Fintech en Honduras. Este marco debe promover la innovación y la competencia, al tiempo que protege a los consumidores y la estabilidad del sistema financiero.
-      </p>
-      <h2 class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10">
-        Educación financiera:
-      </h2>
-      <p class="cont-txt-mto text-white text-xl md:text-4xl">
-        Se destaca la importancia de la educación financiera y tecnológica para que la población pueda comprender y utilizar los servicios Fintech de manera responsable.
-      </p>
-    </div>
-  </div>
   </SectionScreen>
 
   <SectionScreen tipo="azul" class="mt-0 section-content-res">
-  <div class="flex flex-col lg:flex-row items-center justify-center gap-20 h-full py-25 lg:py-10">
-    <div class="card-img relative h-auto lg:w-1/4 w-1/2">
-      <IconFlecha class="flecha-mto rotate-180 lg:rotate-90 absolute top-40 lg:top-50 -right-5 lg:scale-100 scale-60 bg-secondary z-10" />
-      <div class="cont-img-mto relative w-full h-full">
-        <div class="rect-img-mto absolute w-full h-full bg-secondary opacity-0 rounded-2xl "></div>
-        <Image
-          src={foto10.img}
-          alt={foto10.alt}
-          width={500}
-          height={300}
-          class="img-mto w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+    <div
+      class="flex flex-col lg:flex-row items-center justify-center gap-20 h-full py-25 lg:py-10"
+    >
+      <div class="card-img relative h-auto lg:w-1/4 w-1/2">
+        <IconFlecha
+          class="flecha-mto rotate-180 lg:rotate-90 absolute top-40 lg:top-50 -right-5 lg:scale-100 scale-60 bg-secondary z-10"
         />
+        <div class="cont-img-mto relative w-full h-full">
+          <div
+            class="rect-img-mto absolute w-full h-full bg-secondary opacity-0 rounded-2xl"
+          >
+          </div>
+          <Image
+            src={foto10.img}
+            alt={foto10.alt}
+            width={500}
+            height={300}
+            class="img-mto w-full h-auto rounded-br-4xl rounded-tl-4xl rounded-lg shadow-xl shadow-secondary/50"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-baseLine justify-center gap-4 px-10 lg:px-1 lg:w-1/2"
+      >
+        <h2
+          class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2"
+        >
+          Confianza y colaboración:
+        </h2>
+        <p class="cont-txt-mto text-white text-xl md:text-4xl">
+          Se enfatiza la necesidad de fomentar la confianza y la colaboración
+          entre los diferentes actores del ecosistema Fintech, incluyendo
+          bancos, Fintech e instituciones gubernamentales.
+        </p>
+        <h2
+          class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10"
+        >
+          Oportunidades:
+        </h2>
+        <p class="cont-txt-mto text-white text-xl md:text-4xl">
+          Los cuatro expertos reconocen el potencial de las Fintech para
+          impulsar la inclusión financiera y el desarrollo económico en
+          Honduras, especialmente considerando la alta penetración de la
+          telefonía móvil y el acceso a internet.
+        </p>
       </div>
     </div>
-    <div class="flex flex-col items-baseLine justify-center gap-4 px-10 lg:px-1 lg:w-1/2">
-      <h2 class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2">
-        Confianza y colaboración:
-      </h2>
-      <p class="cont-txt-mto  text-white text-xl md:text-4xl">
-        Se enfatiza la necesidad de fomentar la confianza y la colaboración entre los diferentes actores del ecosistema Fintech, incluyendo bancos, Fintech e instituciones gubernamentales.
-      </p>
-      <h2 class="linea titulo-mto text-secondary text-4xl md:text-7x l border-b-2 border-white mb-2 mt-10">
-        Oportunidades:
-      </h2>
-      <p class="cont-txt-mto text-white text-xl md:text-4xl">
-        Los tres expertos reconocen el potencial de las Fintech para impulsar la inclusión financiera y el desarrollo económico en Honduras, especialmente considerando la alta penetración de la telefonía móvil y el acceso a internet.
-      </p>
-    </div>
-  </div>
   </SectionScreen>
-
-
 
   <NavFooterSection
     anterior={{
@@ -99,11 +131,15 @@ const { foto9, foto10 } = imagensElements;
 <style>
   .gradiant-text {
     width: fit-content;
-      color: #3d56cf; 
-      background-image: linear-gradient(45deg, var(--color-secondary-2) , var(--color-secondary)); 
-      background-clip: text; 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent;
+    color: #3d56cf;
+    background-image: linear-gradient(
+      45deg,
+      var(--color-secondary-2),
+      var(--color-secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
 
@@ -112,68 +148,66 @@ const { foto9, foto10 } = imagensElements;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollTrigger.batch(".section-content-res", {
+      onEnter: (batch) => {
+        batch.forEach((elemento, index) => {
+          const lineas = elemento.querySelectorAll(".linea");
+          const cardsImg = elemento.querySelectorAll(".card-img");
+          const title = elemento.querySelectorAll("h2");
+          const parrafo = elemento.querySelectorAll("p");
 
-  ScrollTrigger.batch(".section-content-res", {
-    onEnter: ( batch ) => {
-      batch.forEach((elemento, index) => {
-        const lineas = elemento.querySelectorAll(".linea");
-        const cardsImg = elemento.querySelectorAll(".card-img");
-        const title = elemento.querySelectorAll("h2");
-        const parrafo = elemento.querySelectorAll("p");
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: elemento,
+              start: "20% center",
+            },
+          });
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: elemento,
-            start: "20% center",
-          },
+          if (cardsImg.length > 0) {
+            tl.from(
+              cardsImg,
+              {
+                y: 50,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.5,
+                ease: "power2.out",
+              },
+              "<"
+            );
+          }
+
+          if (lineas.length > 0) {
+            tl.from(lineas, {
+              scale: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          }
+
+          if (title.length > 0) {
+            const splitTitle = new SplitText(title, { type: "words" });
+            tl.from(splitTitle.words, {
+              y: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+            });
+          }
+
+          if (parrafo.length > 0) {
+            const splitParrafo = new SplitText(parrafo, { type: "lines" });
+            tl.from(splitParrafo.lines, {
+              x: 50,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.5,
+            });
+          }
         });
-
-        if(cardsImg.length > 0){
-          tl.from(cardsImg, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.out",
-          }, "<")
-        }
-
-        if(lineas.length > 0){
-          tl.from(lineas, {
-            scale: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.out",
-          })
-        }
-
-        if(title.length > 0){
-          const splitTitle = new SplitText(title, { type: "words" });
-          tl.from(splitTitle.words, {
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-          })
-        }
-
-        if(parrafo.length > 0){
-          const splitParrafo = new SplitText(parrafo, { type: "lines" });
-          tl.from(splitParrafo.lines, {
-            x: 50,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.5,
-          })
-        }
-
-
-
-        
-      })
-    },
-    
-  })
-
-
+      },
+    });
+  });
 </script>

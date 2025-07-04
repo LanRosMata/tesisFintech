@@ -5,20 +5,21 @@ import SectionScreen from "../../components/SectionScreen.astro";
 import imagensElements from "../../utilitys/imagensElements";
 
 const { foto3 } = imagensElements;
-
-
 ---
 
 <SectionScreen tipo="azul" class="mt-fintech">
   <div
-    class="flex flex-col md:flex-row items-center justify-center gap-20 h-full  py-40 lg:py-10 lg:p-40 p-10"
+    class="flex flex-col md:flex-row items-center justify-center gap-20 h-full py-40 lg:py-10 lg:p-40 p-10"
   >
     <div class="relative md:h-auto md:w-1/4 w-1/2">
       <IconFlecha
         class="flecha-mtf rotate-90 absolute top-[30%] left-[95%] w-[50px] h-[50px] md:scale-100 scale-60 bg-secondary z-10"
       />
       <div class="cont-img-mtf relative w-full h-full overflow-hidden">
-        <div class="rect-img-mtf absolute w-full h-full bg-secondary opacity-0 rounded-2xl "></div>
+        <div
+          class="rect-img-mtf absolute w-full h-full bg-secondary opacity-0 rounded-2xl"
+        >
+        </div>
         <Image
           src={foto3.img}
           alt={foto3.alt}
@@ -47,79 +48,82 @@ const { foto3 } = imagensElements;
   </div>
 </SectionScreen>
 
-
-
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+  document.addEventListener("DOMContentLoaded", () => {
+    const contenedor = document.querySelector(".mt-fintech");
+    const imagElement = document.querySelector(".img-mtf");
+    const rectImg = document.querySelector(".rect-img-mtf");
+    const icoFlecha = document.querySelector(".flecha-mtf");
+    const lineTitle = document.querySelector(".titulo-mtf");
+    const imgContainer = document.querySelector(".cont-img-mtf");
 
-  const contenedor = document.querySelector(".mt-fintech")
-  const imagElement = document.querySelector(".img-mtf");
-  const rectImg = document.querySelector(".rect-img-mtf");
-  const icoFlecha = document.querySelector(".flecha-mtf");
-  const lineTitle = document.querySelector(".titulo-mtf")
-  const imgContainer = document.querySelector(".cont-img-mtf")
+    const titleText = new SplitText(".titulo-mtf", { type: "words" });
+    const containerContent = new SplitText(".cont-txt-mtf", { type: "lines" });
 
-  const titleText = new SplitText(".titulo-mtf", { type: "words" });
-  const containerContent = new SplitText(".cont-txt-mtf", { type: "lines" });
+    const tlMtFintech = gsap.timeline({
+      scrollTrigger: {
+        trigger: contenedor,
+        start: "10% center",
+        toggleActions: "play none none none",
+        markers: false,
+      },
+    });
 
-  const tlMtFintech = gsap.timeline({
-    scrollTrigger: {
-      trigger: contenedor,
-      start: "10% center",
-      toggleActions: "play none none none",
-      markers: false,
-    },
+    tlMtFintech
+      .set(imagElement, {
+        opacity: 0,
+      })
+      .set(rectImg, {
+        xPercent: 100,
+      })
+      .to(rectImg, {
+        opacity: 1,
+        duration: 0.1,
+        ease: "power2.inOut",
+      })
+      .to(rectImg, {
+        xPercent: 0,
+        duration: 0.2,
+        ease: "power2.Out",
+      })
+      .from(icoFlecha, {
+        scale: 0,
+        duration: 0.5,
+      })
+      .set(imagElement, {
+        opacity: 1,
+      })
+      .to(rectImg, {
+        scale: 0,
+        duration: 0.5,
+        ease: "power2.inOut",
+      })
+      .to(imgContainer, {
+        overflow: "visible",
+      })
+      .from(
+        lineTitle,
+        {
+          xPercent: -1000,
+          duration: 1,
+        },
+        "<"
+      )
+      .from(titleText.words, {
+        xPercent: 50,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1,
+      })
+      .from(containerContent.lines, {
+        yPercent: 50,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1,
+      });
   });
-
-  tlMtFintech
-    .set(imagElement, {
-      opacity: 0,
-    })
-    .set(rectImg, {
-      xPercent: 100,
-    })
-    .to(rectImg, {
-      opacity: 1,
-      duration: 0.1,
-      ease: "power2.inOut",
-    })
-    .to(rectImg, {
-      xPercent: 0,
-      duration: 0.2,
-      ease: "power2.Out",
-    })
-    .from(icoFlecha,{
-      scale: 0,
-      duration: 0.5,
-    })
-    .set(imagElement, {
-      opacity: 1,
-    })
-    .to(rectImg, {
-      scale: 0,
-      duration: 0.5,
-      ease: "power2.inOut",
-    })
-    .to(imgContainer, {
-      overflow: "visible",
-    })
-    .from(lineTitle, {
-      xPercent: -1000,
-      duration: 1,
-    },"<")
-    .from(titleText.words, {
-      xPercent: 50,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 1,
-    })
-    .from(containerContent.lines, {
-      yPercent: 50,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 1,
-    })
 </script>

@@ -7,28 +7,53 @@ import MapHN from "../assets/img/svg/MapHN.svg";
 import LgUPH from "../assets/img/image2.svg";
 ---
 
-
 <!-- Portada -->
 <section
-  class="hero w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white "
+  class="hero w-full h-screen flex flex-col items-center justify-center bg-background-1 shadow-lg shadow-white"
 >
   <div class="hero-portada w-full h-screen">
-    <div class="flex flex-row items-center justify-center gap-10 absolute z-40 top-[80%] md:right-[45%] right-[20%]">
-      <a href="/01-marco-teorico" class="btn-mt font-bold text-xl lg:text-3xl text-white bg-secondary p-4 rounded-2xl hover:bg-secondary/80 cursor-pointer  opacity-0">Comenzar</a>
-      <a href="/indice" class="btn-mt font-bold text-xl lg:text-3xl text-primary bg-secondary-2 p-4 rounded-2xl hover:bg-secondary-2/80 cursor-pointer  opacity-0">Indice</a>
+    <div
+      class="flex flex-row items-center justify-center gap-10 absolute z-40 top-[80%] md:right-[45%] right-[20%]"
+    >
+      <a
+        href="/01-marco-teorico"
+        class="btn-mt font-bold text-xl lg:text-3xl text-white bg-secondary p-4 rounded-2xl hover:bg-secondary/80 cursor-pointer opacity-0"
+        >Comenzar</a
+      >
+      <a
+        href="/indice"
+        class="btn-mt font-bold text-xl lg:text-3xl text-primary bg-secondary-2 p-4 rounded-2xl hover:bg-secondary-2/80 cursor-pointer opacity-0"
+        >Indice</a
+      >
     </div>
     <TecnoLineas
       class="tecnoLineas absolute tecno-img w-5xl h-4xl fill-amber-700 rotate-180 -right-5 top-40 lg:flex hidden"
     />
-    <div class="absolute h-full flex flex-col z-10 top-[10%] lg:top-[20%] left-[5%]">
-      <LgUPH class="lg-uph overflow-visible flex w-auto px-5 md:w-[500px] h-auto md:mx-auto mb-5 md:mb-10" />
+    <div
+      class="absolute h-full flex flex-col z-10 top-[10%] lg:top-[20%] left-[5%]"
+    >
+      <LgUPH
+        class="lg-uph overflow-visible flex w-auto px-5 md:w-[500px] h-auto md:mx-auto mb-5 md:mb-10"
+      />
 
-      <h1 class="textToAnimate md:text-4xl lg:text-6xl text-white">Las Fintech y su Presencia en</h1>
-      <h1 class="textToAnimate md:text-4xl lg:text-6xl text-white">Honduras en el Año 2024</h1>
-      <h2 class="textToAnimate text-2xl lg:text-4xl text-secondary-2 mt-2 md:mt-10">Presentado por:</h2>
+      <h1 class="textToAnimate md:text-4xl lg:text-6xl text-white">
+        Las Fintech y su Presencia en
+      </h1>
+      <h1 class="textToAnimate md:text-4xl lg:text-6xl text-white">
+        Honduras en el Año 2024
+      </h1>
+      <h2
+        class="textToAnimate text-2xl lg:text-4xl text-secondary-2 mt-2 md:mt-10"
+      >
+        Presentado por:
+      </h2>
       <p class="textToAnimate text-3xl lg:text-5xl text-white">Allan Rosales</p>
-      <h2 class="textToAnimate text-2xl lg:text-4xl text-secondary-2">Carrera:</h2>
-      <p class="textToAnimate text-3xl lg:text-5xl text-white">Ingeniería en Sistemas Computacionales</p>
+      <h2 class="textToAnimate text-2xl lg:text-4xl text-secondary-2">
+        Carrera:
+      </h2>
+      <p class="textToAnimate text-3xl lg:text-5xl text-white">
+        Ingeniería en Sistemas Computacionales
+      </p>
     </div>
     <MapHN
       class="mapHN-hero absolute w-5xl h-4xl fill-background-2/30 left-[0%] top-[0%] z-0"
@@ -39,7 +64,7 @@ import LgUPH from "../assets/img/image2.svg";
 </section>
 
 <style>
-  .textToAnimate{
+  .textToAnimate {
     opacity: 1;
   }
   .hero-portada {
@@ -97,7 +122,7 @@ import LgUPH from "../assets/img/image2.svg";
   }
   .lg-uph {
     opacity: 1;
-  } 
+  }
 </style>
 
 <script>
@@ -105,146 +130,185 @@ import LgUPH from "../assets/img/image2.svg";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
   import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 
-  gsap.registerPlugin(ScrollTrigger, SplitText , DrawSVGPlugin);
+  document.addEventListener("DOMContentLoaded", () => {
+    const lgUpTlInt = gsap.timeline({});
+    lgUpTlInt
+      .to(".lg-uph", {
+        opacity: 1,
+        duration: 0.2,
+      })
+      .from(".lg-uph1", {
+        opacity: 0,
+        ease: "power2.out",
+        duration: 0.2,
+      })
+      .from(
+        ".lg-uph1",
+        {
+          y: 50,
+          ease: "elastic.out(1,0.3)",
+          duration: 0.8,
+        },
+        "<"
+      )
+      .from(".lg-uph2", {
+        opacity: 0,
+        ease: "power2.out",
+        duration: 0.2,
+      })
+      .from(
+        ".lg-uph2",
+        {
+          y: 50,
+          ease: "elastic.out(1,0.3)",
+          duration: 0.8,
+        },
+        "<"
+      )
+      .from(".lg-uph3", {
+        opacity: 0,
+        ease: "power2.out",
+        duration: 0.2,
+      })
+      .from(
+        ".lg-uph3",
+        {
+          y: 50,
+          ease: "elastic.out(1,0.3)",
+          duration: 0.8,
+        },
+        "<"
+      )
+      .from(
+        ".lg-uph4",
+        {
+          scale: 0,
+          opacity: 1,
+          delay: 0,
+          transformOrigin: "center center",
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<"
+      )
+      .from(
+        ".lg-uph5",
+        {
+          x: -200,
+          opacity: 0,
+          delay: 0,
+          ease: "power2.out",
+          duration: 1,
+        },
+        "<"
+      );
 
-  const lgUpTlInt = gsap.timeline({})
-  lgUpTlInt
-  .to(".lg-uph", {
-    opacity: 1,
-    duration: 0.2,
-  })
-  .from(".lg-uph1", {
-    opacity: 0,
-    ease: "power2.out",
-    duration: 0.2,
-  })
-  .from(".lg-uph1", {
-    y: 50,
-    ease: "elastic.out(1,0.3)",
-    duration: 0.8,
-  },"<")
-  .from(".lg-uph2", {
-    opacity: 0,
-    ease: "power2.out",
-    duration: 0.2,
-  })
-  .from(".lg-uph2", {
-    y: 50,
-    ease: "elastic.out(1,0.3)",
-    duration: 0.8,
-  },"<")
-  .from(".lg-uph3", {
-    opacity: 0,
-    ease: "power2.out",
-    duration: 0.2,
-  })
-  .from(".lg-uph3", {
-    y: 50,
-    ease: "elastic.out(1,0.3)",
-    duration: 0.8,
-  },"<")
-  .from(".lg-uph4", {
-    scale: 0,
-    opacity: 1,
-    delay: 0,
-    transformOrigin: 'center center',
-    ease: "power2.out",
-    duration: 1,
-  },"<")
-  .from(".lg-uph5", {
-    x: -200,
-    opacity: 0,
-    delay: 0,
-    ease: "power2.out",
-    duration: 1,
-  },"<")
+    // TimeLine de Fondo
+    const tlFondo = gsap.timeline();
+    tlFondo
+      .to(".resplandor", {
+        opacity: 1,
+        duration: 3,
+      })
+      .to(
+        ".planeta",
+        {
+          opacity: 1,
+          duration: 3,
+        },
+        "<0.5"
+      )
+      .from(
+        ".tecnoLineas path",
+        {
+          duration: 0.5,
+          x: -100,
+          opacity: 0,
+          transformOrigin: "center right",
+          ease: "power2.out",
+          stagger: 0.1,
+        },
+        "<"
+      );
+    document.querySelectorAll(".mapHN-hero path").forEach((path, index) => {
+      tlFondo.from(
+        path,
+        {
+          scale: 0,
+          opacity: 0,
+          duration: 0.2,
+          delay: index * 0.01,
+        },
+        "<"
+      );
+    });
 
-
-// TimeLine de Fondo
-  const tlFondo = gsap.timeline()
-  tlFondo
-  .to(".resplandor",{
-    opacity: 1,
-    duration: 3,
-  })  
-  .to(".planeta",{
-    opacity: 1,
-    duration: 3,
-  },"<0.5")
-  .from(".tecnoLineas path", {
-    duration:0.5,
-    x: -100,
-    opacity: 0,
-    transformOrigin: 'center right',
-    ease: "power2.out",
-    stagger: 0.1,
-  },"<")
-document.querySelectorAll(".mapHN-hero path").forEach((path, index) => {
-  tlFondo.from(path, {
-    scale: 0,
-    opacity: 0,
-    duration: 0.2,
-    delay: index * 0.01,
-  },"<")
-})
-
-//TimeLine del Texto
-const tlTexto = gsap.timeline();
-document.querySelectorAll(".textToAnimate").forEach((element) => {
-    const splitText = new SplitText(element, { type: "words" });
-    tlTexto
-      .from(splitText.words, {
+    //TimeLine del Texto
+    const tlTexto = gsap.timeline();
+    document.querySelectorAll(".textToAnimate").forEach((element) => {
+      const splitText = new SplitText(element, { type: "words" });
+      tlTexto.from(splitText.words, {
         opacity: 0,
         y: 50,
         ease: "power2.out",
         duration: 0.2,
       });
+    });
+
+    //Timeline Principal
+    const tlMain = gsap.timeline({
+      defaults: {
+        ease: "power2.out",
+      },
+    });
+    tlMain
+      .set(".lg-uph", {
+        scale: (index, target) => {
+          if (window.innerWidth < 768) {
+            return window.innerWidth / target?.getBoundingClientRect().width;
+          }
+          const rest =
+            window.innerWidth / target?.getBoundingClientRect().width - 0.5;
+          return rest;
+        },
+        x: (index, target) => {
+          const rest =
+            window.innerWidth / 2 -
+            target.getBoundingClientRect().left -
+            target.getBoundingClientRect().width / 2;
+          return rest;
+        },
+        y: (index, target) => {
+          const rest =
+            window.innerHeight / 2 -
+            target.getBoundingClientRect().top -
+            target.getBoundingClientRect().height / 2;
+          return rest;
+        },
+        duration: 0.5,
+      })
+      .add(lgUpTlInt)
+      .add(tlFondo)
+      .to(
+        ".lg-uph",
+        {
+          scale: 1,
+          x: 0,
+          y: 0,
+          duration: 1,
+        },
+        "<"
+      )
+      .add(tlTexto, "<2")
+      .to(
+        ".btn-mt",
+        {
+          opacity: 1,
+          duration: 1,
+        },
+        "+=1"
+      );
   });
-
-//Timeline Principal
-  const tlMain = gsap.timeline({
-    defaults: {
-      ease: "power2.out",
-    },
-  });
-  tlMain
-    .set(".lg-uph", {
-      scale: (index, target) => {
-        if (window.innerWidth < 768) {
-          return window.innerWidth / target?.getBoundingClientRect().width
-        } 
-        const rest = (window.innerWidth / target?.getBoundingClientRect().width) - 0.5;
-        console.log(rest)
-        return rest
-      },
-      x: (index, target) => {
-        const rest = window.innerWidth / 2 - target.getBoundingClientRect().left - target.getBoundingClientRect().width / 2
-        console.log(rest)
-        return rest
-      },
-      y: (index, target) => { 
-        const rest = window.innerHeight / 2 - target.getBoundingClientRect().top - target.getBoundingClientRect().height / 2
-        console.log(rest)
-        return rest
-      },
-      duration: 0.5,
-  })
-  .add(lgUpTlInt)
-  .add(tlFondo)
-  .to(".lg-uph", {
-      scale: 1,
-      x: 0,
-      y: 0,
-      duration: 1,
-    },"<")
-  .add(tlTexto, "<2")
-  .to(".btn-mt", {
-      opacity: 1,
-      duration: 1,
-    },"+=1")
-
-
-
 </script>
-

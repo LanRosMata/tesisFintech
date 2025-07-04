@@ -1,12 +1,16 @@
 ---
-import SectionScreen from '../../components/SectionScreen.astro';
-import TitleCard from '../../components/TitleCard.astro';
-import MapHN from '../../assets/img/svg/MapHN.svg'
+import SectionScreen from "../../components/SectionScreen.astro";
+import TitleCard from "../../components/TitleCard.astro";
+import MapHN from "../../assets/img/svg/MapHN.svg";
 const { title } = Astro.props;
-
 ---
+
 <SectionScreen tipo="degradado-1" class="st-MT relative overflow-hidden hero">
-  <TitleCard numero="00" titulo={"Objetivos de la investigación"} class="tl-card z-50" />
+  <TitleCard
+    numero="00"
+    titulo={"Objetivos de la investigación"}
+    class="tl-card z-50"
+  />
   <MapHN
     class="absolute z-0 -top-[5%] w-screen h-full scale-200 fill-background-1/20"
   />
@@ -15,58 +19,69 @@ const { title } = Astro.props;
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin( ScrollTrigger );
+  gsap.registerPlugin(ScrollTrigger);
+  document.addEventListener("DOMContentLoaded", () => {
+    //Selectores
+    const NavBar = document.getElementById("Nav-Bar");
+    const Tlcard = document.querySelector(".tl-card");
 
-  //Selectores
-  const NavBar = document.getElementById("Nav-Bar");
-  const Tlcard = document.querySelector(".tl-card");
+    // Obtener medidas
+    const heightWindow = window.innerHeight;
+    const widthWindow = window.innerWidth;
+    const pageContent = document
+      .getElementById("page-content")
+      ?.getBoundingClientRect().height;
+    const lengBody = pageContent ? pageContent : 1080;
+    const heightNavBar = NavBar ? NavBar?.getBoundingClientRect().height : 0;
+    const TlcardWidth =
+      document.querySelector(".tl-card")?.getBoundingClientRect().width || 0;
 
-  // Obtener medidas
-  const heightWindow = window.innerHeight;
-  const widthWindow = window.innerWidth;
-  const pageContent = document.getElementById("page-content")?.getBoundingClientRect().height;
-  const lengBody = pageContent ? pageContent : 1080;
-  const heightNavBar = NavBar ? NavBar?.getBoundingClientRect().height : 0;
-  const TlcardWidth = document.querySelector(".tl-card")?.getBoundingClientRect().width || 0;
+    //Calcular separación superior
+    const PercentBarWindowHeight = (heightNavBar / heightWindow) * 100;
+    const TopicY = PercentBarWindowHeight - 95;
+    //calcular separacion izquierda
+    const PercentPadingWith = ((TlcardWidth * 0.3) / widthWindow) * -100;
+    const TopicX = PercentPadingWith - 5;
 
-  //Calcular separación superior
-  const PercentBarWindowHeight = (heightNavBar  / heightWindow) * 100;
-  const TopicY = PercentBarWindowHeight - 95
-  //calcular separacion izquierda
-  const PercentPadingWith = ((TlcardWidth * .3) / widthWindow) * -100;
-  const TopicX = PercentPadingWith - 5
-  
-  //Calculo de la longitud del documento para el Scroll
-  const aniEnd = lengBody - heightWindow;
+    //Calculo de la longitud del documento para el Scroll
+    const aniEnd = lengBody - heightWindow;
 
-  const tlMT = gsap.timeline({
-    scrollTrigger: {
-      trigger: Tlcard,
-      start: "top center",
-      end: aniEnd,
-      pin: true,
-      scrub: 1,
-      markers: false,
-    }
-  })
-   tlMT
-    .set(Tlcard,{
-      xPercent: 0,
-      yPercent: -50,
-      rotateX: 0,
-      opacity: 1,
-      scale: 1,
-    })
-    .to(Tlcard, {
-      // xPercent: -35,
-      xPercent: TopicX,
-      // yPercent: -85,
-      yPercent: TopicY,
-      scale:0.3,
-    }, ">+1")
-    .to(Tlcard, {
-      xPercent: -35,
-      yPercent: -100,
-    }, ">+=5")
-
+    const tlMT = gsap.timeline({
+      scrollTrigger: {
+        trigger: Tlcard,
+        start: "top center",
+        end: aniEnd,
+        pin: true,
+        scrub: 1,
+        markers: false,
+      },
+    });
+    tlMT
+      .set(Tlcard, {
+        xPercent: 0,
+        yPercent: -50,
+        rotateX: 0,
+        opacity: 1,
+        scale: 1,
+      })
+      .to(
+        Tlcard,
+        {
+          // xPercent: -35,
+          xPercent: TopicX,
+          // yPercent: -85,
+          yPercent: TopicY,
+          scale: 0.3,
+        },
+        ">+1"
+      )
+      .to(
+        Tlcard,
+        {
+          xPercent: -35,
+          yPercent: -100,
+        },
+        ">+=5"
+      );
+  });
 </script>

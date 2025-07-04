@@ -49,73 +49,76 @@ const { foto4 } = imagensElements;
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  const contenedor = document.querySelector(".mt-o")
-  const imagElement = document.querySelector(".img-mto");
-  const rectImg = document.querySelector(".rect-img-mto");
-  const icoFlecha = document.querySelector(".flecha-mto");
-  const lineTitle = document.querySelectorAll(".titulo-mto")
-  const imgContainer = document.querySelector(".cont-img-mto")
-
-  const titleText = new SplitText(".titulo-mto", { type: "words" });
-  const containerContent = new SplitText(".cont-txt-mto", { type: "lines" });
-
-  const tlMtFintech = gsap.timeline({
-    scrollTrigger: {
-      trigger: contenedor,
-      start: "10% center",
-      toggleActions: "play none none none",
-      markers: false,
-    },
+  document.addEventListener('DOMContentLoaded', () => {
+    
+      const contenedor = document.querySelector(".mt-o")
+      const imagElement = document.querySelector(".img-mto");
+      const rectImg = document.querySelector(".rect-img-mto");
+      const icoFlecha = document.querySelector(".flecha-mto");
+      const lineTitle = document.querySelectorAll(".titulo-mto")
+      const imgContainer = document.querySelector(".cont-img-mto")
+    
+      const titleText = new SplitText(".titulo-mto", { type: "words" });
+      const containerContent = new SplitText(".cont-txt-mto", { type: "lines" });
+    
+      const tlMtFintech = gsap.timeline({
+        scrollTrigger: {
+          trigger: contenedor,
+          start: "10% center",
+          toggleActions: "play none none none",
+          markers: false,
+        },
+      });
+    
+      tlMtFintech
+        .set(imagElement, {
+          opacity: 0,
+        })
+        .set(rectImg, {
+          xPercent: 100,
+        })
+        .to(rectImg, {
+          opacity: 1,
+          duration: 0.1,
+          ease: "power2.inOut",
+        })
+        .to(rectImg, {
+          xPercent: 0,
+          duration: 0.2,
+          ease: "power2.Out",
+        })
+        .from(icoFlecha,{
+          scale: 0,
+          duration: 0.5,
+        })
+        .set(imagElement, {
+          opacity: 1,
+        })
+        .to(rectImg, {
+          scale: 0,
+          duration: 0.5,
+          ease: "power2.inOut",
+        })
+        .to(imgContainer, {
+          overflow: "visible",
+        })
+        .from(lineTitle, {
+          xPercent: -1000,
+          duration: 1,
+        },"<")
+        .from(titleText.words, {
+          xPercent: 50,
+          opacity: 0,
+          stagger: 0.3,
+          duration: 0.5,
+          ease: "power2.inOut",
+        })
+        .from(containerContent.lines, {
+          yPercent: 50,
+          opacity: 0,
+          stagger: 0.3,
+          duration: 0.5,
+          ease: "power2.inOut",
+        })
   });
-
-  tlMtFintech
-    .set(imagElement, {
-      opacity: 0,
-    })
-    .set(rectImg, {
-      xPercent: 100,
-    })
-    .to(rectImg, {
-      opacity: 1,
-      duration: 0.1,
-      ease: "power2.inOut",
-    })
-    .to(rectImg, {
-      xPercent: 0,
-      duration: 0.2,
-      ease: "power2.Out",
-    })
-    .from(icoFlecha,{
-      scale: 0,
-      duration: 0.5,
-    })
-    .set(imagElement, {
-      opacity: 1,
-    })
-    .to(rectImg, {
-      scale: 0,
-      duration: 0.5,
-      ease: "power2.inOut",
-    })
-    .to(imgContainer, {
-      overflow: "visible",
-    })
-    .from(lineTitle, {
-      xPercent: -1000,
-      duration: 1,
-    },"<")
-    .from(titleText.words, {
-      xPercent: 50,
-      opacity: 0,
-      stagger: 0.3,
-      duration: 0.5,
-      ease: "power2.inOut",
-    })
-    .from(containerContent.lines, {
-      yPercent: 50,
-      opacity: 0,
-      stagger: 0.3,
-      duration: 0.5,
-      ease: "power2.inOut",
-    })
 </script>
