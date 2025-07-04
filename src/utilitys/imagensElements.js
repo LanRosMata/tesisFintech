@@ -191,6 +191,10 @@ const imagensElements = {
       alt: 'QR de Tesis Fintech Honduras',
       site: 'https://tesis.allanrosales.dev/'
     },
+    estructura:{
+      img: estructuraIMG,
+      alt: 'Estructura de Tecnologías Fintech en Honduras',
+    },
 };
 
 export default imagensElements
