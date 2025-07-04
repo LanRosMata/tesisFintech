@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionScreen from "../../components/SectionScreen.astro";
+import imagensElements from "../../utilitys/imagensElements.js";
+import { Image } from "astro:assets";
+const { qrTesis } = imagensElements;
+
+---
+<Layout title="QR Tesis Fintech">
+  <SectionScreen tipo="azul" class="overflow-hidden section-content-ant">
+    <div class="h-full flex flex-col justify-center items-center gap-5">
+      <p class="text-white text-3xl lg:text-4xl text-center my-10 md:w-2/3 m-5 md:m-20">
+        Escanea el código QR para acceder a la presentación.
+      </p>
+      <div class="flex flex-wrap gap-10 items-center justify-center">
+        <div class="flex flex-col items-center">
+          <Image src={qrTesis.img} alt={qrTesis.alt} width={600} height={300} class="w-64 h-64 md:w-80 md:h-80" />
+          <p class="text-white mt-4">{qrTesis.site}</p>
+        </div>
+      </div>
+      <p class="text-white text-lg mt-10">
+        <a href="/" class="text-secondary bg-white py-1 px-2 text-4xl border-2 border-amber-100 rounded-2xl hover:bg-amber-200 hover:border-amber-500 cursor-pointer" rel="noopener noreferrer">
+          Iniciar Presentación
+        </a>
+      </p>
+    </div>
+  </SectionScreen>
+</Layout>
