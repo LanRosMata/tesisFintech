@@ -208,72 +208,82 @@ const { webTfhn, estructura } = imagensElements;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+
   document.addEventListener("DOMContentLoaded", () => {
-    ScrollTrigger.batch(".section-content-ps", {
-      onEnter: (batch) => {
-        batch.forEach((elemento, index) => {
-          const cardsData = elemento.querySelectorAll(".card-data");
-          const cardsImg = elemento.querySelectorAll(".card-img");
-          const gradiantText = elemento.querySelectorAll(".gradiant-text");
-          const title = elemento.querySelectorAll(".titulo");
-          const parrafo = elemento.querySelectorAll(".parrafo");
+    const contenedor = document.querySelectorAll(".section-content-ps");
+    contenedor.forEach((elemento) => {
+      const cardsData = elemento.querySelectorAll(".card-data");
+      const cardsImg = elemento.querySelectorAll(".card-img");
+      const gradiantText = elemento.querySelectorAll(".gradiant-text");
+      const title = elemento.querySelectorAll(".titulo");
+      const parrafo = elemento.querySelectorAll(".parrafo");
+    
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: elemento,
+          start: "10% center",
+        },
+      });
 
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: elemento,
-              start: "10% center",
-            },
-          });
-          if (title.length > 0) {
-            const splitTitle = new SplitText(title, { type: "words" });
-            tl.from(splitTitle.words, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-            });
-          }
-
-          if (gradiantText.length > 0) {
-            tl.from(gradiantText, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 1,
-              ease: "power2.inOut",
-            });
-          }
-
-          if (parrafo.length > 0) {
-            const splitParrafo = new SplitText(parrafo, { type: "lines" });
-            tl.from(splitParrafo.lines, {
-              x: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-            });
-          }
-
-          if (cardsImg.length > 0) {
-            tl.from(cardsImg, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              ease: "power2.out",
-            });
-          }
-          if (cardsData.length > 0) {
-            tl.from(cardsData, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              ease: "power2.out",
-            });
-          }
+      if (title.length > 0) {
+        const tl = gsap.timeline({});
+        const splitTitle = new SplitText(title, { type: "words" });
+        tl.from(splitTitle.words, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
         });
-      },
-    });
+        tlMain.add(tl);
+      }
+    
+      if (gradiantText.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(gradiantText, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 1,
+          ease: "power2.inOut",
+        });
+        tlMain.add(tl);
+      }
+    
+      if (parrafo.length > 0) {
+        const tl = gsap.timeline({});
+        const splitParrafo = new SplitText(parrafo, { type: "lines" });
+        tl.from(splitParrafo.lines, {
+          x: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+        });
+        tlMain.add(tl);
+      }
+    
+      if (cardsImg.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(cardsImg, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "back.out(1.7)",
+        });
+        tlMain.add(tl);
+      }
+      if (cardsData.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(cardsData, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "back.out(1.7)",
+        });
+        tlMain.add(tl);
+      }
+    })
   });
+
 </script>

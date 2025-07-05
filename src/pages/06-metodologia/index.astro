@@ -116,6 +116,8 @@ const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  
   document.addEventListener("DOMContentLoaded", () => {
     const tlDip1 = gsap.timeline({
       scrollTrigger: {
@@ -172,8 +174,9 @@ const { entrevista1, entrevista2, entrevista3, entrevista4 } = imagensElements;
       .from(".card-profile", {
         y: 50,
         opacity: 0,
-        stagger: 0.5,
-        duration: 0.5,
+        stagger: 0.7,
+        duration: 1,
+        ease: "back.out(1.7)",
       });
   });
 </script>

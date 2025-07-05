@@ -251,39 +251,43 @@ const {
   }
 </style>
 
+
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
+import DataBox from "../../components/DataBox.astro";
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
   document.addEventListener("DOMContentLoaded", () => {
-    ScrollTrigger.batch(".section-content-ant", {
-      onEnter: (batch) => {
-        batch.forEach((elemento, index) => {
-          const cardsData = elemento.querySelectorAll(".card-data");
-          const cardsImg = elemento.querySelectorAll(".card-img");
-          const title = elemento.querySelectorAll("h2");
-          const parrafo = elemento.querySelectorAll("p");
+    const contenedor = document.querySelectorAll(".section-content-ant");
+    contenedor.forEach((elemento) => {
+      const cardsData = elemento.querySelectorAll(".card-data");
+      const cardsImg = elemento.querySelectorAll(".card-img");
+      const title = elemento.querySelectorAll("h2");
+      const parrafo = elemento.querySelectorAll("p");
 
-          const tl = gsap.timeline({
+      const tlMain = gsap.timeline({
             scrollTrigger: {
               trigger: elemento,
               start: "20% center",
             },
           });
 
-          if (title.length > 0) {
-            const splitTitle = new SplitText(title, { type: "words" });
-            tl.from(splitTitle.words, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-            });
-          }
+      if (title.length > 0) {
+          const tl = gsap.timeline({});
+          const splitTitle = new SplitText(title, { type: "words" });
+          tl.from(splitTitle.words, {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+          });
+          tlMain.add(tl);
+        }
 
-          if (parrafo.length > 0) {
+        if (parrafo.length > 0) {
+            const tl = gsap.timeline({});
             const splitParrafo = new SplitText(parrafo, { type: "lines" });
             tl.from(splitParrafo.lines, {
               x: 50,
@@ -291,9 +295,10 @@ const {
               stagger: 0.1,
               duration: 0.5,
             });
+            tlMain.add(tl);
           }
-
-          if (cardsImg.length > 0) {
+        if (cardsImg.length > 0) {
+            const tl = gsap.timeline({});
             tl.from(
               cardsImg,
               {
@@ -301,12 +306,12 @@ const {
                 opacity: 0,
                 stagger: 0.1,
                 duration: 0.5,
-                ease: "power2.out",
-              },
-              "<"
-            );
+                ease: "back.out(1.7)",
+              });
+            tlMain.add(tl,"<0.5");
           }
-          if (cardsData.length > 0) {
+        if (cardsData.length > 0) {
+            const tl = gsap.timeline({});
             tl.from(
               cardsData,
               {
@@ -314,13 +319,11 @@ const {
                 opacity: 0,
                 stagger: 0.1,
                 duration: 0.5,
-                ease: "power2.out",
-              },
-              "<"
-            );
+                ease: "back.out(1.7)",
+              });
+            tlMain.add(tl,"<0.5");
           }
-        });
-      },
     });
   });
+
 </script>

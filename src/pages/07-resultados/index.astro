@@ -148,66 +148,73 @@ const { foto9, foto10 } = imagensElements;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+
   document.addEventListener("DOMContentLoaded", () => {
-    ScrollTrigger.batch(".section-content-res", {
-      onEnter: (batch) => {
-        batch.forEach((elemento, index) => {
-          const lineas = elemento.querySelectorAll(".linea");
-          const cardsImg = elemento.querySelectorAll(".card-img");
-          const title = elemento.querySelectorAll("h2");
-          const parrafo = elemento.querySelectorAll("p");
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: elemento,
-              start: "20% center",
-            },
-          });
-
-          if (cardsImg.length > 0) {
-            tl.from(
-              cardsImg,
-              {
-                y: 50,
-                opacity: 0,
-                stagger: 0.1,
-                duration: 0.5,
-                ease: "power2.out",
-              },
-              "<"
-            );
-          }
-
-          if (lineas.length > 0) {
-            tl.from(lineas, {
-              scale: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              ease: "power2.out",
-            });
-          }
-
-          if (title.length > 0) {
-            const splitTitle = new SplitText(title, { type: "words" });
-            tl.from(splitTitle.words, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-            });
-          }
-
-          if (parrafo.length > 0) {
-            const splitParrafo = new SplitText(parrafo, { type: "lines" });
-            tl.from(splitParrafo.lines, {
-              x: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-            });
-          }
+    const contenedor = document.querySelectorAll(".section-content-res");
+    contenedor.forEach((elemento) => {
+      const lineas = elemento.querySelectorAll(".linea");
+      const cardsImg = elemento.querySelectorAll(".card-img");
+      const title = elemento.querySelectorAll("h2");
+      const parrafo = elemento.querySelectorAll("p");
+    
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: elemento,
+          start: "20% center",
+        },
+      });
+    
+      if (cardsImg.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(
+          cardsImg,
+          {
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.7)",
+          },
+          "<0.5"
+        );
+        tlMain.add(tl);
+      }
+    
+      if (lineas.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(lineas, {
+          scale: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "back.out(1.7)",
         });
-      },
-    });
+        tlMain.add(tl);
+      }
+    
+      if (title.length > 0) {
+        const tl = gsap.timeline({});
+        const splitTitle = new SplitText(title, { type: "words" });
+        tl.from(splitTitle.words, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+        });
+        tlMain.add(tl);
+      }
+    
+      if (parrafo.length > 0) {
+        const tl = gsap.timeline({});
+        const splitParrafo = new SplitText(parrafo, { type: "lines" });
+        tl.from(splitParrafo.lines, {
+          x: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+        });
+        tlMain.add(tl);
+      }
+    })
   });
+
 </script>

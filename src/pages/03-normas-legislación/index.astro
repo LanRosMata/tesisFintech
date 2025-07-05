@@ -109,50 +109,55 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollTrigger.batch(".section-content-nl", {
-      onEnter: (batch) => {
-        batch.forEach((elemento, index) => {
-          const cardsData = elemento.querySelectorAll(".data-card-tit");
-          const cardsDataRect = elemento.querySelectorAll(".data-card-rect");
-          const title = elemento.querySelectorAll("h2");
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: elemento,
-              start: "10% center",
-            },
-          });
-          if (title.length > 0) {
-            const splitTitle = new SplitText(title, { type: "words" });
-            tl.from(splitTitle.words, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              ease: "power2.inOut",
-            });
-          }
-          if (cardsDataRect.length > 0) {
-            tl.from(cardsDataRect, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              ease: "power2.inOut",
-            });
-          }
-          if (cardsData.length > 0) {
-            tl.from(cardsData, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              ease: "power2.inOut",
-            });
-          }
+ document.addEventListener("DOMContentLoaded", () => {
+    const contenedor = document.querySelectorAll(".section-content-nl");
+    contenedor.forEach((elemento) => {
+      const cardsData = elemento.querySelectorAll(".data-card-tit");
+      const cardsDataRect = elemento.querySelectorAll(".data-card-rect");
+      const title = elemento.querySelectorAll("h2");
+    
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: elemento,
+          start: "10% center",
+        },
+      });
+      if (title.length > 0) {
+        const tl = gsap.timeline({});
+        const splitTitle = new SplitText(title, { type: "words" });
+        tl.from(splitTitle.words, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "power2.inOut",
         });
-      },
-    });
+        tlMain.add(tl);
+
+      }
+      if (cardsDataRect.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(cardsDataRect, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "back.out(1.7)",
+        });
+        tlMain.add(tl,"<0.5");
+      }
+      if (cardsData.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(cardsData, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "back.out(1.7)",
+        });
+        tlMain.add(tl,"<0.5");
+      }
+    })
   });
+
 </script>

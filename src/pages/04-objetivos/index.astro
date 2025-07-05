@@ -98,76 +98,83 @@ import TitlePinSub from "../../components/TitlePinSub.astro";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { SplitText } from "gsap/SplitText";
   gsap.registerPlugin(ScrollTrigger, SplitText);
+
   document.addEventListener("DOMContentLoaded", () => {
-    ScrollTrigger.batch(".section-content-obj", {
-      onEnter: (batch) => {
-        batch.forEach((elemento, index) => {
-          const gradiantText = elemento.querySelectorAll(".gradiant-text");
-          const lineas = elemento.querySelectorAll(".linea");
-          const flecha = elemento.querySelectorAll(".flecha");
-          const parrafo = elemento.querySelectorAll("p");
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: elemento,
-              start: "20% center",
-            },
-          });
-
-          if (gradiantText.length > 0) {
-            tl.from(gradiantText, {
-              y: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 1,
-              delay: 0.1,
-              ease: "power2.inOut",
-            });
-          }
-          if (lineas.length > 0) {
-            tl.from(lineas, {
-              scale: 0,
-              rotateY: 45,
-              stagger: 0.1,
-              duration: 0.8,
-              delay: 0.0,
-              ease: "power2.inOut",
-            });
-          }
-          if (parrafo.length > 0 && flecha.length > 0) {
-            const splitParrafo = new SplitText(parrafo, { type: "lines" });
-            tl.from(splitParrafo.lines, {
-              x: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              delay: 0.1,
-              ease: "power2.inOut",
-            }).from(
-              flecha,
-              {
-                scale: 0,
-                rotateY: 45,
-                stagger: 0.1,
-                duration: 0.8,
-                delay: 0.0,
-                ease: "power2.inOut",
-              },
-              "<"
-            );
-          } else if (parrafo.length > 0) {
-            const splitParrafo = new SplitText(parrafo, { type: "lines" });
-            tl.from(splitParrafo.lines, {
-              x: 50,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.5,
-              delay: 0.1,
-              ease: "power2.inOut",
-            });
-          }
+    const contenedor = document.querySelectorAll(".section-content-obj");
+    contenedor.forEach((elemento) => {
+      const gradiantText = elemento.querySelectorAll(".gradiant-text");
+      const lineas = elemento.querySelectorAll(".linea");
+      const flecha = elemento.querySelectorAll(".flecha");
+      const parrafo = elemento.querySelectorAll("p");
+    
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: elemento,
+          start: "10% center",
+        },
+      });
+    
+      if (gradiantText.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(gradiantText, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 1,
+          delay: 0.1,
+          ease: "power2.inOut",
         });
-      },
-    });
+        tlMain.add(tl);
+      }
+      if (lineas.length > 0) {
+        const tl = gsap.timeline({});
+        tl.from(lineas, {
+          scale: 0,
+          rotateY: 45,
+          stagger: 0.1,
+          duration: 0.8,
+          delay: 0.0,
+          ease: "back.out(1.7)",
+        });
+        tlMain.add(tl);
+      }
+      if (parrafo.length > 0 && flecha.length > 0) {
+        const tl = gsap.timeline({});
+        const splitParrafo = new SplitText(parrafo, { type: "lines" });
+        tl.from(splitParrafo.lines, {
+          x: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          delay: 0.1,
+          ease: "power2.inOut",
+        }).from(
+          flecha,
+          {
+            scale: 0,
+            rotateY: 45,
+            stagger: 0.1,
+            duration: 0.8,
+            delay: 0.0,
+            ease: "back.out(1.7)",
+          },
+          "<"
+        );
+        tlMain.add(tl);
+      } else if (parrafo.length > 0) {
+        const tl = gsap.timeline({});
+        const splitParrafo = new SplitText(parrafo, { type: "lines" });
+        tl.from(splitParrafo.lines, {
+          x: 50,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          delay: 0.1,
+          ease: "power2.inOut",
+        });
+        tlMain.add(tl);
+      }
+
+    })
   });
 </script>
